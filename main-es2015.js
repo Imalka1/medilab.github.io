@@ -62,6 +62,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn-add/grn-add.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn-add/grn-add.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"min-width: 1000px\">\n\n  <div class=\"grnNode\">\n    <div class=\"row grnTop\">\n      <div class=\"col-6\">\n        <div>\n          <div>GRN. No</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n        </div>\n        <div>\n          <div>Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n        </div>\n        <div>\n          <div>Supplier</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">Location</div>\n          <div> :&nbsp;&nbsp;&nbsp;018</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Supplier Invoice Number</div>\n          <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">User</div>\n          <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Invoice Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">PO No</div>\n          <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Status</div>\n          <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n    <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"\" style=\"font-size: 14px;\">\n      <div class=\"\" style=\"margin-bottom: 40px;margin-top: 20px\">\n\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td width=\"8%\">Code</td>\n            <td>Description</td>\n            <td width=\"5%\">P/S</td>\n            <td width=\"7%\">W/S Price</td>\n            <td width=\"5%\">Pack Qty</td>\n            <td width=\"7%\">Free</td>\n            <td width=\"5%\">%</td>\n            <td width=\"8%\">Discount</td>\n            <td width=\"9%\">Amount</td>\n            <td width=\"7%\"></td>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of items,let i = index\">\n            <td>{{i+1}}</td>\n            <td><input type=\"text\" placeholder=\"Code\" value=\"{{item.code}}\"></td>\n            <td><input type=\"text\" placeholder=\"Description\" value=\"{{item.desc}}\"></td>\n            <td><input type=\"number\" value=\"{{item.ps}}\"></td>\n            <td><input type=\"number\" value=\"{{item.ws}}\"></td>\n            <td><input type=\"number\" value=\"{{item.qty}}\"></td>\n            <td><input type=\"number\" value=\"{{item.free}}\"></td>\n            <td><input type=\"number\" value=\"{{item.perce}}\"></td>\n            <td><input type=\"number\" value=\"{{item.discount}}\"></td>\n            <td>{{item.amount}}</td>\n            <td (click)=\"removeRow(i)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n              <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n            <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n              <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n          </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"grnNode grnBottom\">\n        <div style=\"float: right\">\n          <div>\n            <div>Number Of Items</div>\n            <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n          </div>\n          <div>\n            <div>Gross Amount</div>\n            <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div>\n            <div>Net Discount %</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Tax</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Additions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Deductions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Net Amount</div>\n            <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n            <div>Payment Amount</div>\n            <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn.component.html ***!
@@ -71,7 +84,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"min-width: 1000px\">\n\n  <div class=\"grnNode\">\n    <div class=\"row grnTop\">\n      <div class=\"col-6\">\n        <div>\n          <div>GRN. No</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n        </div>\n        <div>\n          <div>Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n        </div>\n        <div>\n          <div>Supplier</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">Location</div>\n          <div> :&nbsp;&nbsp;&nbsp;018</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Supplier Invoice Number</div>\n          <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">User</div>\n          <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Invoice Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">PO No</div>\n          <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Status</div>\n          <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n    <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"\" style=\"font-size: 14px;\">\n      <div class=\"\" style=\"margin-bottom: 40px;margin-top: 20px\">\n\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td width=\"8%\">Code</td>\n            <td>Description</td>\n            <td width=\"5%\">P/S</td>\n            <td width=\"7%\">W/S Price</td>\n            <td width=\"5%\">Pack Qty</td>\n            <td width=\"7%\">Free</td>\n            <td width=\"5%\">%</td>\n            <td width=\"8%\">Discount</td>\n            <td width=\"9%\">Amount</td>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of items,let i = index\">\n            <td>{{i+1}}</td>\n            <td>{{item.code}}</td>\n            <td>{{item.desc}}</td>\n            <td>{{item.ps}}</td>\n            <td>{{item.ws}}</td>\n            <td>{{item.qty}}</td>\n            <td>{{item.free}}</td>\n            <td>{{item.perce}}</td>\n            <td>{{item.discount}}</td>\n            <td>{{item.amount}}</td>\n          </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"grnNode grnBottom\">\n        <div style=\"float: right\">\n          <div>\n            <div>Number Of Items</div>\n            <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n          </div>\n          <div>\n            <div>Gross Amount</div>\n            <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div>\n            <div>Net Discount %</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Tax</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Additions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Deductions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Net Amount</div>\n            <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n            <div>Payment Amount</div>\n            <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"grnNode\" style=\"min-width: 1000px\">\n  <div class=\"tabNode\">\n    <span [routerLink]=\"'/content/grn/list'\" [routerLinkActive]=\"'tabSelected'\">View GRNs</span>\n    <span [routerLink]=\"'/content/grn/add'\" [routerLinkActive]=\"'tabSelected'\">Add GRN</span>\n  </div>\n\n  <router-outlet></router-outlet>\n\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.html":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div\n  style=\"margin: 10px 0px 15px 0px;border: 2px solid #737373;padding: 15px 15px 0px 15px\">\n\n  <div class=\"grnNode\">\n    <div class=\"row grnTop\">\n      <div class=\"col-6\">\n        <div>\n          <div>GRN. No</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;{{grn.infoId}}</div>\n        </div>\n        <div>\n          <div>Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n        </div>\n        <div>\n          <div>Supplier</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">Location</div>\n          <div> :&nbsp;&nbsp;&nbsp;018</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Supplier Invoice Number</div>\n          <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">User</div>\n          <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Invoice Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">PO No</div>\n          <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Status</div>\n          <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n    <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"\" style=\"font-size: 14px;\">\n      <div class=\"\" style=\"margin-bottom: 30px;margin-top: 20px\">\n\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td width=\"8%\">Code</td>\n            <td>Description</td>\n            <td width=\"5%\">P/S</td>\n            <td width=\"7%\">W/S Price</td>\n            <td width=\"5%\">Pack Qty</td>\n            <td width=\"7%\">Free</td>\n            <td width=\"5%\">%</td>\n            <td width=\"8%\">Discount</td>\n            <td width=\"9%\">Amount</td>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of items,let i = index\">\n            <td>{{i+1}}</td>\n            <td>{{item.code}}</td>\n            <td>{{item.desc}}</td>\n            <td>{{item.ps}}</td>\n            <td>{{item.ws}}</td>\n            <td>{{item.qty}}</td>\n            <td>{{item.free}}</td>\n            <td>{{item.perce}}</td>\n            <td>{{item.discount}}</td>\n            <td>{{item.amount}}</td>\n          </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"grnNode grnBottom\">\n        <div style=\"float: right\">\n          <div>\n            <div>Number Of Items</div>\n            <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n          </div>\n          <div>\n            <div>Gross Amount</div>\n            <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div>\n            <div>Net Discount %</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Tax</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Additions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Deductions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Net Amount</div>\n            <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n            <div>Payment Amount</div>\n            <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grns-list/grns-list.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grns-list/grns-list.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"orderNode\">\n\n  <div style=\"font-weight: 600;margin-bottom: 10px\">\n    <div class=\"reportYear\" *ngFor=\"let grnsOfYear of grns;first as isFirst\"\n         style=\"padding: 9px 0px 9px 0px;cursor: pointer;border-bottom: 1px solid #cecece\"\n         [ngStyle]=\"{'border-top':isFirst?'1px solid #cecece':''}\">\n\n      <div style=\"font-size: 18px;color: #6e6e6e;margin-left: 5px\"\n           (click)=\"expandYear(grnsOfYear)\">\n        <i [ngClass]=\"grnsOfYear.expandYear?'fas fa-caret-down':'fas fa-caret-right'\"\n           style=\"padding-right: 10px;color: #f1a304;font-size: 19px\"></i>\n        <span style=\"margin-bottom: 15px\">{{grnsOfYear.year}}</span>\n      </div>\n\n      <div *ngIf=\"grnsOfYear.expandYear\">\n        <div *ngFor=\"let grnsOfMonth of grnsOfYear.informationOfMonth\"\n             style=\"margin-top: 15px;margin-bottom: 10px\">\n\n          <div style=\"font-size: 17px;color: #5b5b5b\"\n               (click)=\"expandMonth(grnsOfMonth)\">\n            <i [ngClass]=\"grnsOfMonth.expandMonth?'fas fa-caret-down':'fas fa-caret-right'\"\n               style=\"margin-left: 23px;margin-right: 12px;color: #f1a304;font-size: 19px\"></i>\n            <span>{{grnsOfMonth.month}}</span>\n          </div>\n\n          <div *ngIf=\"grnsOfMonth.expandMonth\">\n            <div *ngFor=\"let grnsOfDay of grnsOfMonth.informationOfDay\"\n                 style=\"margin-top: 15px;font-size: 16px;color: #3f3f3f\">\n\n              <div (click)=\"expandDay(grnsOfDay)\" style=\"margin-left: 5px;font-size: 16px\">\n                <i style=\"margin-left: 40px;margin-right: 10px;color: #f1a304;font-size: 19px\"\n                   [ngClass]=\"grnsOfDay.expandDay?'fas fa-caret-down':'fas fa-caret-right'\"></i>\n                <span style=\"margin-left: 5px\">GRNs {{'(' + grnsOfDay.date + ')'}}</span>\n              </div>\n\n              <div *ngIf=\"grnsOfDay.expandDay\" style=\"padding: 0px;font-weight: normal\">\n                <div *ngFor=\"let grn of grnsOfDay.info\"\n                     style=\"margin-top: 5px;margin-bottom: 5px;padding: 0px\">\n\n                  <div (click)=\"expandGrn(grn)\" style=\"font-size: 16px;margin-top: 15px\">\n                    <i style=\"margin-left: 65px;margin-right: 10px;color: #ff4227;font-size: 19px\"\n                       [ngClass]=\"grn.expandGrn?'fas fa-caret-down':'fas fa-caret-right'\"></i>\n                    <span style=\"margin-left: 5px\">Goods Received Note {{'(' + grn.infoId + ')'}}</span>\n                  </div>\n\n                  <app-grn-view *ngIf=\"grn.expandGrn\" [grn]=\"grn\"></app-grn-view>\n\n                </div>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -123,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div\n  style=\"margin: 10px 0px 15px 0px;border: 2px solid #737373;padding: 15px 15px 0px 15px\">\n  <!--<div style=\"width: 1400px\">-->\n    <div class=\"orderNode\">\n      <div class=\"row orderTop\">\n        <div class=\"col-6\">\n          <div>\n            <div style=\"font-weight: bold\">PO. No</div>\n            <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;{{order.orderId}}</div>\n          </div>\n          <div>\n            <div style=\"font-weight: bold\">Date</div>\n            <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n          </div>\n          <div>\n            <div style=\"font-weight: bold\">Vendor</div>\n            <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;E-008 EMERCHEMIE NB CEYLON LTD.</div>\n          </div>\n          <div>\n            <div style=\"font-weight: bold\">Status</div>\n            <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n          </div>\n          <div>\n            <div style=\"font-weight: bold\">Valid Until</div>\n            <div> :&nbsp;&nbsp;&nbsp;06/13/2020</div>\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div>\n            <div style=\"font-weight: bold\">Telephone</div>\n            <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n          </div>\n          <div>\n            <div style=\"font-weight: bold\">Fax</div>\n            <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n          </div>\n          <div>\n            <div style=\"font-weight: bold\">Email</div>\n            <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n      <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n    </div>\n\n    <div class=\"orderNode\">\n      <div style=\"margin-bottom: 20px;margin-top: 20px\">\n\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td width=\"8%\">Code</td>\n            <td>Description</td>\n            <td width=\"7%\">Pack Size</td>\n            <td width=\"7%\">Qty</td>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of items,let i = index\">\n            <td>{{i+1}}</td>\n            <td>{{item.code}}</td>\n            <td>{{item.desc}}</td>\n            <td>{{item.pack}}</td>\n            <td>{{item.qty}}</td>\n          </tr>\n          </tbody>\n        </table>\n\n      </div>\n    </div>\n  <!--</div>-->\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div\n  style=\"margin: 10px 0px 15px 0px;border: 2px solid #737373;padding: 15px 15px 0px 15px\">\n  <!--<div style=\"width: 1400px\">-->\n  <div class=\"orderNode\">\n    <div class=\"row orderTop\">\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">PO. No</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;{{order.infoId}}</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Vendor</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;E-008 EMERCHEMIE NB CEYLON LTD.</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Status</div>\n          <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Valid Until</div>\n          <div> :&nbsp;&nbsp;&nbsp;06/13/2020</div>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">Telephone</div>\n          <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Fax</div>\n          <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Email</div>\n          <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n    <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n  </div>\n\n  <div class=\"orderNode\">\n    <div style=\"margin-bottom: 20px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td width=\"8%\">Code</td>\n          <td>Description</td>\n          <td width=\"7%\">Pack Size</td>\n          <td width=\"7%\">Qty</td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let item of items,let i = index\">\n          <td>{{i+1}}</td>\n          <td>{{item.code}}</td>\n          <td>{{item.desc}}</td>\n          <td>{{item.pack}}</td>\n          <td>{{item.qty}}</td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n  </div>\n\n  <div style=\"text-align: right;padding-bottom: 15px\">\n    <button class=\"btn btn-primary\" style=\"background-color: #3e8039;border-color: #3e8039;padding-right: 30px;padding-left: 30px;font-weight: bold\" (click)=\"setToGRN()\">Add GRN</button>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -136,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"orderNode\">\n\n  <div style=\"font-weight: 600;margin-bottom: 10px\">\n    <div class=\"reportYear\" *ngFor=\"let ordersOfYear of orders;first as isFirst\"\n         style=\"padding: 9px 0px 9px 0px;cursor: pointer;border-bottom: 1px solid #cecece\"\n         [ngStyle]=\"{'border-top':isFirst?'1px solid #cecece':''}\">\n\n      <div style=\"font-size: 18px;color: #6e6e6e;margin-left: 5px\"\n           (click)=\"expandYear(ordersOfYear)\">\n        <i [ngClass]=\"ordersOfYear.expandYear?'fas fa-caret-down':'fas fa-caret-right'\"\n           style=\"padding-right: 10px;color: #f1a304;font-size: 19px\"></i>\n        <span style=\"margin-bottom: 15px\">{{ordersOfYear.year}}</span>\n      </div>\n\n      <div *ngIf=\"ordersOfYear.expandYear\">\n        <div *ngFor=\"let ordersOfMonth of ordersOfYear.ordersOfMonth\"\n             style=\"margin-top: 15px;margin-bottom: 10px\">\n\n          <div style=\"font-size: 17px;color: #5b5b5b\"\n               (click)=\"expandMonth(ordersOfMonth)\">\n            <i [ngClass]=\"ordersOfMonth.expandMonth?'fas fa-caret-down':'fas fa-caret-right'\"\n               style=\"margin-left: 23px;margin-right: 12px;color: #f1a304;font-size: 19px\"></i>\n            <span>{{ordersOfMonth.month}}</span>\n          </div>\n\n          <div *ngIf=\"ordersOfMonth.expandMonth\">\n            <div *ngFor=\"let ordersOfDay of ordersOfMonth.ordersOfDay\"\n                 style=\"margin-top: 15px;font-size: 16px;color: #3f3f3f\">\n\n              <div (click)=\"expandDay(ordersOfDay)\" style=\"margin-left: 5px;font-size: 16px\">\n                <i style=\"margin-left: 40px;margin-right: 10px;color: #f1a304;font-size: 19px\"\n                   [ngClass]=\"ordersOfDay.expandDay?'fas fa-caret-down':'fas fa-caret-right'\"></i>\n                <span style=\"margin-left: 5px\">Orders {{'(' + ordersOfDay.date + ')'}}</span>\n              </div>\n\n              <div *ngIf=\"ordersOfDay.expandDay\" style=\"padding: 0px;font-weight: normal\">\n                <div *ngFor=\"let order of ordersOfDay.orders\"\n                     style=\"margin-top: 5px;margin-bottom: 5px;padding: 0px\">\n\n                  <div (click)=\"expandOrder(order)\" style=\"font-size: 16px;margin-top: 15px\">\n                    <i style=\"margin-left: 65px;margin-right: 10px;color: #ff4227;font-size: 19px\"\n                       [ngClass]=\"order.expandOrder?'fas fa-caret-down':'fas fa-caret-right'\"></i>\n                    <span style=\"margin-left: 5px\">Purchase Order {{'(' + order.orderId + ')'}}</span>\n                  </div>\n\n                  <app-order-view *ngIf=\"order.expandOrder\" [order]=\"order\"></app-order-view>\n\n                </div>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"orderNode\">\n\n  <div style=\"font-weight: 600;margin-bottom: 10px\">\n    <div class=\"reportYear\" *ngFor=\"let ordersOfYear of orders;first as isFirst\"\n         style=\"padding: 9px 0px 9px 0px;cursor: pointer;border-bottom: 1px solid #cecece\"\n         [ngStyle]=\"{'border-top':isFirst?'1px solid #cecece':''}\">\n\n      <div style=\"font-size: 18px;color: #6e6e6e;margin-left: 5px\"\n           (click)=\"expandYear(ordersOfYear)\">\n        <i [ngClass]=\"ordersOfYear.expandYear?'fas fa-caret-down':'fas fa-caret-right'\"\n           style=\"padding-right: 10px;color: #f1a304;font-size: 19px\"></i>\n        <span style=\"margin-bottom: 15px\">{{ordersOfYear.year}}</span>\n      </div>\n\n      <div *ngIf=\"ordersOfYear.expandYear\">\n        <div *ngFor=\"let ordersOfMonth of ordersOfYear.informationOfMonth\"\n             style=\"margin-top: 15px;margin-bottom: 10px\">\n\n          <div style=\"font-size: 17px;color: #5b5b5b\"\n               (click)=\"expandMonth(ordersOfMonth)\">\n            <i [ngClass]=\"ordersOfMonth.expandMonth?'fas fa-caret-down':'fas fa-caret-right'\"\n               style=\"margin-left: 23px;margin-right: 12px;color: #f1a304;font-size: 19px\"></i>\n            <span>{{ordersOfMonth.month}}</span>\n          </div>\n\n          <div *ngIf=\"ordersOfMonth.expandMonth\">\n            <div *ngFor=\"let ordersOfDay of ordersOfMonth.informationOfDay\"\n                 style=\"margin-top: 15px;font-size: 16px;color: #3f3f3f\">\n\n              <div (click)=\"expandDay(ordersOfDay)\" style=\"margin-left: 5px;font-size: 16px\">\n                <i style=\"margin-left: 40px;margin-right: 10px;color: #f1a304;font-size: 19px\"\n                   [ngClass]=\"ordersOfDay.expandDay?'fas fa-caret-down':'fas fa-caret-right'\"></i>\n                <span style=\"margin-left: 5px\">Orders {{'(' + ordersOfDay.date + ')'}}</span>\n              </div>\n\n              <div *ngIf=\"ordersOfDay.expandDay\" style=\"padding: 0px;font-weight: normal\">\n                <div *ngFor=\"let order of ordersOfDay.info\"\n                     style=\"margin-top: 5px;margin-bottom: 5px;padding: 0px\">\n\n                  <div (click)=\"expandOrder(order)\" style=\"font-size: 16px;margin-top: 15px\">\n                    <i style=\"margin-left: 65px;margin-right: 10px;color: #ff4227;font-size: 19px\"\n                       [ngClass]=\"order.expandOrder?'fas fa-caret-down':'fas fa-caret-right'\"></i>\n                    <span style=\"margin-left: 5px\">Purchase Order {{'(' + order.infoId + ')'}}</span>\n                  </div>\n\n                  <app-order-view *ngIf=\"order.expandOrder\" [order]=\"order\"></app-order-view>\n\n                </div>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -466,6 +505,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./content-panel/purchase-order/order-add/order-add.component */ "./src/app/content-panel/purchase-order/order-add/order-add.component.ts");
 /* harmony import */ var _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./content-panel/purchase-order/orders-list/order-view/order-view.component */ "./src/app/content-panel/purchase-order/orders-list/order-view/order-view.component.ts");
 /* harmony import */ var _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./content-panel/purchase-order/orders-list/orders-list.component */ "./src/app/content-panel/purchase-order/orders-list/orders-list.component.ts");
+/* harmony import */ var _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./content-panel/grn/grns-list/grns-list.component */ "./src/app/content-panel/grn/grns-list/grns-list.component.ts");
+/* harmony import */ var _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./content-panel/grn/grns-list/grn-view/grn-view.component */ "./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.ts");
+/* harmony import */ var _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./content-panel/grn/grn-add/grn-add.component */ "./src/app/content-panel/grn/grn-add/grn-add.component.ts");
+
+
+
 
 
 
@@ -515,7 +560,26 @@ const routes = [
             },
             {
                 path: 'grn',
-                component: _content_panel_grn_grn_component__WEBPACK_IMPORTED_MODULE_6__["GrnComponent"]
+                component: _content_panel_grn_grn_component__WEBPACK_IMPORTED_MODULE_6__["GrnComponent"],
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'list',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'list',
+                        component: _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_10__["GrnsListComponent"]
+                    },
+                    {
+                        path: 'view',
+                        component: _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_11__["GrnViewComponent"]
+                    },
+                    {
+                        path: 'add',
+                        component: _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_12__["GrnAddComponent"]
+                    }
+                ]
             }
         ]
     },
@@ -605,6 +669,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./content-panel/purchase-order/orders-list/order-view/order-view.component */ "./src/app/content-panel/purchase-order/orders-list/order-view/order-view.component.ts");
 /* harmony import */ var _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./content-panel/purchase-order/order-add/order-add.component */ "./src/app/content-panel/purchase-order/order-add/order-add.component.ts");
 /* harmony import */ var _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./content-panel/purchase-order/orders-list/orders-list.component */ "./src/app/content-panel/purchase-order/orders-list/orders-list.component.ts");
+/* harmony import */ var _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./content-panel/grn/grn-add/grn-add.component */ "./src/app/content-panel/grn/grn-add/grn-add.component.ts");
+/* harmony import */ var _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./content-panel/grn/grns-list/grns-list.component */ "./src/app/content-panel/grn/grns-list/grns-list.component.ts");
+/* harmony import */ var _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./content-panel/grn/grns-list/grn-view/grn-view.component */ "./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
+
+
+
 
 
 
@@ -639,16 +711,173 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _content_panel_grn_grn_component__WEBPACK_IMPORTED_MODULE_13__["GrnComponent"],
             _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_14__["OrderViewComponent"],
             _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_15__["OrderAddComponent"],
-            _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_16__["OrdersListComponent"]
+            _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_16__["OrdersListComponent"],
+            _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_17__["GrnAddComponent"],
+            _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_18__["GrnsListComponent"],
+            _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_19__["GrnViewComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
         ],
-        providers: [],
+        providers: [_angular_common__WEBPACK_IMPORTED_MODULE_20__["DatePipe"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/content-panel/common/date-categorizer.service.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/content-panel/common/date-categorizer.service.ts ***!
+  \******************************************************************/
+/*! exports provided: DateCategorizerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateCategorizerService", function() { return DateCategorizerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
+
+
+let DateCategorizerService = class DateCategorizerService {
+    constructor(datePipe) {
+        this.datePipe = datePipe;
+    }
+    getDatesList(infoList) {
+        let information = [];
+        let curDate = new Date();
+        let years = new Set();
+        for (let i = 0; i < infoList.length; i++) {
+            years.add(this.datePipe.transform(infoList[i].orderDate, 'yyyy'));
+        }
+        if (!years.has(parseInt(this.datePipe.transform(curDate, 'yyyy')))) {
+            years.add(this.datePipe.transform(curDate, 'yyyy'));
+        }
+        for (let year of years) {
+            let months = new Set();
+            for (let i = 0; i < infoList.length; i++) {
+                if (year === this.datePipe.transform(infoList[i].orderDate, 'yyyy')) {
+                    months.add(parseInt(this.datePipe.transform(infoList[i].orderDate, 'MM')));
+                }
+            }
+            let informationOfMonth = [];
+            for (let month of months) {
+                let days = new Set();
+                for (let i = 0; i < infoList.length; i++) {
+                    if (year == this.datePipe.transform(infoList[i].orderDate, 'yyyy') &&
+                        month == parseInt(this.datePipe.transform(infoList[i].orderDate, 'MM'))) {
+                        days.add(parseInt(this.datePipe.transform(infoList[i].orderDate, 'dd')));
+                    }
+                }
+                let informationOfDay = [];
+                for (let day of days) {
+                    let info = [];
+                    for (let i = 0; i < infoList.length; i++) {
+                        if (year == this.datePipe.transform(infoList[i].orderDate, 'yyyy') &&
+                            month == parseInt(this.datePipe.transform(infoList[i].orderDate, 'MM')) &&
+                            day == parseInt(this.datePipe.transform(infoList[i].orderDate, 'dd'))) {
+                            info.push({
+                                expandOrder: false,
+                                infoId: infoList[i].id
+                            });
+                        }
+                    }
+                    informationOfDay.push({
+                        date: year + '-' + this.formatDayOrMonth(month) + '-' + this.formatDayOrMonth(day),
+                        expandDay: false,
+                        info: info
+                    });
+                }
+                informationOfMonth.push({
+                    month: this.getMonthText(month),
+                    expandMonth: false,
+                    informationOfDay: informationOfDay
+                });
+            }
+            // if (this.datePipe.transform(curDate, 'yyyy') === year && !months.has(parseInt(this.datePipe.transform(curDate, 'MM')))) {
+            //   grnsOfMonth.unshift({
+            //     expandMonth: false,
+            //     month: this.getMonthText(parseInt(this.datePipe.transform(curDate, 'MM'))),
+            //     grns: []
+            //   })
+            // }
+            information.push({
+                year: year,
+                expandYear: false,
+                informationOfMonth: informationOfMonth
+            });
+        }
+        information[0].expandYear = true;
+        information[0].informationOfMonth[0].expandMonth = true;
+        return information;
+    }
+    getMonthText(month) {
+        switch (month) {
+            case 1:
+                return 'January';
+            case 2:
+                return 'February';
+            case 3:
+                return 'March';
+            case 4:
+                return 'April';
+            case 5:
+                return 'May';
+            case 6:
+                return 'June';
+            case 7:
+                return 'July';
+            case 8:
+                return 'August';
+            case 9:
+                return 'September';
+            case 10:
+                return 'October';
+            case 11:
+                return 'November';
+            case 12:
+                return 'December';
+        }
+    }
+    formatDayOrMonth(dayOrMonth) {
+        switch (dayOrMonth) {
+            case 1:
+                return '01';
+            case 2:
+                return '02';
+            case 3:
+                return '03';
+            case 4:
+                return '04';
+            case 5:
+                return '05';
+            case 6:
+                return '06';
+            case 7:
+                return '07';
+            case 8:
+                return '08';
+            case 9:
+                return '09';
+            default:
+                return dayOrMonth;
+        }
+    }
+};
+DateCategorizerService.ctorParameters = () => [
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"] }
+];
+DateCategorizerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], DateCategorizerService);
 
 
 
@@ -689,6 +918,7 @@ let ContentPanelComponent = class ContentPanelComponent {
         this.widthContent = 'calc(100% - 230px)';
     }
     ngOnInit() {
+        window.scrollTo(0, 0);
         if (window.outerWidth < 1000) {
             this.setMobile();
         }
@@ -793,6 +1023,160 @@ DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/content-panel/grn/grn-add/grn-add.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/content-panel/grn/grn-add/grn-add.component.css ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".grnNode {\r\n  padding: 0px 3px 0px 3px;\r\n  width: 100%;\r\n  font-size: 14px;\r\n}\r\n\r\n.grnTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.grnTop > div > div > div:first-child {\r\n  float: left\r\n}\r\n\r\n.grnTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\n.grnTop > div:nth-child(2) > div > div:nth-child(2) {\r\n  margin-left: 180px\r\n}\r\n\r\n.grnBottom{\r\n  padding: 0px 80px 0px 15px;\r\n  margin-bottom: 15px;\r\n  height: 200px;\r\n}\r\n\r\n.grnBottom > div > div > div:first-child {\r\n  font-weight: bold;\r\n  float: left;\r\n}\r\n\r\n.grnBottom > div > div > div:nth-child(2) {\r\n  margin-left: 190px;\r\n}\r\n\r\ntd > input {\r\n  border: none;\r\n  width: 100%;\r\n}\r\n\r\ntd > input:focus {\r\n  outline: 0;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9ncm4vZ3JuLWFkZC9ncm4tYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx3QkFBd0I7RUFDeEIsV0FBVztFQUNYLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFO0FBQ0Y7O0FBRUE7RUFDRTtBQUNGOztBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLG1CQUFtQjtFQUNuQixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztBQUNiOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLFdBQVc7QUFDYjs7QUFFQTtFQUNFLFVBQVU7QUFDWiIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvZ3JuL2dybi1hZGQvZ3JuLWFkZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmdybk5vZGUge1xyXG4gIHBhZGRpbmc6IDBweCAzcHggMHB4IDNweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbn1cclxuXHJcbi5ncm5Ub3Age1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxufVxyXG5cclxuLmdyblRvcCA+IGRpdiA+IGRpdiA+IGRpdjpmaXJzdC1jaGlsZCB7XHJcbiAgZmxvYXQ6IGxlZnRcclxufVxyXG5cclxuLmdyblRvcCA+IGRpdiA+IGRpdiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gIG1hcmdpbi1sZWZ0OiA5MHB4XHJcbn1cclxuXHJcbi5ncm5Ub3AgPiBkaXY6bnRoLWNoaWxkKDIpID4gZGl2ID4gZGl2Om50aC1jaGlsZCgyKSB7XHJcbiAgbWFyZ2luLWxlZnQ6IDE4MHB4XHJcbn1cclxuXHJcbi5ncm5Cb3R0b217XHJcbiAgcGFkZGluZzogMHB4IDgwcHggMHB4IDE1cHg7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxuICBoZWlnaHQ6IDIwMHB4O1xyXG59XHJcblxyXG4uZ3JuQm90dG9tID4gZGl2ID4gZGl2ID4gZGl2OmZpcnN0LWNoaWxkIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmdybkJvdHRvbSA+IGRpdiA+IGRpdiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gIG1hcmdpbi1sZWZ0OiAxOTBweDtcclxufVxyXG5cclxudGQgPiBpbnB1dCB7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG50ZCA+IGlucHV0OmZvY3VzIHtcclxuICBvdXRsaW5lOiAwO1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/content-panel/grn/grn-add/grn-add.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/content-panel/grn/grn-add/grn-add.component.ts ***!
+  \****************************************************************/
+/*! exports provided: GrnAddComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GrnAddComponent", function() { return GrnAddComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _grn_add_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grn-add.service */ "./src/app/content-panel/grn/grn-add/grn-add.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let GrnAddComponent = class GrnAddComponent {
+    constructor(grnAddService, route) {
+        this.grnAddService = grnAddService;
+        this.route = route;
+        this.items = [
+            {
+                code: 214332,
+                desc: 'PHENYCOF COUGH SYRUP 100ML',
+                ps: 1,
+                ws: 204.41,
+                qty: 12,
+                free: 0.00.toFixed(2),
+                perce: 4.00.toFixed(2),
+                discount: 98.12,
+                amount: 2254.80,
+                newRow: false
+            },
+            {
+                code: 214331,
+                desc: 'PHENYCOF JUNIOR COUGH SYRUP 6',
+                ps: 1,
+                ws: 164.35,
+                qty: 24,
+                free: 0.00.toFixed(2),
+                perce: 4.00.toFixed(2),
+                discount: 158.78,
+                amount: 3766.62,
+                newRow: false
+            },
+            {
+                code: '',
+                desc: '',
+                ps: 0,
+                ws: 0.00.toFixed(2),
+                qty: 0,
+                free: 0.00.toFixed(2),
+                perce: 0.00.toFixed(2),
+                discount: 0.00.toFixed(2),
+                amount: 0.00.toFixed(2),
+                newRow: true
+            }
+        ];
+    }
+    ngOnInit() {
+        this.setGrn();
+        window.scrollTo(0, 0);
+    }
+    addRow() {
+        this.items[this.items.length - 1].newRow = false;
+        this.items.push({
+            code: '',
+            desc: '',
+            ps: 0,
+            ws: 0.00.toFixed(2),
+            qty: 0,
+            free: 0.00.toFixed(2),
+            perce: 0.00.toFixed(2),
+            discount: 0.00.toFixed(2),
+            amount: 0.00.toFixed(2),
+            newRow: true
+        });
+    }
+    removeRow(index) {
+        this.items.splice(index, 1);
+    }
+    setGrn() {
+        if (this.grnAddService.orders !== undefined) {
+            this.items = this.grnAddService.orders;
+            for (let item of this.items) {
+                item.ps = 0;
+                item.ws = 0.00.toFixed(2);
+                item.free = 0.00.toFixed(2);
+                item.perce = 0.00.toFixed(2);
+                item.discount = 0.00.toFixed(2);
+                item.amount = 0.00.toFixed(2);
+            }
+            this.grnAddService.orders = undefined;
+        }
+    }
+};
+GrnAddComponent.ctorParameters = () => [
+    { type: _grn_add_service__WEBPACK_IMPORTED_MODULE_2__["GrnAddService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+GrnAddComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-grn-add',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grn-add.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn-add/grn-add.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grn-add.component.css */ "./src/app/content-panel/grn/grn-add/grn-add.component.css")).default]
+    })
+], GrnAddComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/content-panel/grn/grn-add/grn-add.service.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/content-panel/grn/grn-add/grn-add.service.ts ***!
+  \**************************************************************/
+/*! exports provided: GrnAddService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GrnAddService", function() { return GrnAddService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let GrnAddService = class GrnAddService {
+    constructor() { }
+};
+GrnAddService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], GrnAddService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/content-panel/grn/grn.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/content-panel/grn/grn.component.css ***!
@@ -802,7 +1186,7 @@ DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".grnNode{\r\n  padding: 0px 10px 0px 10px;\r\n  width: 100%;\r\n}\r\n\r\n.grnTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.grnTop > div > div > div:first-child {\r\n  float: left\r\n}\r\n\r\n.grnTop > div:first-child > div  > div:nth-child(2) {\r\n  /*position: absolute;*/\r\n  margin-left: 90px\r\n}\r\n\r\n.grnTop > div:nth-child(2) > div > div:nth-child(2) {\r\n  /*position: absolute;*/\r\n  margin-left: 180px\r\n}\r\n\r\n.grnBottom{\r\n  padding: 0px 80px 0px 15px;\r\n  height: 200px;\r\n}\r\n\r\n.grnBottom > div > div > div:first-child {\r\n  font-weight: bold;\r\n  float: left;\r\n}\r\n\r\n.grnBottom > div > div > div:nth-child(2) {\r\n  margin-left: 190px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9ncm4vZ3JuLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsV0FBVztBQUNiOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFO0FBQ0Y7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEI7QUFDRjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QjtBQUNGOztBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL2dybi9ncm4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ncm5Ob2Rle1xyXG4gIHBhZGRpbmc6IDBweCAxMHB4IDBweCAxMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uZ3JuVG9wIHtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbn1cclxuXHJcbi5ncm5Ub3AgPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZsb2F0OiBsZWZ0XHJcbn1cclxuXHJcbi5ncm5Ub3AgPiBkaXY6Zmlyc3QtY2hpbGQgPiBkaXYgID4gZGl2Om50aC1jaGlsZCgyKSB7XHJcbiAgLypwb3NpdGlvbjogYWJzb2x1dGU7Ki9cclxuICBtYXJnaW4tbGVmdDogOTBweFxyXG59XHJcblxyXG4uZ3JuVG9wID4gZGl2Om50aC1jaGlsZCgyKSA+IGRpdiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gIC8qcG9zaXRpb246IGFic29sdXRlOyovXHJcbiAgbWFyZ2luLWxlZnQ6IDE4MHB4XHJcbn1cclxuXHJcbi5ncm5Cb3R0b217XHJcbiAgcGFkZGluZzogMHB4IDgwcHggMHB4IDE1cHg7XHJcbiAgaGVpZ2h0OiAyMDBweDtcclxufVxyXG5cclxuLmdybkJvdHRvbSA+IGRpdiA+IGRpdiA+IGRpdjpmaXJzdC1jaGlsZCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5ncm5Cb3R0b20gPiBkaXYgPiBkaXYgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBtYXJnaW4tbGVmdDogMTkwcHg7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".grnNode {\r\n  padding: 0px 10px 0px 10px;\r\n  width: 100%;\r\n}\r\n\r\n.tabNode{\r\n  padding: 0px 0px 5px 0px;\r\n  font-size: 18px;\r\n  border-bottom: 4px solid rgba(0, 122, 169, 0.3);\r\n  margin: 0px 0px 25px 0px;\r\n  color: rgba(0, 122, 169, 0.4);\r\n  font-weight: bold;\r\n  cursor: pointer;\r\n}\r\n\r\n.tabNode :focus {\r\n  outline: 0;\r\n}\r\n\r\n.tabNode > span {\r\n  margin-left: 10px;\r\n  padding: 0px 5px 7px 5px;\r\n}\r\n\r\n.tabNode > span:first-child {\r\n  margin-left: 0px;\r\n}\r\n\r\n.tabSelected {\r\n  color: #007aa9;\r\n  border-bottom: 4px solid #007aa9;\r\n  padding-bottom: 7px;\r\n}\r\n\r\n@media screen and (max-width: 796px) {\r\n  .tabNode{\r\n    font-size: 16px !important;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 636px) {\r\n  .tabNode{\r\n    font-size: 15px !important;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 466px) {\r\n  .tabNode{\r\n    font-size: 14px !important;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 396px) {\r\n  .tabNode{\r\n    font-size: 14px !important;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9ncm4vZ3JuLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsV0FBVztBQUNiOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGVBQWU7RUFDZiwrQ0FBK0M7RUFDL0Msd0JBQXdCO0VBQ3hCLDZCQUE2QjtFQUM3QixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7QUFDWjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQix3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsZ0NBQWdDO0VBQ2hDLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFO0lBQ0UsMEJBQTBCO0VBQzVCO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLDBCQUEwQjtFQUM1QjtBQUNGOztBQUVBO0VBQ0U7SUFDRSwwQkFBMEI7RUFDNUI7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsMEJBQTBCO0VBQzVCO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL2dybi9ncm4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ncm5Ob2RlIHtcclxuICBwYWRkaW5nOiAwcHggMTBweCAwcHggMTBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnRhYk5vZGV7XHJcbiAgcGFkZGluZzogMHB4IDBweCA1cHggMHB4O1xyXG4gIGZvbnQtc2l6ZTogMThweDtcclxuICBib3JkZXItYm90dG9tOiA0cHggc29saWQgcmdiYSgwLCAxMjIsIDE2OSwgMC4zKTtcclxuICBtYXJnaW46IDBweCAwcHggMjVweCAwcHg7XHJcbiAgY29sb3I6IHJnYmEoMCwgMTIyLCAxNjksIDAuNCk7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4udGFiTm9kZSA6Zm9jdXMge1xyXG4gIG91dGxpbmU6IDA7XHJcbn1cclxuXHJcbi50YWJOb2RlID4gc3BhbiB7XHJcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgcGFkZGluZzogMHB4IDVweCA3cHggNXB4O1xyXG59XHJcblxyXG4udGFiTm9kZSA+IHNwYW46Zmlyc3QtY2hpbGQge1xyXG4gIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbn1cclxuXHJcbi50YWJTZWxlY3RlZCB7XHJcbiAgY29sb3I6ICMwMDdhYTk7XHJcbiAgYm9yZGVyLWJvdHRvbTogNHB4IHNvbGlkICMwMDdhYTk7XHJcbiAgcGFkZGluZy1ib3R0b206IDdweDtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHtcclxuICAudGFiTm9kZXtcclxuICAgIGZvbnQtc2l6ZTogMTZweCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjM2cHgpIHtcclxuICAudGFiTm9kZXtcclxuICAgIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNDY2cHgpIHtcclxuICAudGFiTm9kZXtcclxuICAgIGZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHtcclxuICAudGFiTm9kZXtcclxuICAgIGZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -821,6 +1205,51 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let GrnComponent = class GrnComponent {
+    constructor() {
+    }
+    ngOnInit() {
+    }
+};
+GrnComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-grn',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grn.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grn.component.css */ "./src/app/content-panel/grn/grn.component.css")).default]
+    })
+], GrnComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.css ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".grnNode{\r\n  padding: 0px 3px 0px 3px;\r\n  width: 100%;\r\n  font-size: 14px;\r\n}\r\n\r\n.grnTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.grnTop > div > div > div:first-child {\r\n  float: left\r\n}\r\n\r\n.grnTop > div:first-child > div  > div:nth-child(2) {\r\n  /*position: absolute;*/\r\n  margin-left: 90px\r\n}\r\n\r\n.grnTop > div:nth-child(2) > div > div:nth-child(2) {\r\n  /*position: absolute;*/\r\n  margin-left: 180px\r\n}\r\n\r\n.grnBottom{\r\n  padding: 0px 80px 0px 15px;\r\n  margin-bottom: 15px;\r\n  height: 200px;\r\n}\r\n\r\n.grnBottom > div > div > div:first-child {\r\n  font-weight: bold;\r\n  float: left;\r\n}\r\n\r\n.grnBottom > div > div > div:nth-child(2) {\r\n  margin-left: 190px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9ncm4vZ3Jucy1saXN0L2dybi12aWV3L2dybi12aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx3QkFBd0I7RUFDeEIsV0FBVztFQUNYLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QjtBQUNGOztBQUVBO0VBQ0Usc0JBQXNCO0VBQ3RCO0FBQ0Y7O0FBRUE7RUFDRSwwQkFBMEI7RUFDMUIsbUJBQW1CO0VBQ25CLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL2dybi9ncm5zLWxpc3QvZ3JuLXZpZXcvZ3JuLXZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ncm5Ob2Rle1xyXG4gIHBhZGRpbmc6IDBweCAzcHggMHB4IDNweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbn1cclxuXHJcbi5ncm5Ub3Age1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxufVxyXG5cclxuLmdyblRvcCA+IGRpdiA+IGRpdiA+IGRpdjpmaXJzdC1jaGlsZCB7XHJcbiAgZmxvYXQ6IGxlZnRcclxufVxyXG5cclxuLmdyblRvcCA+IGRpdjpmaXJzdC1jaGlsZCA+IGRpdiAgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICAvKnBvc2l0aW9uOiBhYnNvbHV0ZTsqL1xyXG4gIG1hcmdpbi1sZWZ0OiA5MHB4XHJcbn1cclxuXHJcbi5ncm5Ub3AgPiBkaXY6bnRoLWNoaWxkKDIpID4gZGl2ID4gZGl2Om50aC1jaGlsZCgyKSB7XHJcbiAgLypwb3NpdGlvbjogYWJzb2x1dGU7Ki9cclxuICBtYXJnaW4tbGVmdDogMTgwcHhcclxufVxyXG5cclxuLmdybkJvdHRvbXtcclxuICBwYWRkaW5nOiAwcHggODBweCAwcHggMTVweDtcclxuICBtYXJnaW4tYm90dG9tOiAxNXB4O1xyXG4gIGhlaWdodDogMjAwcHg7XHJcbn1cclxuXHJcbi5ncm5Cb3R0b20gPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4uZ3JuQm90dG9tID4gZGl2ID4gZGl2ID4gZGl2Om50aC1jaGlsZCgyKSB7XHJcbiAgbWFyZ2luLWxlZnQ6IDE5MHB4O1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: GrnViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GrnViewComponent", function() { return GrnViewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let GrnViewComponent = class GrnViewComponent {
     constructor() {
         this.items = [
             {
@@ -848,15 +1277,133 @@ let GrnComponent = class GrnComponent {
         ];
     }
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
 };
-GrnComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], GrnViewComponent.prototype, "grn", void 0);
+GrnViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-grn',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grn.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grn.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grn.component.css */ "./src/app/content-panel/grn/grn.component.css")).default]
+        selector: 'app-grn-view',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grn-view.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grn-view.component.css */ "./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.css")).default]
     })
-], GrnComponent);
+], GrnViewComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/content-panel/grn/grns-list/grns-list.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/content-panel/grn/grns-list/grns-list.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".grnNode {\r\n  width: 100%;\r\n  font-size: 14px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9ncm4vZ3Jucy1saXN0L2dybnMtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL2dybi9ncm5zLWxpc3QvZ3Jucy1saXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ3JuTm9kZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/content-panel/grn/grns-list/grns-list.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/content-panel/grn/grns-list/grns-list.component.ts ***!
+  \********************************************************************/
+/*! exports provided: GrnsListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GrnsListComponent", function() { return GrnsListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _common_date_categorizer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common/date-categorizer.service */ "./src/app/content-panel/common/date-categorizer.service.ts");
+
+
+
+let GrnsListComponent = class GrnsListComponent {
+    constructor(dataCategorizer) {
+        this.dataCategorizer = dataCategorizer;
+        this.grns = [];
+    }
+    ngOnInit() {
+        window.scrollTo(0, 0);
+        let grnsList = [
+            {
+                id: '0003112',
+                orderDate: '2020-10-09'
+            },
+            {
+                id: '0893112',
+                orderDate: '2020-10-09'
+            },
+            {
+                id: '0056112',
+                orderDate: '2020-10-08'
+            },
+            {
+                id: '2503112',
+                orderDate: '2019-11-08',
+            }
+        ];
+        this.grns = this.dataCategorizer.getDatesList(grnsList);
+        console.log(this.grns);
+    }
+    expandYear(grnsOfYear) {
+        if (grnsOfYear.expandYear) {
+            grnsOfYear.expandYear = false;
+            for (let grnOfMonth of grnsOfYear.informationOfMonth) {
+                grnOfMonth.expandMonth = false;
+            }
+        }
+        else {
+            grnsOfYear.expandYear = true;
+        }
+    }
+    expandMonth(grnsOfMonth) {
+        if (grnsOfMonth.expandMonth) {
+            grnsOfMonth.expandMonth = false;
+            for (let grnOfDay of grnsOfMonth.informationOfDay) {
+                grnOfDay.expandDay = false;
+            }
+        }
+        else {
+            grnsOfMonth.expandMonth = true;
+        }
+    }
+    expandDay(grn) {
+        if (grn.expandDay) {
+            grn.expandDay = false;
+            for (let grnInfo of grn.info) {
+                grnInfo.expandOrder = false;
+            }
+        }
+        else {
+            grn.expandDay = true;
+        }
+    }
+    expandGrn(grn) {
+        if (grn.expandOrder) {
+            grn.expandOrder = false;
+        }
+        else {
+            grn.expandOrder = true;
+        }
+    }
+};
+GrnsListComponent.ctorParameters = () => [
+    { type: _common_date_categorizer_service__WEBPACK_IMPORTED_MODULE_2__["DateCategorizerService"] }
+];
+GrnsListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-grns-list',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./grns-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/grn/grns-list/grns-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./grns-list.component.css */ "./src/app/content-panel/grn/grns-list/grns-list.component.css")).default]
+    })
+], GrnsListComponent);
 
 
 
@@ -892,6 +1439,7 @@ __webpack_require__.r(__webpack_exports__);
 let InventoryComponent = class InventoryComponent {
     constructor() { }
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
 };
 InventoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -986,10 +1534,11 @@ let OrderAddComponent = class OrderAddComponent {
         ];
     }
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
-    getLastIndex() {
-        return this.items.length;
-    }
+    // getLastIndex() {
+    //   return this.items.length;
+    // }
     addRow() {
         this.items[this.items.length - 1].newRow = false;
         this.items.push({ code: '', desc: '', pack: 0, qty: 0, newRow: true });
@@ -1035,10 +1584,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderViewComponent", function() { return OrderViewComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _grn_grn_add_grn_add_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../grn/grn-add/grn-add.service */ "./src/app/content-panel/grn/grn-add/grn-add.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let OrderViewComponent = class OrderViewComponent {
-    constructor() {
+    constructor(grnAddService, router) {
+        this.grnAddService = grnAddService;
+        this.router = router;
         this.items = [
             { code: 226455, desc: 'ADACAPONE TAB 200MG', pack: 50, qty: 1 },
             { code: 229216, desc: 'ADMENTA 10MG TAB [MEMANTINE HCL]', pack: 30, qty: 10 },
@@ -1049,8 +1604,17 @@ let OrderViewComponent = class OrderViewComponent {
         ];
     }
     ngOnInit() {
+        window.scrollTo(0, 0);
+    }
+    setToGRN() {
+        this.grnAddService.orders = this.items;
+        this.router.navigate(['/content/grn/add']);
     }
 };
+OrderViewComponent.ctorParameters = () => [
+    { type: _grn_grn_add_grn_add_service__WEBPACK_IMPORTED_MODULE_2__["GrnAddService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], OrderViewComponent.prototype, "order", void 0);
@@ -1092,20 +1656,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _common_date_categorizer_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../common/date-categorizer.service */ "./src/app/content-panel/common/date-categorizer.service.ts");
+
 
 
 
 let OrdersListComponent = class OrdersListComponent {
-    constructor(datePipe) {
-        this.datePipe = datePipe;
+    constructor(dataCategorizer) {
+        this.dataCategorizer = dataCategorizer;
         this.orders = [];
     }
     ngOnInit() {
-        // let years = ['2020', '2019', '2018'];
-        // let months = ['March', 'February', 'January'];
-        // let days = [25, 26, 27, 28]
-        let curDate = new Date();
-        let years = new Set();
+        window.scrollTo(0, 0);
         let ordersList = [
             {
                 id: '0003112',
@@ -1124,73 +1686,15 @@ let OrdersListComponent = class OrdersListComponent {
                 orderDate: '2019-11-08',
             }
         ];
-        for (let i = 0; i < ordersList.length; i++) {
-            years.add(this.datePipe.transform(ordersList[i].orderDate, 'yyyy'));
-        }
-        if (!years.has(parseInt(this.datePipe.transform(curDate, 'yyyy')))) {
-            years.add(this.datePipe.transform(curDate, 'yyyy'));
-        }
-        for (let year of years) {
-            let months = new Set();
-            for (let i = 0; i < ordersList.length; i++) {
-                if (year === this.datePipe.transform(ordersList[i].orderDate, 'yyyy')) {
-                    months.add(parseInt(this.datePipe.transform(ordersList[i].orderDate, 'MM')));
-                }
-            }
-            let ordersOfMonth = [];
-            for (let month of months) {
-                let days = new Set();
-                for (let i = 0; i < ordersList.length; i++) {
-                    if (year == this.datePipe.transform(ordersList[i].orderDate, 'yyyy') &&
-                        month == parseInt(this.datePipe.transform(ordersList[i].orderDate, 'MM'))) {
-                        days.add(parseInt(this.datePipe.transform(ordersList[i].orderDate, 'dd')));
-                    }
-                }
-                let ordersOfDay = [];
-                for (let day of days) {
-                    let orders = [];
-                    for (let i = 0; i < ordersList.length; i++) {
-                        if (year == this.datePipe.transform(ordersList[i].orderDate, 'yyyy') &&
-                            month == parseInt(this.datePipe.transform(ordersList[i].orderDate, 'MM')) &&
-                            day == parseInt(this.datePipe.transform(ordersList[i].orderDate, 'dd'))) {
-                            orders.push({
-                                expandOrder: false,
-                                orderId: ordersList[i].id
-                            });
-                        }
-                    }
-                    ordersOfDay.push({
-                        date: year + '-' + this.formatDayOrMonth(month) + '-' + this.formatDayOrMonth(day),
-                        expandDay: false,
-                        orders: orders
-                    });
-                }
-                ordersOfMonth.push({
-                    month: this.getMonthText(month),
-                    expandMonth: false,
-                    ordersOfDay: ordersOfDay
-                });
-            }
-            // if (this.datePipe.transform(curDate, 'yyyy') === year && !months.has(parseInt(this.datePipe.transform(curDate, 'MM')))) {
-            //   ordersOfMonth.unshift({
-            //     expandMonth: false,
-            //     month: this.getMonthText(parseInt(this.datePipe.transform(curDate, 'MM'))),
-            //     orders: []
-            //   })
-            // }
-            this.orders.push({
-                year: year,
-                expandYear: false,
-                ordersOfMonth: ordersOfMonth
-            });
-        }
-        this.orders[0].expandYear = true;
-        this.orders[0].ordersOfMonth[0].expandMonth = true;
+        this.orders = this.dataCategorizer.getDatesList(ordersList);
         console.log(this.orders);
     }
     expandYear(ordersOfYear) {
         if (ordersOfYear.expandYear) {
             ordersOfYear.expandYear = false;
+            for (let orderOfMonth of ordersOfYear.informationOfMonth) {
+                orderOfMonth.expandMonth = false;
+            }
         }
         else {
             ordersOfYear.expandYear = true;
@@ -1199,6 +1703,9 @@ let OrdersListComponent = class OrdersListComponent {
     expandMonth(ordersOfMonth) {
         if (ordersOfMonth.expandMonth) {
             ordersOfMonth.expandMonth = false;
+            for (let orderOfDay of ordersOfMonth.informationOfDay) {
+                orderOfDay.expandDay = false;
+            }
         }
         else {
             ordersOfMonth.expandMonth = true;
@@ -1207,6 +1714,9 @@ let OrdersListComponent = class OrdersListComponent {
     expandDay(order) {
         if (order.expandDay) {
             order.expandDay = false;
+            for (let orderInfo of order.info) {
+                orderInfo.expandOrder = false;
+            }
         }
         else {
             order.expandDay = true;
@@ -1220,61 +1730,9 @@ let OrdersListComponent = class OrdersListComponent {
             order.expandOrder = true;
         }
     }
-    getMonthText(month) {
-        switch (month) {
-            case 1:
-                return 'January';
-            case 2:
-                return 'February';
-            case 3:
-                return 'March';
-            case 4:
-                return 'April';
-            case 5:
-                return 'May';
-            case 6:
-                return 'June';
-            case 7:
-                return 'July';
-            case 8:
-                return 'August';
-            case 9:
-                return 'September';
-            case 10:
-                return 'October';
-            case 11:
-                return 'November';
-            case 12:
-                return 'December';
-        }
-    }
-    formatDayOrMonth(dayOrMonth) {
-        switch (dayOrMonth) {
-            case 1:
-                return '01';
-            case 2:
-                return '02';
-            case 3:
-                return '03';
-            case 4:
-                return '04';
-            case 5:
-                return '05';
-            case 6:
-                return '06';
-            case 7:
-                return '07';
-            case 8:
-                return '08';
-            case 9:
-                return '09';
-            default:
-                return dayOrMonth;
-        }
-    }
 };
 OrdersListComponent.ctorParameters = () => [
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"] }
+    { type: _common_date_categorizer_service__WEBPACK_IMPORTED_MODULE_3__["DateCategorizerService"] }
 ];
 OrdersListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1320,6 +1778,7 @@ let PurchaseOrderComponent = class PurchaseOrderComponent {
     constructor() {
     }
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
 };
 PurchaseOrderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
