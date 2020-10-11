@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"width: 100%;position: relative\">\n\n  <div id=\"navBar\"\n       style=\"position: fixed;border-right: 1px solid #dadada;height: 100%;overflow-y: auto;background-color: #f3f3f3\"\n       [ngStyle]=\"{'width':width,'min-width':minWidth}\">\n    <app-navbar (toggleNav)=\"toggleNavBarViaSideNav($event)\"></app-navbar>\n  </div>\n\n  <div id=\"contentScreen\" style=\"position: absolute\"\n       [ngStyle]=\"{'margin-left': marginLeft,'width': widthContent}\">\n    <app-header (toggleNav)=\"toggleNavBarViaHeader($event)\"></app-header>\n\n    <div style=\"margin-top: 130px;position: relative;min-height: calc(100vh - 196px);overflow-x: scroll\">\n      <router-outlet></router-outlet>\n    </div>\n\n    <app-footer></app-footer>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"width: 100%;position: relative\">\n\n  <div id=\"navBar\"\n       style=\"position: fixed;border-right: 1px solid #dadada;height: 100%;overflow-y: auto;background-color: #f3f3f3\"\n       [ngStyle]=\"{'width':width,'min-width':minWidth}\">\n    <app-navbar (toggleNav)=\"toggleNavBar($event)\"></app-navbar>\n  </div>\n\n  <div id=\"contentScreen\" style=\"position: absolute\"\n       [ngStyle]=\"{'margin-left': marginLeft,'width': widthContent}\">\n    <app-header (toggleNav)=\"toggleNavBar($event)\"></app-header>\n\n    <div style=\"margin-top: 130px;position: relative;min-height: calc(100vh - 196px);overflow-x: scroll\">\n      <router-outlet></router-outlet>\n    </div>\n\n    <app-footer></app-footer>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" style=\"padding: 0px 10px 0px 10px\">\n  <div class=\"avatar\">\n    <div></div>\n    <div class=\"btnConfig\">\n      <div style=\"position: absolute;top: 40px;left: 18px;font-size: 40px;color: black\">\n        <i class=\"fas fa-cog\" style=\"cursor: pointer\"></i>\n        <i class=\"fas fa-power-off\" style=\"margin-left: 20px;cursor: pointer\"></i>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"col-12\" style=\"font-size: 18px;text-align: center;margin-top: 32px;font-weight: bold;margin-bottom: 20px\">\n    Danley Richardson\n  </div>\n\n  <div class=\"col-12\">\n    <div class=\"row\">\n      <div class=\"col-12 btnNav\" style=\"padding: 0px;margin-bottom: 80px\">\n\n        <div [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Dashboard\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/purchase_order'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Purchase Order\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/inventory'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Inventory\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/grn'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Goods Received Note\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Invoices\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n\n        <!--<div *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]\">-->\n          <!--<div [routerLinkActive]=\"'btnNavActive'\">-->\n            <!--Invoices-->\n            <!--<div>-->\n              <!--<i class=\"fas fa-caret-right\"></i>-->\n            <!--</div>-->\n          <!--</div>-->\n        <!--</div>-->\n      </div>\n    </div>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" style=\"padding: 0px 10px 0px 10px\" id=\"navBar\">\n  <div style=\"position: absolute;top: 0px;font-size: 25px;color: black;left: 205px\" (click)=\"toggleNavbar()\" *ngIf=\"isMobile()\">\n    <i class=\"fas fa-times\"></i>\n  </div>\n\n  <div class=\"avatar\">\n    <div></div>\n    <div class=\"btnConfig\">\n      <div style=\"position: absolute;top: 40px;left: 18px;font-size: 40px;color: black\">\n        <i class=\"fas fa-cog\" style=\"cursor: pointer\"></i>\n        <i class=\"fas fa-power-off\" style=\"margin-left: 20px;cursor: pointer\"></i>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"col-12\" style=\"font-size: 18px;text-align: center;margin-top: 32px;font-weight: bold;margin-bottom: 20px\">\n    Danley Richardson\n  </div>\n\n  <div class=\"col-12\">\n    <div class=\"row\">\n      <div class=\"col-12 btnNav\" style=\"padding: 0px;margin-bottom: 80px\">\n\n        <div [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Dashboard\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/purchase_order'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Purchase Order\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/inventory'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Inventory\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/grn'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Goods Received Note\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n        <div [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\">\n          <div>\n            Invoices\n            <div>\n              <i class=\"fas fa-caret-right\"></i>\n            </div>\n          </div>\n        </div>\n\n        <!--<div *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]\">-->\n          <!--<div [routerLinkActive]=\"'btnNavActive'\">-->\n            <!--Invoices-->\n            <!--<div>-->\n              <!--<i class=\"fas fa-caret-right\"></i>-->\n            <!--</div>-->\n          <!--</div>-->\n        <!--</div>-->\n      </div>\n    </div>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -663,7 +663,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/*@media screen and (max-width: 1400px) {*/\r\n/*#contentScreen {*/\r\n/*min-height: calc(108vh - 212px) !important;*/\r\n/*}*/\r\n/*}*/\r\n/*@media screen and (max-width: 1300px) {*/\r\n/*#contentScreen {*/\r\n/*min-height: calc(116vh - 212px) !important;*/\r\n/*}*/\r\n/*}*/\r\n/*@media screen and (max-width: 1200px) {*/\r\n/*#contentScreen {*/\r\n/*min-height: calc(124vh - 212px) !important;*/\r\n/*}*/\r\n/*}*/\r\n@media screen and (max-width: 1000px) {\r\n  /*#navBar {*/\r\n    /*width: 0px !important;*/\r\n    /*min-width: 0px !important;*/\r\n  /*}*/\r\n\r\n  /*#contentScreen {*/\r\n    /*width: 100% !important;*/\r\n    /*margin-left: 0px !important;*/\r\n  /*}*/\r\n\r\n  #contentScreen > div {\r\n    margin-top: 90px !important;\r\n    min-height: calc(100vh - 156px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 796px) {\r\n  #contentScreen > div {\r\n    margin-top: 80px !important;\r\n    min-height: calc(100vh - 146px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 636px) {\r\n  #contentScreen > div {\r\n    margin-top: 70px !important;\r\n    min-height: calc(100vh - 130px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 466px) {\r\n  #contentScreen > div {\r\n    min-height: calc(100vh - 127px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 396px) {\r\n  #contentScreen > div {\r\n    min-height: calc(100vh - 126px) !important;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9jb250ZW50LXBhbmVsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsMENBQTBDO0FBQzFDLG1CQUFtQjtBQUNuQiw4Q0FBOEM7QUFDOUMsSUFBSTtBQUNKLElBQUk7QUFFSiwwQ0FBMEM7QUFDMUMsbUJBQW1CO0FBQ25CLDhDQUE4QztBQUM5QyxJQUFJO0FBQ0osSUFBSTtBQUVKLDBDQUEwQztBQUMxQyxtQkFBbUI7QUFDbkIsOENBQThDO0FBQzlDLElBQUk7QUFDSixJQUFJO0FBRUo7RUFDRSxZQUFZO0lBQ1YseUJBQXlCO0lBQ3pCLDZCQUE2QjtFQUMvQixJQUFJOztFQUVKLG1CQUFtQjtJQUNqQiwwQkFBMEI7SUFDMUIsK0JBQStCO0VBQ2pDLElBQUk7O0VBRUo7SUFDRSwyQkFBMkI7SUFDM0IsMENBQTBDO0VBQzVDO0FBQ0Y7QUFFQTtFQUNFO0lBQ0UsMkJBQTJCO0lBQzNCLDBDQUEwQztFQUM1QztBQUNGO0FBRUE7RUFDRTtJQUNFLDJCQUEyQjtJQUMzQiwwQ0FBMEM7RUFDNUM7QUFDRjtBQUVBO0VBQ0U7SUFDRSwwQ0FBMEM7RUFDNUM7QUFDRjtBQUVBO0VBQ0U7SUFDRSwwQ0FBMEM7RUFDNUM7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvY29udGVudC1wYW5lbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNDAwcHgpIHsqL1xyXG4vKiNjb250ZW50U2NyZWVuIHsqL1xyXG4vKm1pbi1oZWlnaHQ6IGNhbGMoMTA4dmggLSAyMTJweCkgIWltcG9ydGFudDsqL1xyXG4vKn0qL1xyXG4vKn0qL1xyXG5cclxuLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMzAwcHgpIHsqL1xyXG4vKiNjb250ZW50U2NyZWVuIHsqL1xyXG4vKm1pbi1oZWlnaHQ6IGNhbGMoMTE2dmggLSAyMTJweCkgIWltcG9ydGFudDsqL1xyXG4vKn0qL1xyXG4vKn0qL1xyXG5cclxuLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMjAwcHgpIHsqL1xyXG4vKiNjb250ZW50U2NyZWVuIHsqL1xyXG4vKm1pbi1oZWlnaHQ6IGNhbGMoMTI0dmggLSAyMTJweCkgIWltcG9ydGFudDsqL1xyXG4vKn0qL1xyXG4vKn0qL1xyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KSB7XHJcbiAgLyojbmF2QmFyIHsqL1xyXG4gICAgLyp3aWR0aDogMHB4ICFpbXBvcnRhbnQ7Ki9cclxuICAgIC8qbWluLXdpZHRoOiAwcHggIWltcG9ydGFudDsqL1xyXG4gIC8qfSovXHJcblxyXG4gIC8qI2NvbnRlbnRTY3JlZW4geyovXHJcbiAgICAvKndpZHRoOiAxMDAlICFpbXBvcnRhbnQ7Ki9cclxuICAgIC8qbWFyZ2luLWxlZnQ6IDBweCAhaW1wb3J0YW50OyovXHJcbiAgLyp9Ki9cclxuXHJcbiAgI2NvbnRlbnRTY3JlZW4gPiBkaXYge1xyXG4gICAgbWFyZ2luLXRvcDogOTBweCAhaW1wb3J0YW50O1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE1NnB4KSAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHtcclxuICAjY29udGVudFNjcmVlbiA+IGRpdiB7XHJcbiAgICBtYXJnaW4tdG9wOiA4MHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTQ2cHgpICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MzZweCkge1xyXG4gICNjb250ZW50U2NyZWVuID4gZGl2IHtcclxuICAgIG1hcmdpbi10b3A6IDcwcHggIWltcG9ydGFudDtcclxuICAgIG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSAxMzBweCkgIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ2NnB4KSB7XHJcbiAgI2NvbnRlbnRTY3JlZW4gPiBkaXYge1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDEyN3B4KSAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHtcclxuICAjY29udGVudFNjcmVlbiA+IGRpdiB7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTI2cHgpICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("/*@media screen and (max-width: 1400px) {*/\r\n/*#contentScreen {*/\r\n/*min-height: calc(108vh - 212px) !important;*/\r\n/*}*/\r\n/*}*/\r\n/*@media screen and (max-width: 1300px) {*/\r\n/*#contentScreen {*/\r\n/*min-height: calc(116vh - 212px) !important;*/\r\n/*}*/\r\n/*}*/\r\n/*@media screen and (max-width: 1200px) {*/\r\n/*#contentScreen {*/\r\n/*min-height: calc(124vh - 212px) !important;*/\r\n/*}*/\r\n/*}*/\r\n/*#navBar{*/\r\n/*transition: width .1s;*/\r\n/*}*/\r\n/*#contentScreen{*/\r\n/*transition: width .1s;*/\r\n/*}*/\r\n@media screen and (max-width: 1000px) {\r\n  /*#navBar {*/\r\n    /*width: 0px !important;*/\r\n    /*min-width: 0px !important;*/\r\n  /*}*/\r\n\r\n  /*#contentScreen {*/\r\n    /*width: 100% !important;*/\r\n    /*margin-left: 0px !important;*/\r\n  /*}*/\r\n\r\n  #contentScreen > div {\r\n    margin-top: 90px !important;\r\n    min-height: calc(100vh - 156px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 796px) {\r\n  #contentScreen > div {\r\n    margin-top: 80px !important;\r\n    min-height: calc(100vh - 146px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 636px) {\r\n  #contentScreen > div {\r\n    margin-top: 70px !important;\r\n    min-height: calc(100vh - 130px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 466px) {\r\n  #contentScreen > div {\r\n    min-height: calc(100vh - 127px) !important;\r\n  }\r\n}\r\n@media screen and (max-width: 396px) {\r\n  #contentScreen > div {\r\n    min-height: calc(100vh - 126px) !important;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9jb250ZW50LXBhbmVsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsMENBQTBDO0FBQzFDLG1CQUFtQjtBQUNuQiw4Q0FBOEM7QUFDOUMsSUFBSTtBQUNKLElBQUk7QUFFSiwwQ0FBMEM7QUFDMUMsbUJBQW1CO0FBQ25CLDhDQUE4QztBQUM5QyxJQUFJO0FBQ0osSUFBSTtBQUVKLDBDQUEwQztBQUMxQyxtQkFBbUI7QUFDbkIsOENBQThDO0FBQzlDLElBQUk7QUFDSixJQUFJO0FBRUosV0FBVztBQUNULHlCQUF5QjtBQUMzQixJQUFJO0FBRUosa0JBQWtCO0FBQ2hCLHlCQUF5QjtBQUMzQixJQUFJO0FBRUo7RUFDRSxZQUFZO0lBQ1YseUJBQXlCO0lBQ3pCLDZCQUE2QjtFQUMvQixJQUFJOztFQUVKLG1CQUFtQjtJQUNqQiwwQkFBMEI7SUFDMUIsK0JBQStCO0VBQ2pDLElBQUk7O0VBRUo7SUFDRSwyQkFBMkI7SUFDM0IsMENBQTBDO0VBQzVDO0FBQ0Y7QUFFQTtFQUNFO0lBQ0UsMkJBQTJCO0lBQzNCLDBDQUEwQztFQUM1QztBQUNGO0FBRUE7RUFDRTtJQUNFLDJCQUEyQjtJQUMzQiwwQ0FBMEM7RUFDNUM7QUFDRjtBQUVBO0VBQ0U7SUFDRSwwQ0FBMEM7RUFDNUM7QUFDRjtBQUVBO0VBQ0U7SUFDRSwwQ0FBMEM7RUFDNUM7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvY29udGVudC1wYW5lbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNDAwcHgpIHsqL1xyXG4vKiNjb250ZW50U2NyZWVuIHsqL1xyXG4vKm1pbi1oZWlnaHQ6IGNhbGMoMTA4dmggLSAyMTJweCkgIWltcG9ydGFudDsqL1xyXG4vKn0qL1xyXG4vKn0qL1xyXG5cclxuLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMzAwcHgpIHsqL1xyXG4vKiNjb250ZW50U2NyZWVuIHsqL1xyXG4vKm1pbi1oZWlnaHQ6IGNhbGMoMTE2dmggLSAyMTJweCkgIWltcG9ydGFudDsqL1xyXG4vKn0qL1xyXG4vKn0qL1xyXG5cclxuLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMjAwcHgpIHsqL1xyXG4vKiNjb250ZW50U2NyZWVuIHsqL1xyXG4vKm1pbi1oZWlnaHQ6IGNhbGMoMTI0dmggLSAyMTJweCkgIWltcG9ydGFudDsqL1xyXG4vKn0qL1xyXG4vKn0qL1xyXG5cclxuLyojbmF2QmFyeyovXHJcbiAgLyp0cmFuc2l0aW9uOiB3aWR0aCAuMXM7Ki9cclxuLyp9Ki9cclxuXHJcbi8qI2NvbnRlbnRTY3JlZW57Ki9cclxuICAvKnRyYW5zaXRpb246IHdpZHRoIC4xczsqL1xyXG4vKn0qL1xyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KSB7XHJcbiAgLyojbmF2QmFyIHsqL1xyXG4gICAgLyp3aWR0aDogMHB4ICFpbXBvcnRhbnQ7Ki9cclxuICAgIC8qbWluLXdpZHRoOiAwcHggIWltcG9ydGFudDsqL1xyXG4gIC8qfSovXHJcblxyXG4gIC8qI2NvbnRlbnRTY3JlZW4geyovXHJcbiAgICAvKndpZHRoOiAxMDAlICFpbXBvcnRhbnQ7Ki9cclxuICAgIC8qbWFyZ2luLWxlZnQ6IDBweCAhaW1wb3J0YW50OyovXHJcbiAgLyp9Ki9cclxuXHJcbiAgI2NvbnRlbnRTY3JlZW4gPiBkaXYge1xyXG4gICAgbWFyZ2luLXRvcDogOTBweCAhaW1wb3J0YW50O1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE1NnB4KSAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHtcclxuICAjY29udGVudFNjcmVlbiA+IGRpdiB7XHJcbiAgICBtYXJnaW4tdG9wOiA4MHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTQ2cHgpICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MzZweCkge1xyXG4gICNjb250ZW50U2NyZWVuID4gZGl2IHtcclxuICAgIG1hcmdpbi10b3A6IDcwcHggIWltcG9ydGFudDtcclxuICAgIG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSAxMzBweCkgIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ2NnB4KSB7XHJcbiAgI2NvbnRlbnRTY3JlZW4gPiBkaXYge1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDEyN3B4KSAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHtcclxuICAjY29udGVudFNjcmVlbiA+IGRpdiB7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTI2cHgpICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -693,21 +693,24 @@ let ContentPanelComponent = class ContentPanelComponent {
             this.setMobile();
         }
     }
-    toggleNavBarViaHeader(toggle) {
-        this.toggle = toggle;
-        if (toggle.toggle) {
-            this.setWeb();
-            toggle.toggle = false;
-        }
-        else {
-            this.setMobile();
-            toggle.toggle = true;
-        }
-    }
-    toggleNavBarViaSideNav(toggle) {
+    // toggleNavBar(toggle) {
+    //   this.toggle = toggle;
+    //   if (toggle.toggle) {
+    //     this.setWeb()
+    //     toggle.toggle = false;
+    //   } else {
+    //     this.setMobile()
+    //     toggle.toggle = true;
+    //   }
+    // }
+    toggleNavBar(toggle) {
         if (window.outerWidth < 1000) {
-            this.setMobile();
-            this.toggle.toggle = true;
+            if (toggle) {
+                this.setWeb();
+            }
+            else {
+                this.setMobile();
+            }
         }
     }
     onResize(event) {
@@ -1403,16 +1406,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let HeaderComponent = class HeaderComponent {
+    // toggle = {
+    //   toggle: true
+    // };
     constructor() {
         this.toggleNav = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.toggle = {
-            toggle: true
-        };
     }
     ngOnInit() {
     }
     toggleNavbar() {
-        this.toggleNav.next(this.toggle);
+        this.toggleNav.next(true);
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1465,6 +1468,9 @@ let NavbarComponent = class NavbarComponent {
     }
     toggleNavbar() {
         this.toggleNav.next(false);
+    }
+    isMobile() {
+        return window.outerWidth < 1000;
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
