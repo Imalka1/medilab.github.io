@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"width: 100%;position: relative\">\n\n  <div id=\"navBar\"\n       style=\"position: fixed;border-right: 1px solid #dadada;height: 100%;overflow-y: auto;background-color: #f3f3f3\"\n       [ngStyle]=\"{'width':width,'min-width':minWidth}\">\n    <app-navbar (toggleNav)=\"toggleNavBar($event)\"></app-navbar>\n  </div>\n\n  <div id=\"contentScreen\" style=\"position: absolute\"\n       [ngStyle]=\"{'margin-left': marginLeft,'width': widthContent}\">\n    <app-header (toggleNav)=\"toggleNavBar($event)\"></app-header>\n\n    <div style=\"margin-top: 130px;position: relative;min-height: calc(100vh - 196px);overflow-x: scroll\">\n      <router-outlet></router-outlet>\n    </div>\n\n    <app-footer></app-footer>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"width: 100%;position: relative\">\n\n  <div id=\"navBar\"\n       style=\"position: fixed;border-right: 1px solid #dadada;height: 100%;overflow-y: auto;background-color: #f3f3f3\"\n       [ngStyle]=\"{'width':width,'min-width':minWidth}\">\n    <app-navbar (toggleNav)=\"toggleNavBar($event)\"></app-navbar>\n  </div>\n\n  <div id=\"contentScreen\" style=\"position: absolute\"\n       [ngStyle]=\"{'margin-left': marginLeft,'width': widthContent}\">\n    <app-header (toggleNav)=\"toggleNavBar($event)\"></app-header>\n\n    <div #contentPage style=\"margin-top: 130px;position: relative;min-height: calc(100vh - 196px);overflow-x: scroll\">\n      <router-outlet></router-outlet>\n    </div>\n\n    <app-footer></app-footer>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"grnNode\" style=\"min-width: 1000px\">\n  <div class=\"tabNode\">\n    <span [routerLink]=\"'/content/grn/list'\" [routerLinkActive]=\"'tabSelected'\">View GRNs</span>\n    <span [routerLink]=\"'/content/grn/add'\" [routerLinkActive]=\"'tabSelected'\">Add GRN</span>\n  </div>\n\n  <router-outlet></router-outlet>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"grnNode\" style=\"min-width: 1000px\">\n\n  <div class=\"tabNode\">\n    <span [routerLink]=\"'/content/grn/list'\" [routerLinkActive]=\"'tabSelected'\">View GRNs</span>\n    <span [routerLink]=\"'/content/grn/add'\" [routerLinkActive]=\"'tabSelected'\">Add GRN</span>\n  </div>\n\n  <router-outlet></router-outlet>\n\n</div>\n");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--<div style=\"overflow-x: scroll\">-->\n\n  <div class=\"orderNode\" style=\"min-width: 1000px\">\n    <div class=\"tabNode\">\n      <span [routerLink]=\"'/content/purchase_order/list'\" [routerLinkActive]=\"'tabSelected'\">View Orders</span>\n      <span [routerLink]=\"'/content/purchase_order/add'\" [routerLinkActive]=\"'tabSelected'\">Add Order</span>\n    </div>\n\n    <router-outlet></router-outlet>\n\n  </div>\n<!--</div>-->\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--<div style=\"overflow-x: scroll\">-->\n\n  <div class=\"orderNode\" style=\"min-width: 1000px\">\n\n    <div class=\"tabNode\">\n      <span [routerLink]=\"'/content/purchase_order/list'\" [routerLinkActive]=\"'tabSelected'\">View Orders</span>\n      <span [routerLink]=\"'/content/purchase_order/add'\" [routerLinkActive]=\"'tabSelected'\">Add Order</span>\n    </div>\n\n    <router-outlet></router-outlet>\n\n  </div>\n<!--</div>-->\n");
 
 /***/ }),
 
@@ -908,17 +908,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentPanelComponent", function() { return ContentPanelComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _content_panel_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content-panel.service */ "./src/app/content-panel/content-panel.service.ts");
+
 
 
 let ContentPanelComponent = class ContentPanelComponent {
-    constructor() {
+    constructor(contentService) {
+        this.contentService = contentService;
         this.width = '230px';
         this.minWidth = '230px';
         this.marginLeft = '230px';
         this.widthContent = 'calc(100% - 230px)';
+        this.contentService.pageScroll.subscribe(() => {
+            this.contentPage.nativeElement.scrollTo(0, 0);
+        });
     }
     ngOnInit() {
-        window.scrollTo(0, 0);
         if (window.outerWidth < 1000) {
             this.setMobile();
         }
@@ -964,6 +969,12 @@ let ContentPanelComponent = class ContentPanelComponent {
         this.widthContent = 'calc(100% - 230px)';
     }
 };
+ContentPanelComponent.ctorParameters = () => [
+    { type: _content_panel_service__WEBPACK_IMPORTED_MODULE_2__["ContentPanelService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('contentPage', { static: true })
+], ContentPanelComponent.prototype, "contentPage", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:resize', ['$event'])
 ], ContentPanelComponent.prototype, "onResize", null);
@@ -974,6 +985,40 @@ ContentPanelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./content-panel.component.css */ "./src/app/content-panel/content-panel.component.css")).default]
     })
 ], ContentPanelComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/content-panel/content-panel.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/content-panel/content-panel.service.ts ***!
+  \********************************************************/
+/*! exports provided: ContentPanelService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentPanelService", function() { return ContentPanelService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let ContentPanelService = class ContentPanelService {
+    constructor() {
+        this.pageScroll = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+    }
+    scrollTop() {
+        this.pageScroll.next();
+    }
+};
+ContentPanelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], ContentPanelService);
 
 
 
@@ -1049,15 +1094,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _grn_add_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grn-add.service */ "./src/app/content-panel/grn/grn-add/grn-add.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
 
 
 
 let GrnAddComponent = class GrnAddComponent {
-    constructor(grnAddService, route) {
+    constructor(grnAddService) {
         this.grnAddService = grnAddService;
-        this.route = route;
         this.items = [
             {
                 code: 214332,
@@ -1098,8 +1140,8 @@ let GrnAddComponent = class GrnAddComponent {
         ];
     }
     ngOnInit() {
-        this.setGrn();
         window.scrollTo(0, 0);
+        this.setGrn();
     }
     addRow() {
         this.items[this.items.length - 1].newRow = false;
@@ -1135,8 +1177,7 @@ let GrnAddComponent = class GrnAddComponent {
     }
 };
 GrnAddComponent.ctorParameters = () => [
-    { type: _grn_add_service__WEBPACK_IMPORTED_MODULE_2__["GrnAddService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+    { type: _grn_add_service__WEBPACK_IMPORTED_MODULE_2__["GrnAddService"] }
 ];
 GrnAddComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1586,13 +1627,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _grn_grn_add_grn_add_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../grn/grn-add/grn-add.service */ "./src/app/content-panel/grn/grn-add/grn-add.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _content_panel_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../content-panel.service */ "./src/app/content-panel/content-panel.service.ts");
+
 
 
 
 
 let OrderViewComponent = class OrderViewComponent {
-    constructor(grnAddService, router) {
+    constructor(grnAddService, contentService, router) {
         this.grnAddService = grnAddService;
+        this.contentService = contentService;
         this.router = router;
         this.items = [
             { code: 226455, desc: 'ADACAPONE TAB 200MG', pack: 50, qty: 1 },
@@ -1609,10 +1653,12 @@ let OrderViewComponent = class OrderViewComponent {
     setToGRN() {
         this.grnAddService.orders = this.items;
         this.router.navigate(['/content/grn/add']);
+        this.contentService.scrollTop();
     }
 };
 OrderViewComponent.ctorParameters = () => [
     { type: _grn_grn_add_grn_add_service__WEBPACK_IMPORTED_MODULE_2__["GrnAddService"] },
+    { type: _content_panel_service__WEBPACK_IMPORTED_MODULE_4__["ContentPanelService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
