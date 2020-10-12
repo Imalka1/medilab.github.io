@@ -1988,6 +1988,9 @@ let NavbarComponent = class NavbarComponent {
             }
         ];
         navBarService.navSelect.subscribe((nav) => {
+            for (let toggleDd of this.toggleDropdownVar) {
+                toggleDd.toggleDropdown = false;
+            }
             this.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
         });
     }
@@ -2000,6 +2003,9 @@ let NavbarComponent = class NavbarComponent {
         return window.outerWidth < 1000;
     }
     toggleDropdown(toggleDd) {
+        for (let toggleDd of this.toggleDropdownVar) {
+            toggleDd.toggleDropdown = false;
+        }
         if (toggleDd.toggleDropdown) {
             toggleDd.toggleDropdown = false;
         }

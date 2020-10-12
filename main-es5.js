@@ -3426,6 +3426,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           toggleDropdown: false
         }];
         navBarService.navSelect.subscribe(function (nav) {
+          var _iterator11 = _createForOfIteratorHelper(_this2.toggleDropdownVar),
+              _step11;
+
+          try {
+            for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
+              var toggleDd = _step11.value;
+              toggleDd.toggleDropdown = false;
+            }
+          } catch (err) {
+            _iterator11.e(err);
+          } finally {
+            _iterator11.f();
+          }
+
           _this2.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
         });
       }
@@ -3446,6 +3460,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleDropdown",
         value: function toggleDropdown(toggleDd) {
+          var _iterator12 = _createForOfIteratorHelper(this.toggleDropdownVar),
+              _step12;
+
+          try {
+            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
+              var _toggleDd = _step12.value;
+              _toggleDd.toggleDropdown = false;
+            }
+          } catch (err) {
+            _iterator12.e(err);
+          } finally {
+            _iterator12.f();
+          }
+
           if (toggleDd.toggleDropdown) {
             toggleDd.toggleDropdown = false;
           } else {
