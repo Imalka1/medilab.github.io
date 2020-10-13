@@ -137,7 +137,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Goods Received Note</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add GRN</span>\n</div>\n\n<div class=\"grnNode\">\n  <div class=\"row grnTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>GRN. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div>\n        <div>Supplier</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n      </div>\n    </div>\n    <div class=\"col-6\">\n      <div>\n        <div>Location</div>\n        <div> :&nbsp;&nbsp;&nbsp;018</div>\n      </div>\n      <div>\n        <div>Supplier Invoice Number</div>\n        <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n      </div>\n      <div>\n        <div>User</div>\n        <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n      </div>\n      <div>\n        <div>Invoice Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n      </div>\n      <div>\n        <div>PO No</div>\n        <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n  <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"grnNode\">\n  <div class=\"\" style=\"font-size: 14px;\">\n    <div class=\"\" style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td width=\"8%\">Code</td>\n          <td>Description</td>\n          <td width=\"5%\">P/S</td>\n          <td width=\"7%\">W/S Price</td>\n          <td width=\"5%\">Pack Qty</td>\n          <td width=\"7%\">Free</td>\n          <td width=\"5%\">%</td>\n          <td width=\"8%\">Discount</td>\n          <td width=\"9%\">Amount</td>\n          <td width=\"7%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let item of items,let i = index\">\n          <td>{{i+1}}</td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Code\" value=\"{{item.code}}\">\n            <span *ngIf=\"fromPO\">{{item.code}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Description\" value=\"{{item.desc}}\">\n            <span *ngIf=\"fromPO\">{{item.desc}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ps}}\">\n            <span *ngIf=\"fromPO\">{{item.ps}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ws}}\">\n            <span *ngIf=\"fromPO\">{{item.ws}}</span>\n          </td>\n          <td>\n            <input type=\"number\" value=\"{{item.qty}}\" max=\"{{item.qty}}\" min=\"0\">\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.free}}\">\n            <span *ngIf=\"fromPO\">{{item.free}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.perce}}\">\n            <span *ngIf=\"fromPO\">{{item.perce}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.discount}}\">\n            <span *ngIf=\"fromPO\">{{item.discount}}</span>\n          </td>\n          <td>{{item.amount}}</td>\n          <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n    <div class=\"grnNode grnBottom\">\n      <div style=\"float: right\">\n        <div>\n          <div>Number Of Items</div>\n          <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n        </div>\n        <div>\n          <div>Gross Amount</div>\n          <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n        </div>\n        <div>\n          <div>Net Discount %</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Tax</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Additions</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Deductions</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Net Amount</div>\n          <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n        </div>\n        <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n          <div>Payment Amount</div>\n          <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Goods Received Note</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add GRN</span>\n</div>\n\n<div class=\"grnNode\">\n  <div class=\"row grnTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>GRN. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div>\n        <div>Supplier</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n      </div>\n    </div>\n    <div class=\"col-6\">\n      <div>\n        <div>Location</div>\n        <div> :&nbsp;&nbsp;&nbsp;018</div>\n      </div>\n      <div>\n        <div>Supplier Invoice Number</div>\n        <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n      </div>\n      <div>\n        <div>User</div>\n        <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n      </div>\n      <div>\n        <div>Invoice Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n      </div>\n      <div>\n        <div>PO No</div>\n        <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n  <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"grnNode\">\n  <div class=\"\" style=\"font-size: 14px;\">\n    <div class=\"\" style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td width=\"8%\">Code</td>\n          <td>Description</td>\n          <td width=\"5%\">P/S</td>\n          <td width=\"7%\">W/S Price</td>\n          <td width=\"5%\">Pack Qty</td>\n          <td width=\"7%\">Free</td>\n          <td width=\"5%\">%</td>\n          <td width=\"8%\">Discount</td>\n          <td width=\"9%\">Amount</td>\n          <td width=\"7%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let item of items,let i = index\">\n          <td>{{i+1}}</td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\">\n            <span *ngIf=\"fromPO\">{{item.code}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\">\n            <span *ngIf=\"fromPO\">{{item.desc}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" [(ngModel)]=\"item.ps\">\n            <span *ngIf=\"fromPO\">{{item.ps}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" [(ngModel)]=\"item.ws\">\n            <span *ngIf=\"fromPO\">{{item.ws}}</span>\n          </td>\n          <td>\n            <input type=\"number\" [(ngModel)]=\"item.qty\" min=\"0\">\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" [(ngModel)]=\"item.free\">\n            <span *ngIf=\"fromPO\">{{item.free}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" [(ngModel)]=\"item.perce\">\n            <span *ngIf=\"fromPO\">{{item.perce}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" [(ngModel)]=\"item.discount\">\n            <span *ngIf=\"fromPO\">{{item.discount}}</span>\n          </td>\n          <td>{{item.amount}}</td>\n          <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n    <div class=\"grnNode grnBottom\">\n      <div style=\"float: right\">\n        <div>\n          <div>Number Of Items</div>\n          <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n        </div>\n        <div>\n          <div>Gross Amount</div>\n          <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n        </div>\n        <div>\n          <div>Net Discount %</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Tax</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Additions</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Deductions</div>\n          <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n        </div>\n        <div>\n          <div>Net Amount</div>\n          <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n        </div>\n        <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n          <div>Payment Amount</div>\n          <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n";
     /***/
   },
 
@@ -237,7 +237,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div>\n        <div>Vendor</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;E-008 EMERCHEMIE NB CEYLON LTD.</div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 7px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 6px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" class=\"form-control\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"7%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" value=\"{{item.code}}\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" value=\"{{item.desc}}\"></td>\n        <td><input type=\"number\" value=\"{{item.pack}}\"></td>\n        <td><input type=\"number\" value=\"{{item.qty}}\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div>\n        <div>Vendor</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;E-008 EMERCHEMIE NB CEYLON LTD.</div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 7px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 6px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" class=\"form-control\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"7%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.pack\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.qty\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n";
     /***/
   },
 
@@ -297,7 +297,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td width=\"8%\">Code</td>\n          <td>Description</td>\n          <td width=\"5%\">P/S</td>\n          <td width=\"7%\">W/S Price</td>\n          <td width=\"5%\">Pack Qty</td>\n          <td width=\"7%\">Free</td>\n          <td width=\"5%\">%</td>\n          <td width=\"8%\">Discount</td>\n          <td width=\"9%\">Amount</td>\n          <td width=\"7%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let item of items,let i = index\">\n          <td>{{i+1}}</td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Code\" value=\"{{item.code}}\">\n            <span *ngIf=\"fromPO\">{{item.code}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Description\" value=\"{{item.desc}}\">\n            <span *ngIf=\"fromPO\">{{item.desc}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ps}}\">\n            <span *ngIf=\"fromPO\">{{item.ps}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ws}}\">\n            <span *ngIf=\"fromPO\">{{item.ws}}</span>\n          </td>\n          <td>\n            <input type=\"number\" value=\"{{item.qty}}\" max=\"{{item.qty}}\" min=\"0\">\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.free}}\">\n            <span *ngIf=\"fromPO\">{{item.free}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.perce}}\">\n            <span *ngIf=\"fromPO\">{{item.perce}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.discount}}\">\n            <span *ngIf=\"fromPO\">{{item.discount}}</span>\n          </td>\n          <td>{{item.amount}}</td>\n          <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td>Name</td>\n          <td width=\"15%\">Email</td>\n          <td width=\"15%\">Address</td>\n          <td width=\"10%\">Contact Number</td>\n          <td width=\"10%\">Fax Number</td>\n          <td width=\"7%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let supplier of suppliers,let i = index\">\n          <td>{{i+1}}</td>\n          <td><input type=\"text\" placeholder=\"Name\" [(ngModel)]=\"supplier.name\"></td>\n          <td><input type=\"text\" placeholder=\"Email\" [(ngModel)]=\"supplier.email\"></td>\n          <td><input type=\"text\" placeholder=\"Address\" [(ngModel)]=\"supplier.address\"></td>\n          <td><input type=\"text\" placeholder=\"Contact Number\" [(ngModel)]=\"supplier.cNumber\"></td>\n          <td><input type=\"text\" placeholder=\"Fax Number\" [(ngModel)]=\"supplier.fNumber\"></td>\n          <td (click)=\"removeRow(i,supplier)\" *ngIf=\"!supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n  </div>\n</div>\n";
     /***/
   },
 
@@ -1482,6 +1482,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! ./content-panel/supplier/supplier.component */
     "./src/app/content-panel/supplier/supplier.component.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -1489,7 +1495,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_11__["InventoryComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_12__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_13__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_14__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_15__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_16__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_17__["GrnViewComponent"], _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_19__["AlertBoxComponent"], _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__["SupplierComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"]],
       providers: [_angular_common__WEBPACK_IMPORTED_MODULE_18__["DatePipe"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })], AppModule);
@@ -3282,19 +3288,83 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _alert_box_alert_box_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../alert-box/alert-box.service */
+    "./src/app/alert-box/alert-box.service.ts");
 
     var SupplierComponent = /*#__PURE__*/function () {
-      function SupplierComponent() {
+      function SupplierComponent(alertService) {
         _classCallCheck(this, SupplierComponent);
+
+        this.alertService = alertService;
+        this.alertBox = {
+          alert: false,
+          msg: '',
+          value: ''
+        };
+        this.suppliers = [{
+          name: 'Abc',
+          email: 'abc@gmail.com',
+          address: 'abc Road, Colombo',
+          cNumber: '077-1234567',
+          fNumber: '071-1234567',
+          newRow: false
+        }, {
+          name: '',
+          email: '',
+          address: '',
+          cNumber: '',
+          fNumber: '',
+          newRow: true
+        }];
       }
 
       _createClass(SupplierComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "addRow",
+        value: function addRow() {
+          this.suppliers[this.suppliers.length - 1].newRow = false;
+          this.suppliers.push({
+            name: '',
+            email: '',
+            address: '',
+            cNumber: '',
+            fNumber: '',
+            newRow: true
+          });
+        }
+      }, {
+        key: "removeRow",
+        value: function removeRow(index, supplier) {
+          var _this4 = this;
+
+          this.alertBox.alert = true;
+          this.alertBox.msg = 'Do you want to remove';
+          this.alertBox.value = supplier.name + ' ?';
+          this.alertService.reply.observers = [];
+          this.alertService.reply.subscribe(function (reply) {
+            if (reply) {
+              _this4.suppliers.splice(index, 1);
+            }
+
+            _this4.alertBox.alert = false;
+          });
+        }
       }]);
 
       return SupplierComponent;
     }();
+
+    SupplierComponent.ctorParameters = function () {
+      return [{
+        type: _alert_box_alert_box_service__WEBPACK_IMPORTED_MODULE_2__["AlertBoxService"]
+      }];
+    };
 
     SupplierComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-supplier',
@@ -3533,7 +3603,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var NavbarComponent = /*#__PURE__*/function () {
       function NavbarComponent(navBarService) {
-        var _this4 = this;
+        var _this5 = this;
 
         _classCallCheck(this, NavbarComponent);
 
@@ -3545,7 +3615,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           toggleDropdown: false
         }];
         navBarService.navSelect.subscribe(function (nav) {
-          var _iterator11 = _createForOfIteratorHelper(_this4.toggleDropdownVar),
+          var _iterator11 = _createForOfIteratorHelper(_this5.toggleDropdownVar),
               _step11;
 
           try {
@@ -3559,7 +3629,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             _iterator11.f();
           }
 
-          _this4.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
+          _this5.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
         });
       }
 
