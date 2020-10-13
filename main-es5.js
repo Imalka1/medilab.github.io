@@ -4,11 +4,11 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
   /***/
@@ -38,6 +38,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
     module.exports = webpackEmptyAsyncContext;
     webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/alert-box/alert-box.component.html":
+  /*!******************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/alert-box/alert-box.component.html ***!
+    \******************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppAlertBoxAlertBoxComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"alertB\">\n  <div (click)=\"isTrueOrFalse(false)\"></div>\n  <div>\n    <div><i class=\"fas fa-times\" style=\"cursor: pointer\" (click)=\"isTrueOrFalse(false)\"></i></div>\n    <div>\n      <div>{{alertMsg.msg}}</div>\n      <div>{{alertMsg.value}}</div>\n    </div>\n    <div>\n      <button class=\"btn btn-primary\" (click)=\"isTrueOrFalse(true)\">Yes</button>\n      <button class=\"btn btn-outline-info\" (click)=\"isTrueOrFalse(false)\">No</button>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -117,7 +137,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div style=\"min-width: 1000px\">\n\n  <div class=\"breadCrumb\">\n    <span>Goods Received Note</span>\n    <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n    <span style=\"color: #898989\">Add GRN</span>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"row grnTop\">\n      <div class=\"col-6\">\n        <div>\n          <div>GRN. No</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n        </div>\n        <div>\n          <div>Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n        </div>\n        <div>\n          <div>Supplier</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">Location</div>\n          <div> :&nbsp;&nbsp;&nbsp;018</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Supplier Invoice Number</div>\n          <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">User</div>\n          <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Invoice Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">PO No</div>\n          <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Status</div>\n          <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n    <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"\" style=\"font-size: 14px;\">\n      <div class=\"\" style=\"margin-bottom: 40px;margin-top: 20px\">\n\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td width=\"8%\">Code</td>\n            <td>Description</td>\n            <td width=\"5%\">P/S</td>\n            <td width=\"7%\">W/S Price</td>\n            <td width=\"5%\">Pack Qty</td>\n            <td width=\"7%\">Free</td>\n            <td width=\"5%\">%</td>\n            <td width=\"8%\">Discount</td>\n            <td width=\"9%\">Amount</td>\n            <td width=\"7%\"></td>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of items,let i = index\">\n            <td>{{i+1}}</td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Code\" value=\"{{item.code}}\">\n              <span *ngIf=\"fromPO\">{{item.code}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Description\" value=\"{{item.desc}}\">\n              <span *ngIf=\"fromPO\">{{item.desc}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ps}}\">\n              <span *ngIf=\"fromPO\">{{item.ps}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ws}}\">\n              <span *ngIf=\"fromPO\">{{item.ws}}</span>\n            </td>\n            <td>\n              <input type=\"number\" value=\"{{item.qty}}\" max=\"{{item.qty}}\" min=\"0\">\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.free}}\">\n              <span *ngIf=\"fromPO\">{{item.free}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.perce}}\">\n              <span *ngIf=\"fromPO\">{{item.perce}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.discount}}\">\n              <span *ngIf=\"fromPO\">{{item.discount}}</span>\n            </td>\n            <td>{{item.amount}}</td>\n            <td (click)=\"removeRow(i)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n              <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n            <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n              <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n          </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"grnNode grnBottom\">\n        <div style=\"float: right\">\n          <div>\n            <div>Number Of Items</div>\n            <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n          </div>\n          <div>\n            <div>Gross Amount</div>\n            <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div>\n            <div>Net Discount %</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Tax</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Additions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Deductions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Net Amount</div>\n            <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n            <div>Payment Amount</div>\n            <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div style=\"min-width: 1000px\">\n\n  <div class=\"breadCrumb\">\n    <span>Goods Received Note</span>\n    <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n    <span style=\"color: #898989\">Add GRN</span>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"row grnTop\">\n      <div class=\"col-6\">\n        <div>\n          <div>GRN. No</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n        </div>\n        <div>\n          <div>Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n        </div>\n        <div>\n          <div>Supplier</div>\n          <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;I-008 INTERPHARM (PVT) LTD.</div>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <div>\n          <div style=\"font-weight: bold\">Location</div>\n          <div> :&nbsp;&nbsp;&nbsp;018</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Supplier Invoice Number</div>\n          <div> :&nbsp;&nbsp;&nbsp;IP 12341</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">User</div>\n          <div> :&nbsp;&nbsp;&nbsp;Lahiru</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Invoice Date</div>\n          <div> :&nbsp;&nbsp;&nbsp;15/08/2020</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">PO No</div>\n          <div> :&nbsp;&nbsp;&nbsp;0003798</div>\n        </div>\n        <div>\n          <div style=\"font-weight: bold\">Status</div>\n          <div> :&nbsp;&nbsp;&nbsp;Processed</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"grnNode\" style=\"height: 0px;margin-top: 13px\">\n    <div class=\"\" style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n  </div>\n\n  <div class=\"grnNode\">\n    <div class=\"\" style=\"font-size: 14px;\">\n      <div class=\"\" style=\"margin-bottom: 40px;margin-top: 20px\">\n\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td width=\"8%\">Code</td>\n            <td>Description</td>\n            <td width=\"5%\">P/S</td>\n            <td width=\"7%\">W/S Price</td>\n            <td width=\"5%\">Pack Qty</td>\n            <td width=\"7%\">Free</td>\n            <td width=\"5%\">%</td>\n            <td width=\"8%\">Discount</td>\n            <td width=\"9%\">Amount</td>\n            <td width=\"7%\"></td>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of items,let i = index\">\n            <td>{{i+1}}</td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Code\" value=\"{{item.code}}\">\n              <span *ngIf=\"fromPO\">{{item.code}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"text\" placeholder=\"Description\" value=\"{{item.desc}}\">\n              <span *ngIf=\"fromPO\">{{item.desc}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ps}}\">\n              <span *ngIf=\"fromPO\">{{item.ps}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.ws}}\">\n              <span *ngIf=\"fromPO\">{{item.ws}}</span>\n            </td>\n            <td>\n              <input type=\"number\" value=\"{{item.qty}}\" max=\"{{item.qty}}\" min=\"0\">\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.free}}\">\n              <span *ngIf=\"fromPO\">{{item.free}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.perce}}\">\n              <span *ngIf=\"fromPO\">{{item.perce}}</span>\n            </td>\n            <td>\n              <input *ngIf=\"!fromPO\" type=\"number\" value=\"{{item.discount}}\">\n              <span *ngIf=\"fromPO\">{{item.discount}}</span>\n            </td>\n            <td>{{item.amount}}</td>\n            <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n              <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n            <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n              <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n          </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"grnNode grnBottom\">\n        <div style=\"float: right\">\n          <div>\n            <div>Number Of Items</div>\n            <div>:&nbsp;&nbsp;&nbsp;{{items.length}}</div>\n          </div>\n          <div>\n            <div>Gross Amount</div>\n            <div>:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div>\n            <div>Net Discount %</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Tax</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Additions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Deductions</div>\n            <div>:&nbsp;&nbsp;&nbsp;0.00</div>\n          </div>\n          <div>\n            <div>Net Amount</div>\n            <div style=\"font-weight: bold\">:&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n          <div style=\"border-top: 3px solid black;border-bottom: 3px solid black;margin-top: 10px;font-size: 22px\">\n            <div>Payment Amount</div>\n            <div style=\"font-weight: bold;\"> :&nbsp;&nbsp;&nbsp;6453.50</div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</div>\n";
     /***/
   },
 
@@ -966,6 +986,154 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/alert-box/alert-box.component.css":
+  /*!***************************************************!*\
+    !*** ./src/app/alert-box/alert-box.component.css ***!
+    \***************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppAlertBoxAlertBoxComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".alertB {\r\n  position: fixed;\r\n  width: 100%;\r\n  height: 100%;\r\n  z-index: 99;\r\n  top: 0px;\r\n  left: 0px;\r\n}\r\n\r\n.alertB > div:nth-child(1) {\r\n  position: fixed;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.44);\r\n}\r\n\r\n.alertB > div:nth-child(2) {\r\n  width: 600px;\r\n  /*min-height: 100px;*/\r\n  background-color: white;\r\n  margin: 100px auto auto auto;\r\n  position: relative;\r\n  padding: 10px;\r\n  border: 7px solid #ebebeb;\r\n}\r\n\r\n.alertB > div:nth-child(2) > div:nth-child(1) {\r\n  text-align: right;\r\n  color: #787878;\r\n}\r\n\r\n.alertB > div:nth-child(2) > div:nth-child(2) {\r\n  font-weight: bold;\r\n  color: #3f3f3f;\r\n  font-size: 17px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.alertB > div:nth-child(2) > div:nth-child(3) {\r\n  bottom: 10px;\r\n  right: 10px;\r\n  margin-top: 25px;\r\n  text-align: right;\r\n}\r\n\r\n.btn {\r\n  padding: 2px 20px 2px 20px;\r\n  font-weight: bold;\r\n  font-size: 15px;\r\n}\r\n\r\n.btn-primary {\r\n  background-color: #007aa9;\r\n  border-color: #007aa9;\r\n  margin-right: 10px;\r\n}\r\n\r\n.btn-outline-info {\r\n\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n  .alertB > div:nth-child(2) {\r\n    width: 500px !important;\r\n    /*height: 150px !important;*/\r\n  }\r\n\r\n  .alertB > div:nth-child(2) > div:nth-child(2), .alertB > div > div:nth-child(3), .btn {\r\n    font-size: 16px !important;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 796px) {\r\n  .alertB > div:nth-child(2) {\r\n    width: 400px !important;\r\n    /*height: 150px !important;*/\r\n  }\r\n\r\n  .alertB > div:nth-child(2) > div:nth-child(2), .alertB > div > div:nth-child(3), .btn {\r\n    font-size: 15px !important;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 636px) {\r\n  .alertB > div:nth-child(2) {\r\n    width: 300px !important;\r\n    /*height: 150px !important;*/\r\n  }\r\n\r\n  .alertB > div:nth-child(2) > div:nth-child(2), .alertB > div > div:nth-child(3), .btn {\r\n    font-size: 14px !important;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWxlcnQtYm94L2FsZXJ0LWJveC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osV0FBVztFQUNYLFFBQVE7RUFDUixTQUFTO0FBQ1g7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsV0FBVztFQUNYLFlBQVk7RUFDWixxQ0FBcUM7QUFDdkM7O0FBRUE7RUFDRSxZQUFZO0VBQ1oscUJBQXFCO0VBQ3JCLHVCQUF1QjtFQUN2Qiw0QkFBNEI7RUFDNUIsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYix5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsZUFBZTtFQUNmLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLDBCQUEwQjtFQUMxQixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixxQkFBcUI7RUFDckIsa0JBQWtCO0FBQ3BCOztBQUVBOztBQUVBOztBQUVBO0VBQ0U7SUFDRSx1QkFBdUI7SUFDdkIsNEJBQTRCO0VBQzlCOztFQUVBO0lBQ0UsMEJBQTBCO0VBQzVCO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLHVCQUF1QjtJQUN2Qiw0QkFBNEI7RUFDOUI7O0VBRUE7SUFDRSwwQkFBMEI7RUFDNUI7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsdUJBQXVCO0lBQ3ZCLDRCQUE0QjtFQUM5Qjs7RUFFQTtJQUNFLDBCQUEwQjtFQUM1QjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvYWxlcnQtYm94L2FsZXJ0LWJveC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFsZXJ0QiB7XHJcbiAgcG9zaXRpb246IGZpeGVkO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB6LWluZGV4OiA5OTtcclxuICB0b3A6IDBweDtcclxuICBsZWZ0OiAwcHg7XHJcbn1cclxuXHJcbi5hbGVydEIgPiBkaXY6bnRoLWNoaWxkKDEpIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC40NCk7XHJcbn1cclxuXHJcbi5hbGVydEIgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICB3aWR0aDogNjAwcHg7XHJcbiAgLyptaW4taGVpZ2h0OiAxMDBweDsqL1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIG1hcmdpbjogMTAwcHggYXV0byBhdXRvIGF1dG87XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgYm9yZGVyOiA3cHggc29saWQgI2ViZWJlYjtcclxufVxyXG5cclxuLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikgPiBkaXY6bnRoLWNoaWxkKDEpIHtcclxuICB0ZXh0LWFsaWduOiByaWdodDtcclxuICBjb2xvcjogIzc4Nzg3ODtcclxufVxyXG5cclxuLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBjb2xvcjogIzNmM2YzZjtcclxuICBmb250LXNpemU6IDE3cHg7XHJcbiAgbWFyZ2luLXRvcDogMTBweDtcclxufVxyXG5cclxuLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikgPiBkaXY6bnRoLWNoaWxkKDMpIHtcclxuICBib3R0b206IDEwcHg7XHJcbiAgcmlnaHQ6IDEwcHg7XHJcbiAgbWFyZ2luLXRvcDogMjVweDtcclxuICB0ZXh0LWFsaWduOiByaWdodDtcclxufVxyXG5cclxuLmJ0biB7XHJcbiAgcGFkZGluZzogMnB4IDIwcHggMnB4IDIwcHg7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG4uYnRuLXByaW1hcnkge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDdhYTk7XHJcbiAgYm9yZGVyLWNvbG9yOiAjMDA3YWE5O1xyXG4gIG1hcmdpbi1yaWdodDogMTBweDtcclxufVxyXG5cclxuLmJ0bi1vdXRsaW5lLWluZm8ge1xyXG5cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KSB7XHJcbiAgLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gICAgd2lkdGg6IDUwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAvKmhlaWdodDogMTUwcHggIWltcG9ydGFudDsqL1xyXG4gIH1cclxuXHJcbiAgLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikgPiBkaXY6bnRoLWNoaWxkKDIpLCAuYWxlcnRCID4gZGl2ID4gZGl2Om50aC1jaGlsZCgzKSwgLmJ0biB7XHJcbiAgICBmb250LXNpemU6IDE2cHggIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc5NnB4KSB7XHJcbiAgLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gICAgd2lkdGg6IDQwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAvKmhlaWdodDogMTUwcHggIWltcG9ydGFudDsqL1xyXG4gIH1cclxuXHJcbiAgLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikgPiBkaXY6bnRoLWNoaWxkKDIpLCAuYWxlcnRCID4gZGl2ID4gZGl2Om50aC1jaGlsZCgzKSwgLmJ0biB7XHJcbiAgICBmb250LXNpemU6IDE1cHggIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYzNnB4KSB7XHJcbiAgLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gICAgd2lkdGg6IDMwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAvKmhlaWdodDogMTUwcHggIWltcG9ydGFudDsqL1xyXG4gIH1cclxuXHJcbiAgLmFsZXJ0QiA+IGRpdjpudGgtY2hpbGQoMikgPiBkaXY6bnRoLWNoaWxkKDIpLCAuYWxlcnRCID4gZGl2ID4gZGl2Om50aC1jaGlsZCgzKSwgLmJ0biB7XHJcbiAgICBmb250LXNpemU6IDE0cHggIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuIl19 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/alert-box/alert-box.component.ts":
+  /*!**************************************************!*\
+    !*** ./src/app/alert-box/alert-box.component.ts ***!
+    \**************************************************/
+
+  /*! exports provided: AlertBoxComponent */
+
+  /***/
+  function srcAppAlertBoxAlertBoxComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AlertBoxComponent", function () {
+      return AlertBoxComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _alert_box_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./alert-box.service */
+    "./src/app/alert-box/alert-box.service.ts");
+
+    var AlertBoxComponent = /*#__PURE__*/function () {
+      function AlertBoxComponent(alertService) {
+        _classCallCheck(this, AlertBoxComponent);
+
+        this.alertService = alertService;
+      }
+
+      _createClass(AlertBoxComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "isTrueOrFalse",
+        value: function isTrueOrFalse(reply) {
+          this.alertService.reply.next(reply);
+        }
+      }]);
+
+      return AlertBoxComponent;
+    }();
+
+    AlertBoxComponent.ctorParameters = function () {
+      return [{
+        type: _alert_box_service__WEBPACK_IMPORTED_MODULE_2__["AlertBoxService"]
+      }];
+    };
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], AlertBoxComponent.prototype, "alertMsg", void 0);
+    AlertBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-alert-box',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./alert-box.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/alert-box/alert-box.component.html"))["default"],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./alert-box.component.css */
+      "./src/app/alert-box/alert-box.component.css"))["default"]]
+    })], AlertBoxComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/alert-box/alert-box.service.ts":
+  /*!************************************************!*\
+    !*** ./src/app/alert-box/alert-box.service.ts ***!
+    \************************************************/
+
+  /*! exports provided: AlertBoxService */
+
+  /***/
+  function srcAppAlertBoxAlertBoxServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AlertBoxService", function () {
+      return AlertBoxService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+
+    var AlertBoxService = // replyData=this.reply.asObservable();
+    function AlertBoxService() {
+      _classCallCheck(this, AlertBoxService);
+
+      this.reply = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+    };
+
+    AlertBoxService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], AlertBoxService);
+    /***/
+  },
+
+  /***/
   "./src/app/app-routing.module.ts":
   /*!***************************************!*\
     !*** ./src/app/app-routing.module.ts ***!
@@ -1337,13 +1505,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_common__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    /*! ./alert-box/alert-box.component */
+    "./src/app/alert-box/alert-box.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_purchase_order_purchase_order_component__WEBPACK_IMPORTED_MODULE_11__["PurchaseOrderComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_12__["InventoryComponent"], _content_panel_grn_grn_component__WEBPACK_IMPORTED_MODULE_13__["GrnComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_14__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_15__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_16__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_17__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_18__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_19__["GrnViewComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_purchase_order_purchase_order_component__WEBPACK_IMPORTED_MODULE_11__["PurchaseOrderComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_12__["InventoryComponent"], _content_panel_grn_grn_component__WEBPACK_IMPORTED_MODULE_13__["GrnComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_14__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_15__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_16__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_17__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_18__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_19__["GrnViewComponent"], _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_21__["AlertBoxComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]],
       providers: [_angular_common__WEBPACK_IMPORTED_MODULE_20__["DatePipe"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1949,12 +2123,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _grn_add_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./grn-add.service */
     "./src/app/content-panel/grn/grn-add/grn-add.service.ts");
+    /* harmony import */
+
+
+    var _alert_box_alert_box_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../alert-box/alert-box.service */
+    "./src/app/alert-box/alert-box.service.ts");
 
     var GrnAddComponent = /*#__PURE__*/function () {
-      function GrnAddComponent(grnAddService) {
+      function GrnAddComponent(grnAddService, alertService) {
         _classCallCheck(this, GrnAddComponent);
 
         this.grnAddService = grnAddService;
+        this.alertService = alertService; // alertBox = {
+
+        this.alertBox = {
+          alert: false,
+          msg: '',
+          value: ''
+        }; //   alertIndex: 0,
+        //   alertData: '',
+        //   msg: ''
+        // };
+
         this.fromPO = false;
         this.items = [{
           code: 214332,
@@ -2018,8 +2209,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "removeRow",
-        value: function removeRow(index) {
-          this.items.splice(index, 1);
+        value: function removeRow(index, item) {
+          var _this2 = this;
+
+          this.alertBox.alert = true;
+          this.alertBox.msg = 'Do you want to remove';
+          this.alertBox.value = item.desc + ' (' + item.code + ') ?';
+          this.alertService.reply.observers = [];
+          this.alertService.reply.subscribe(function (reply) {
+            if (reply) {
+              _this2.items.splice(index, 1);
+            }
+
+            _this2.alertBox.alert = false;
+          });
         }
       }, {
         key: "setGrn",
@@ -2058,6 +2261,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     GrnAddComponent.ctorParameters = function () {
       return [{
         type: _grn_add_service__WEBPACK_IMPORTED_MODULE_2__["GrnAddService"]
+      }, {
+        type: _alert_box_alert_box_service__WEBPACK_IMPORTED_MODULE_3__["AlertBoxService"]
       }];
     };
 
@@ -3414,7 +3619,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var NavbarComponent = /*#__PURE__*/function () {
       function NavbarComponent(navBarService) {
-        var _this2 = this;
+        var _this3 = this;
 
         _classCallCheck(this, NavbarComponent);
 
@@ -3426,7 +3631,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           toggleDropdown: false
         }];
         navBarService.navSelect.subscribe(function (nav) {
-          var _iterator11 = _createForOfIteratorHelper(_this2.toggleDropdownVar),
+          var _iterator11 = _createForOfIteratorHelper(_this3.toggleDropdownVar),
               _step11;
 
           try {
@@ -3440,7 +3645,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _iterator11.f();
           }
 
-          _this2.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
+          _this3.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
         });
       }
 
@@ -3460,23 +3665,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleDropdown",
         value: function toggleDropdown(toggleDd) {
-          var _iterator12 = _createForOfIteratorHelper(this.toggleDropdownVar),
-              _step12;
-
-          try {
-            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
-              var _toggleDd = _step12.value;
-              _toggleDd.toggleDropdown = false;
-            }
-          } catch (err) {
-            _iterator12.e(err);
-          } finally {
-            _iterator12.f();
-          }
-
           if (toggleDd.toggleDropdown) {
             toggleDd.toggleDropdown = false;
           } else {
+            var _iterator12 = _createForOfIteratorHelper(this.toggleDropdownVar),
+                _step12;
+
+            try {
+              for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
+                var _toggleDd = _step12.value;
+                _toggleDd.toggleDropdown = false;
+              }
+            } catch (err) {
+              _iterator12.e(err);
+            } finally {
+              _iterator12.f();
+            }
+
             toggleDd.toggleDropdown = true;
           }
         }
