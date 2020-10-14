@@ -914,7 +914,7 @@ let AutocompleteBoxComponent = class AutocompleteBoxComponent {
     }
     selectText(item) {
         this.filteredItems.clear();
-        this.inputText = item;
+        this.inputText = item.id;
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

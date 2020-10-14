@@ -1643,7 +1643,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "selectText",
         value: function selectText(item) {
           this.filteredItems.clear();
-          this.inputText = item;
+          this.inputText = item.id;
         }
       }]);
 
