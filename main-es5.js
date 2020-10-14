@@ -82,6 +82,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-box/autocomplete-box.component.html":
+  /*!********************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-box/autocomplete-box.component.html ***!
+    \********************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppAutocompleteBoxAutocompleteBoxComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts()\" [(ngModel)]=\"inputText\" style=\"width: 100%\"\n         placeholder=\"{{clsForm.placeholder}}\">\n  <div *ngIf=\"filteredItems.size !== 0\">\n    <div *ngFor=\"let item of filteredItems\" (click)=\"selectText(item)\">\n      <span style=\"font-weight: bold\">{{item.toString().substring(0,inputText.length)}}</span>\n      <span>{{item.toString().substring(inputText.length,item.length)}}</span>\n    </div>\n  </div>\n</div>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/content-panel.component.html":
   /*!**************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/content-panel/content-panel.component.html ***!
@@ -237,7 +257,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div>\n        <div>Vendor</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;E-008 EMERCHEMIE NB CEYLON LTD.</div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 7px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 6px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" class=\"form-control\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"4%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.pack\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.qty\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div style=\"height: 25px;\">\n        <div style=\"margin-top: 2px\">Vendor</div>\n        <div style=\"position: relative\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;</div>\n          <app-autocomplete-box style=\"float: left;width: 100%;position: absolute\"\n            [clsForm]=\"{placeholder:'Name',value:'E-008 EMERCHEMIE NB CEYLON LTD.'}\"></app-autocomplete-box>\n        </div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 4px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"4%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.pack\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.qty\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n";
     /***/
   },
 
@@ -297,7 +317,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td>Name</td>\n          <td width=\"15%\">Email</td>\n          <td width=\"15%\">Address</td>\n          <td width=\"10%\">Contact Number</td>\n          <td width=\"10%\">Fax Number</td>\n          <td width=\"4%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let supplier of suppliers,let i = index\">\n          <td>{{suppliers.length - i}}</td>\n          <td><input type=\"text\" placeholder=\"Name\" [(ngModel)]=\"supplier.name\"></td>\n          <td><input type=\"text\" placeholder=\"Email\" [(ngModel)]=\"supplier.email\"></td>\n          <td><input type=\"text\" placeholder=\"Address\" [(ngModel)]=\"supplier.address\"></td>\n          <td><input type=\"text\" placeholder=\"Contact Number\" [(ngModel)]=\"supplier.cNumber\"></td>\n          <td><input type=\"text\" placeholder=\"Fax Number\" [(ngModel)]=\"supplier.fNumber\"></td>\n          <td (click)=\"removeRow(i,supplier)\" *ngIf=\"!supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <!--<i (click)=\"updateRow(i,supplier)\" class=\"fas fa-keyboard\" style=\"color: #696969;font-size: 20px;padding-top: 4px;margin-right: 8px\"></i>-->\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td>Name</td>\n          <td width=\"15%\">Email</td>\n          <td width=\"15%\">Address</td>\n          <td width=\"10%\">Contact Number</td>\n          <td width=\"10%\">Fax Number</td>\n          <td width=\"4%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let supplier of suppliers,let i = index\">\n          <td>{{suppliers.length - i}}</td>\n          <td [ngStyle]=\"{'padding':supplier.newRow?'3px 0px 1px 0px':'3px 4px 1px 4px'}\">\n            <app-autocomplete-box *ngIf=\"supplier.newRow\"\n                                  [clsForm]=\"{placeholder:'Name',value:''}\">\n            </app-autocomplete-box>\n            <span *ngIf=\"!supplier.newRow\">{{supplier.name}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Email\" [(ngModel)]=\"supplier.email\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.email}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Address\" [(ngModel)]=\"supplier.address\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.address}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Contact Number\" [(ngModel)]=\"supplier.cNumber\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.cNumber}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Fax Number\" [(ngModel)]=\"supplier.fNumber\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.fNumber}}</span>\n          </td>\n          <td (click)=\"removeRow(i,supplier)\" *ngIf=\"!supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <!--<i (click)=\"updateRow(i,supplier)\" class=\"fas fa-keyboard\" style=\"color: #696969;font-size: 20px;padding-top: 4px;margin-right: 8px\"></i>-->\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n  </div>\n</div>\n\n<!--<app-autocomplete-box [clsForm]=\"{border:'none',padding:'13px',placeholder:'Name'}\"></app-autocomplete-box>-->\n<!--<app-autocomplete-box [clsForm]=\"{class:'',padding:'0px'}\"></app-autocomplete-box>-->\n";
     /***/
   },
 
@@ -357,7 +377,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div style=\"padding: 0px\" id=\"navBar\">\n  <div style=\"position: absolute;top: 10px;font-size: 25px;color: rgb(155,154,153);left: 186px\" (click)=\"toggleNavbar()\"\n       *ngIf=\"isMobile()\">\n    <i class=\"fas fa-caret-left\"></i><i class=\"fas fa-caret-left\"></i>\n    <!--<i class=\"fas fa-times\"></i>-->\n  </div>\n\n  <div class=\"avatar\">\n    <div></div>\n    <div class=\"btnConfig\">\n      <div style=\"position: absolute;top: 40px;left: 18px;font-size: 40px;color: black\">\n        <i class=\"fas fa-cog\" style=\"cursor: pointer\"></i>\n        <i class=\"fas fa-power-off\" style=\"margin-left: 20px;cursor: pointer\"></i>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"font-size: 18px;text-align: center;margin-top: 20px;font-weight: bold;margin-bottom: 30px\">\n    Danley Richardson\n  </div>\n\n  <div class=\"btnNav\" style=\"padding: 0px;margin-bottom: 80px\">\n\n    <div [routerLinkActive]=\"'btnNavActive'\" (click)=\"collapseDropdown()\" #dashboard=\"routerLinkActive\">\n      <div>\n        <span>Dashboard</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':dashboard.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[0])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[0].toggleDropdown?'bold':'normal','color':toggleDropdownVar[0].toggleDropdown?'black':''}\">\n        <span>Purchase Order</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[0].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[0].toggleDropdown\">\n        <div [routerLink]=\"'/content/purchase_order/add'\" [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbar()\" #addorder=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add Order</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addorder.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/purchase_order/list'\" [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbar()\" #vieworders=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View Orders</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':vieworders.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/inventory'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"collapseDropdown()\"\n         #inventory=\"routerLinkActive\">\n      <div>\n        <span>Inventory</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':inventory.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[1])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[1].toggleDropdown?'bold':'normal','color':toggleDropdownVar[1].toggleDropdown?'black':''}\">\n        <span>Goods Received Note</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[1].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[1].toggleDropdown\">\n        <div [routerLink]=\"'/content/grn/add'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\"\n             #addgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/grn/list'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"toggleNavbar()\"\n             #viewgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':viewgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLinkActive]=\"'btnNavActive'\" (click)=\"collapseDropdown()\" #invoices=\"routerLinkActive\">\n      <div>\n        <span>Invoices</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':invoices.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/supplier'\" [routerLinkActive]=\"'btnNavActive'\" (click)=\"collapseDropdown()\"\n         #supplier=\"routerLinkActive\">\n      <div>\n        <span>Suppliers</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':supplier.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <!--&lt;!&ndash;<div *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]\">&ndash;&gt;-->\n    <!--&lt;!&ndash;<div [routerLinkActive]=\"'btnNavActive'\">&ndash;&gt;-->\n    <!--&lt;!&ndash;Invoices&ndash;&gt;-->\n    <!--&lt;!&ndash;<div>&ndash;&gt;-->\n    <!--&lt;!&ndash;<i class=\"fas fa-caret-right\"></i>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  </div>\n\n</div>\n";
+    __webpack_exports__["default"] = "<div style=\"padding: 0px\" id=\"navBar\">\n  <div style=\"position: absolute;top: 10px;font-size: 25px;color: rgb(155,154,153);left: 186px\"\n       (click)=\"toggleNavbarOff()\"\n       *ngIf=\"isMobile()\">\n    <i class=\"fas fa-caret-left\"></i><i class=\"fas fa-caret-left\"></i>\n    <!--<i class=\"fas fa-times\"></i>-->\n  </div>\n\n  <div class=\"avatar\">\n    <div></div>\n    <div class=\"btnConfig\">\n      <div style=\"position: absolute;top: 40px;left: 18px;font-size: 40px;color: black\">\n        <i class=\"fas fa-cog\" style=\"cursor: pointer\"></i>\n        <i class=\"fas fa-power-off\" style=\"margin-left: 20px;cursor: pointer\"></i>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"font-size: 18px;text-align: center;margin-top: 20px;font-weight: bold;margin-bottom: 30px\">\n    Danley Richardson\n  </div>\n\n  <div class=\"btnNav\" style=\"padding: 0px;margin-bottom: 80px\">\n\n    <div [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #dashboard=\"routerLinkActive\">\n      <div>\n        <span>Dashboard</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':dashboard.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[0])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[0].toggleDropdown?'bold':'normal','color':toggleDropdownVar[0].toggleDropdown?'black':''}\">\n        <span>Purchase Order</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[0].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[0].toggleDropdown\">\n        <div [routerLink]=\"'/content/purchase_order/add'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #addorder=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add Order</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addorder.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/purchase_order/list'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #vieworders=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View Orders</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':vieworders.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/inventory'\"\n         [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #inventory=\"routerLinkActive\">\n      <div>\n        <span>Inventory</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':inventory.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[1])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[1].toggleDropdown?'bold':'normal','color':toggleDropdownVar[1].toggleDropdown?'black':''}\">\n        <span>Goods Received Note</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[1].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[1].toggleDropdown\">\n        <div [routerLink]=\"'/content/grn/add'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #addgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/grn/list'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #viewgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':viewgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #invoices=\"routerLinkActive\">\n      <div>\n        <span>Invoices</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':invoices.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/supplier'\"\n         [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #supplier=\"routerLinkActive\">\n      <div>\n        <span>Suppliers</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':supplier.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <!--&lt;!&ndash;<div *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]\">&ndash;&gt;-->\n    <!--&lt;!&ndash;<div [routerLinkActive]=\"'btnNavActive'\">&ndash;&gt;-->\n    <!--&lt;!&ndash;Invoices&ndash;&gt;-->\n    <!--&lt;!&ndash;<div>&ndash;&gt;-->\n    <!--&lt;!&ndash;<i class=\"fas fa-caret-right\"></i>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  </div>\n\n</div>\n";
     /***/
   },
 
@@ -1488,17 +1508,153 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    /*! ./autocomplete-box/autocomplete-box.component */
+    "./src/app/autocomplete-box/autocomplete-box.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_11__["InventoryComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_12__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_13__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_14__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_15__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_16__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_17__["GrnViewComponent"], _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_19__["AlertBoxComponent"], _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__["SupplierComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_11__["InventoryComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_12__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_13__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_14__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_15__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_16__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_17__["GrnViewComponent"], _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_19__["AlertBoxComponent"], _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__["SupplierComponent"], _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__["AutocompleteBoxComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"]],
       providers: [_angular_common__WEBPACK_IMPORTED_MODULE_18__["DatePipe"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })], AppModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/autocomplete-box/autocomplete-box.component.css":
+  /*!*****************************************************************!*\
+    !*** ./src/app/autocomplete-box/autocomplete-box.component.css ***!
+    \*****************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppAutocompleteBoxAutocompleteBoxComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".autoCompleteB {\r\n  position: relative\r\n}\r\n\r\n.autoCompleteB > div {\r\n  position: absolute;\r\n  border: 1px solid #c4c4c4;\r\n  width: 100%;\r\n  margin-top: -1px;\r\n  background-color: white;\r\n}\r\n\r\n.autoCompleteB > div > div {\r\n  padding: 3px 5px 3px 5px;\r\n}\r\n\r\n.autoCompleteB > input {\r\n  padding: 3px 5px 3px 5px;\r\n}\r\n\r\n.autoCompleteB > div > div > span {\r\n  /*padding-left: 13px;*/\r\n  /*padding-right: 13px;*/\r\n}\r\n\r\n.autoCompleteB > div > div:not(:last-child) {\r\n  border-bottom: 1px solid #c4c4c4;\r\n}\r\n\r\ninput:focus {\r\n  outline: 0;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0b2NvbXBsZXRlLWJveC9hdXRvY29tcGxldGUtYm94LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtBQUNGOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtBQUN6Qjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0Qix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxVQUFVO0FBQ1oiLCJmaWxlIjoic3JjL2FwcC9hdXRvY29tcGxldGUtYm94L2F1dG9jb21wbGV0ZS1ib3guY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRvQ29tcGxldGVCIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmVcclxufVxyXG5cclxuLmF1dG9Db21wbGV0ZUIgPiBkaXYge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjYzRjNGM0O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1hcmdpbi10b3A6IC0xcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi5hdXRvQ29tcGxldGVCID4gZGl2ID4gZGl2IHtcclxuICBwYWRkaW5nOiAzcHggNXB4IDNweCA1cHg7XHJcbn1cclxuXHJcbi5hdXRvQ29tcGxldGVCID4gaW5wdXQge1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDVweDtcclxufVxyXG5cclxuLmF1dG9Db21wbGV0ZUIgPiBkaXYgPiBkaXYgPiBzcGFuIHtcclxuICAvKnBhZGRpbmctbGVmdDogMTNweDsqL1xyXG4gIC8qcGFkZGluZy1yaWdodDogMTNweDsqL1xyXG59XHJcblxyXG4uYXV0b0NvbXBsZXRlQiA+IGRpdiA+IGRpdjpub3QoOmxhc3QtY2hpbGQpIHtcclxuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2M0YzRjNDtcclxufVxyXG5cclxuaW5wdXQ6Zm9jdXMge1xyXG4gIG91dGxpbmU6IDA7XHJcbn1cclxuIl19 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/autocomplete-box/autocomplete-box.component.ts":
+  /*!****************************************************************!*\
+    !*** ./src/app/autocomplete-box/autocomplete-box.component.ts ***!
+    \****************************************************************/
+
+  /*! exports provided: AutocompleteBoxComponent */
+
+  /***/
+  function srcAppAutocompleteBoxAutocompleteBoxComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AutocompleteBoxComponent", function () {
+      return AutocompleteBoxComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var AutocompleteBoxComponent = /*#__PURE__*/function () {
+      function AutocompleteBoxComponent() {
+        _classCallCheck(this, AutocompleteBoxComponent);
+
+        this.items = [{
+          id: 123
+        }, {
+          id: 1234
+        }, {
+          id: 456
+        }, {
+          id: 789
+        }, {
+          id: 'E-008 EMERCHEMIE NB CEYLON LTD.'
+        }, {
+          id: 'E-009 EMERCHEMIE NC CEYLON LTD.'
+        }, {
+          id: 'E-009 emerchemiie NC CEYLON LTD.'
+        }];
+        this.filteredItems = new Set();
+      }
+
+      _createClass(AutocompleteBoxComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.inputText = this.clsForm.value;
+        }
+      }, {
+        key: "suggestTexts",
+        value: function suggestTexts() {
+          console.log('^(' + this.inputText + '|' + this.inputText.toLowerCase() + '|' + this.inputText.toUpperCase() + ')');
+          var pattern = new RegExp('^(' + this.inputText + '|' + this.inputText.toLowerCase() + '|' + this.inputText.toUpperCase() + ')');
+          this.filteredItems = new Set();
+
+          if (this.inputText !== '') {
+            var _iterator = _createForOfIteratorHelper(this.items),
+                _step;
+
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var item = _step.value;
+
+                if (pattern.test(item.id.toString())) {
+                  this.filteredItems.add(item.id);
+                }
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+          } // console.log(this.filteredItems)
+
+        }
+      }, {
+        key: "selectText",
+        value: function selectText(item) {
+          this.filteredItems.clear();
+          this.inputText = item;
+        }
+      }]);
+
+      return AutocompleteBoxComponent;
+    }();
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], AutocompleteBoxComponent.prototype, "clsForm", void 0);
+    AutocompleteBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-autocomplete-box',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./autocomplete-box.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-box/autocomplete-box.component.html"))["default"],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./autocomplete-box.component.css */
+      "./src/app/autocomplete-box/autocomplete-box.component.css"))["default"]]
+    })], AutocompleteBoxComponent);
     /***/
   },
 
@@ -1562,12 +1718,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             years.add(this.datePipe.transform(curDate, 'yyyy'));
           }
 
-          var _iterator = _createForOfIteratorHelper(years),
-              _step;
+          var _iterator2 = _createForOfIteratorHelper(years),
+              _step2;
 
           try {
-            for (_iterator.s(); !(_step = _iterator.n()).done;) {
-              var year = _step.value;
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+              var year = _step2.value;
               var months = new Set();
 
               for (var _i = 0; _i < infoList.length; _i++) {
@@ -1578,12 +1734,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
               var informationOfMonth = [];
 
-              var _iterator2 = _createForOfIteratorHelper(months),
-                  _step2;
+              var _iterator3 = _createForOfIteratorHelper(months),
+                  _step3;
 
               try {
-                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                  var month = _step2.value;
+                for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                  var month = _step3.value;
                   var days = new Set();
 
                   for (var _i2 = 0; _i2 < infoList.length; _i2++) {
@@ -1594,12 +1750,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
                   var informationOfDay = [];
 
-                  var _iterator3 = _createForOfIteratorHelper(days),
-                      _step3;
+                  var _iterator4 = _createForOfIteratorHelper(days),
+                      _step4;
 
                   try {
-                    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-                      var day = _step3.value;
+                    for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                      var day = _step4.value;
                       var info = [];
 
                       for (var _i3 = 0; _i3 < infoList.length; _i3++) {
@@ -1618,9 +1774,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       });
                     }
                   } catch (err) {
-                    _iterator3.e(err);
+                    _iterator4.e(err);
                   } finally {
-                    _iterator3.f();
+                    _iterator4.f();
                   }
 
                   informationOfMonth.push({
@@ -1637,9 +1793,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 // }
 
               } catch (err) {
-                _iterator2.e(err);
+                _iterator3.e(err);
               } finally {
-                _iterator2.f();
+                _iterator3.f();
               }
 
               information.push({
@@ -1649,9 +1805,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               });
             }
           } catch (err) {
-            _iterator.e(err);
+            _iterator2.e(err);
           } finally {
-            _iterator.f();
+            _iterator2.f();
           }
 
           information[0].expandYear = true;
@@ -2202,12 +2358,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.grnAddService.orders !== undefined) {
             this.items = this.grnAddService.orders;
 
-            var _iterator4 = _createForOfIteratorHelper(this.items),
-                _step4;
+            var _iterator5 = _createForOfIteratorHelper(this.items),
+                _step5;
 
             try {
-              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-                var item = _step4.value;
+              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+                var item = _step5.value;
                 item.ps = 0;
                 item.ws = 0.00.toFixed(2);
                 item.free = 0.00.toFixed(2);
@@ -2216,9 +2372,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 item.amount = 0.00.toFixed(2);
               }
             } catch (err) {
-              _iterator4.e(err);
+              _iterator5.e(err);
             } finally {
-              _iterator4.f();
+              _iterator5.f();
             }
 
             this.fromPO = true;
@@ -2486,18 +2642,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (grnsOfYear.expandYear) {
             grnsOfYear.expandYear = false;
 
-            var _iterator5 = _createForOfIteratorHelper(grnsOfYear.informationOfMonth),
-                _step5;
+            var _iterator6 = _createForOfIteratorHelper(grnsOfYear.informationOfMonth),
+                _step6;
 
             try {
-              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-                var grnOfMonth = _step5.value;
+              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+                var grnOfMonth = _step6.value;
                 grnOfMonth.expandMonth = false;
               }
             } catch (err) {
-              _iterator5.e(err);
+              _iterator6.e(err);
             } finally {
-              _iterator5.f();
+              _iterator6.f();
             }
           } else {
             grnsOfYear.expandYear = true;
@@ -2509,18 +2665,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (grnsOfMonth.expandMonth) {
             grnsOfMonth.expandMonth = false;
 
-            var _iterator6 = _createForOfIteratorHelper(grnsOfMonth.informationOfDay),
-                _step6;
+            var _iterator7 = _createForOfIteratorHelper(grnsOfMonth.informationOfDay),
+                _step7;
 
             try {
-              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-                var grnOfDay = _step6.value;
+              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+                var grnOfDay = _step7.value;
                 grnOfDay.expandDay = false;
               }
             } catch (err) {
-              _iterator6.e(err);
+              _iterator7.e(err);
             } finally {
-              _iterator6.f();
+              _iterator7.f();
             }
           } else {
             grnsOfMonth.expandMonth = true;
@@ -2532,18 +2688,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (grn.expandDay) {
             grn.expandDay = false;
 
-            var _iterator7 = _createForOfIteratorHelper(grn.info),
-                _step7;
+            var _iterator8 = _createForOfIteratorHelper(grn.info),
+                _step8;
 
             try {
-              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-                var grnInfo = _step7.value;
+              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+                var grnInfo = _step8.value;
                 grnInfo.expandOrder = false;
               }
             } catch (err) {
-              _iterator7.e(err);
+              _iterator8.e(err);
             } finally {
-              _iterator7.f();
+              _iterator8.f();
             }
           } else {
             grn.expandDay = true;
@@ -2753,7 +2909,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".orderNode {\r\n  padding: 0px 11px 0px 11px;\r\n  /*width: 100%;*/\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n.orderTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.orderTop > div > div > div:first-child {\r\n  float: left;\r\n  font-weight: bold;\r\n}\r\n\r\n.orderTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\ntd > input {\r\n  border: none;\r\n  width: 100%;\r\n}\r\n\r\ntd > input:focus {\r\n  outline: 0;\r\n}\r\n\r\n/*.orderNode {*/\r\n\r\n/*padding: 0px 10px 0px 10px;*/\r\n\r\n/*width: 100%;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*padding: 0px 0px 5px 0px;*/\r\n\r\n/*font-size: 18px;*/\r\n\r\n/*border-bottom: 4px solid rgba(0, 122, 169, 0.3);*/\r\n\r\n/*margin: 0px 0px 25px 0px;*/\r\n\r\n/*color: rgba(0, 122, 169, 0.4);*/\r\n\r\n/*font-weight: bold;*/\r\n\r\n/*cursor: pointer;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode :focus {*/\r\n\r\n/*outline: 0;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span {*/\r\n\r\n/*margin-left: 10px;*/\r\n\r\n/*padding: 0px 5px 7px 5px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span:first-child {*/\r\n\r\n/*margin-left: 0px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabSelected {*/\r\n\r\n/*color: #007aa9;*/\r\n\r\n/*border-bottom: 4px solid #007aa9;*/\r\n\r\n/*padding-bottom: 7px;*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 796px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 16px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 636px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 15px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 466px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 396px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxVQUFVO0FBQ1o7O0FBR0EsZUFBZTs7QUFDYiw4QkFBOEI7O0FBQzlCLGVBQWU7O0FBQ2pCLElBQUk7O0FBRUosWUFBWTs7QUFDViw0QkFBNEI7O0FBQzVCLG1CQUFtQjs7QUFDbkIsbURBQW1EOztBQUNuRCw0QkFBNEI7O0FBQzVCLGlDQUFpQzs7QUFDakMscUJBQXFCOztBQUNyQixtQkFBbUI7O0FBQ3JCLElBQUk7O0FBRUosb0JBQW9COztBQUNsQixjQUFjOztBQUNoQixJQUFJOztBQUVKLG9CQUFvQjs7QUFDbEIscUJBQXFCOztBQUNyQiw0QkFBNEI7O0FBQzlCLElBQUk7O0FBRUosZ0NBQWdDOztBQUM5QixvQkFBb0I7O0FBQ3RCLElBQUk7O0FBRUosaUJBQWlCOztBQUNmLGtCQUFrQjs7QUFDbEIsb0NBQW9DOztBQUNwQyx1QkFBdUI7O0FBQ3pCLElBQUk7O0FBRUoseUNBQXlDOztBQUN2QyxZQUFZOztBQUNWLDhCQUE4Qjs7QUFDaEMsSUFBSTs7QUFDTixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDdkMsWUFBWTs7QUFDViw4QkFBOEI7O0FBQ2hDLElBQUk7O0FBQ04sSUFBSTs7QUFFSix5Q0FBeUM7O0FBQ3ZDLFlBQVk7O0FBQ1YsOEJBQThCOztBQUNoQyxJQUFJOztBQUNOLElBQUk7O0FBRUoseUNBQXlDOztBQUN2QyxZQUFZOztBQUNWLDhCQUE4Qjs7QUFDaEMsSUFBSTs7QUFDTixJQUFJIiwiZmlsZSI6InNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIub3JkZXJOb2RlIHtcclxuICBwYWRkaW5nOiAwcHggMTFweCAwcHggMTFweDtcclxuICAvKndpZHRoOiAxMDAlOyovXHJcbiAgLypmb250LXNpemU6IDE0cHg7Ki9cclxufVxyXG5cclxuLm9yZGVyVG9wIHtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbn1cclxuXHJcbi5vcmRlclRvcCA+IGRpdiA+IGRpdiA+IGRpdjpmaXJzdC1jaGlsZCB7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuXHJcbi5vcmRlclRvcCA+IGRpdiA+IGRpdiA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gIG1hcmdpbi1sZWZ0OiA5MHB4XHJcbn1cclxuXHJcbnRkID4gaW5wdXQge1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxudGQgPiBpbnB1dDpmb2N1cyB7XHJcbiAgb3V0bGluZTogMDtcclxufVxyXG5cclxuXHJcbi8qLm9yZGVyTm9kZSB7Ki9cclxuICAvKnBhZGRpbmc6IDBweCAxMHB4IDBweCAxMHB4OyovXHJcbiAgLyp3aWR0aDogMTAwJTsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZXsqL1xyXG4gIC8qcGFkZGluZzogMHB4IDBweCA1cHggMHB4OyovXHJcbiAgLypmb250LXNpemU6IDE4cHg7Ki9cclxuICAvKmJvcmRlci1ib3R0b206IDRweCBzb2xpZCByZ2JhKDAsIDEyMiwgMTY5LCAwLjMpOyovXHJcbiAgLyptYXJnaW46IDBweCAwcHggMjVweCAwcHg7Ki9cclxuICAvKmNvbG9yOiByZ2JhKDAsIDEyMiwgMTY5LCAwLjQpOyovXHJcbiAgLypmb250LXdlaWdodDogYm9sZDsqL1xyXG4gIC8qY3Vyc29yOiBwb2ludGVyOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RlIDpmb2N1cyB7Ki9cclxuICAvKm91dGxpbmU6IDA7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLnRhYk5vZGUgPiBzcGFuIHsqL1xyXG4gIC8qbWFyZ2luLWxlZnQ6IDEwcHg7Ki9cclxuICAvKnBhZGRpbmc6IDBweCA1cHggN3B4IDVweDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA+IHNwYW46Zmlyc3QtY2hpbGQgeyovXHJcbiAgLyptYXJnaW4tbGVmdDogMHB4OyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJTZWxlY3RlZCB7Ki9cclxuICAvKmNvbG9yOiAjMDA3YWE5OyovXHJcbiAgLypib3JkZXItYm90dG9tOiA0cHggc29saWQgIzAwN2FhOTsqL1xyXG4gIC8qcGFkZGluZy1ib3R0b206IDdweDsqL1xyXG4vKn0qL1xyXG5cclxuLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3OTZweCkgeyovXHJcbiAgLyoudGFiTm9kZXsqL1xyXG4gICAgLypmb250LXNpemU6IDE2cHggIWltcG9ydGFudDsqL1xyXG4gIC8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYzNnB4KSB7Ki9cclxuICAvKi50YWJOb2RleyovXHJcbiAgICAvKmZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50OyovXHJcbiAgLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNDY2cHgpIHsqL1xyXG4gIC8qLnRhYk5vZGV7Ki9cclxuICAgIC8qZm9udC1zaXplOiAxNHB4ICFpbXBvcnRhbnQ7Ki9cclxuICAvKn0qL1xyXG4vKn0qL1xyXG5cclxuLypAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzOTZweCkgeyovXHJcbiAgLyoudGFiTm9kZXsqL1xyXG4gICAgLypmb250LXNpemU6IDE0cHggIWltcG9ydGFudDsqL1xyXG4gIC8qfSovXHJcbi8qfSovXHJcbiJdfQ== */";
+    __webpack_exports__["default"] = ".orderNode {\r\n  padding: 0px 11px 0px 11px;\r\n  /*width: 100%;*/\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n.orderTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.orderTop > div > div > div:first-child {\r\n  float: left;\r\n  font-weight: bold;\r\n}\r\n\r\n.orderTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\n::ng-deep app-autocomplete-box >div > div > div{\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n::ng-deep app-autocomplete-box >div>input {\r\n  border: none;\r\n  font-weight: bold;\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n/*#vendorVar>div {*/\r\n\r\n/*border: none;*/\r\n\r\n/*font-weight: bold !important;*/\r\n\r\n/*background-color: #3e8039 !important;*/\r\n\r\n/*}*/\r\n\r\n/*.orderNode {*/\r\n\r\n/*padding: 0px 10px 0px 10px;*/\r\n\r\n/*width: 100%;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*padding: 0px 0px 5px 0px;*/\r\n\r\n/*font-size: 18px;*/\r\n\r\n/*border-bottom: 4px solid rgba(0, 122, 169, 0.3);*/\r\n\r\n/*margin: 0px 0px 25px 0px;*/\r\n\r\n/*color: rgba(0, 122, 169, 0.4);*/\r\n\r\n/*font-weight: bold;*/\r\n\r\n/*cursor: pointer;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode :focus {*/\r\n\r\n/*outline: 0;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span {*/\r\n\r\n/*margin-left: 10px;*/\r\n\r\n/*padding: 0px 5px 7px 5px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span:first-child {*/\r\n\r\n/*margin-left: 0px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabSelected {*/\r\n\r\n/*color: #007aa9;*/\r\n\r\n/*border-bottom: 4px solid #007aa9;*/\r\n\r\n/*padding-bottom: 7px;*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 796px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 16px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 636px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 15px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 466px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 396px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsd0JBQXdCO0FBQzFCOztBQUVBLG1CQUFtQjs7QUFDbkIsZ0JBQWdCOztBQUNoQixnQ0FBZ0M7O0FBQ2hDLHdDQUF3Qzs7QUFDeEMsSUFBSTs7QUFFSixlQUFlOztBQUNmLDhCQUE4Qjs7QUFDOUIsZUFBZTs7QUFDZixJQUFJOztBQUVKLFlBQVk7O0FBQ1osNEJBQTRCOztBQUM1QixtQkFBbUI7O0FBQ25CLG1EQUFtRDs7QUFDbkQsNEJBQTRCOztBQUM1QixpQ0FBaUM7O0FBQ2pDLHFCQUFxQjs7QUFDckIsbUJBQW1COztBQUNuQixJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIsY0FBYzs7QUFDZCxJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIscUJBQXFCOztBQUNyQiw0QkFBNEI7O0FBQzVCLElBQUk7O0FBRUosZ0NBQWdDOztBQUNoQyxvQkFBb0I7O0FBQ3BCLElBQUk7O0FBRUosaUJBQWlCOztBQUNqQixrQkFBa0I7O0FBQ2xCLG9DQUFvQzs7QUFDcEMsdUJBQXVCOztBQUN2QixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSTs7QUFFSix5Q0FBeUM7O0FBQ3pDLFlBQVk7O0FBQ1osOEJBQThCOztBQUM5QixJQUFJOztBQUNKLElBQUk7O0FBRUoseUNBQXlDOztBQUN6QyxZQUFZOztBQUNaLDhCQUE4Qjs7QUFDOUIsSUFBSTs7QUFDSixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSSIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvcHVyY2hhc2Utb3JkZXIvb3JkZXItYWRkL29yZGVyLWFkZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9yZGVyTm9kZSB7XHJcbiAgcGFkZGluZzogMHB4IDExcHggMHB4IDExcHg7XHJcbiAgLyp3aWR0aDogMTAwJTsqL1xyXG4gIC8qZm9udC1zaXplOiAxNHB4OyovXHJcbn1cclxuXHJcbi5vcmRlclRvcCB7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBtYXJnaW4tbGVmdDogOTBweFxyXG59XHJcblxyXG46Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPmRpdiA+IGRpdiA+IGRpdntcclxuICBwYWRkaW5nOiAzcHggNXB4IDNweCA0cHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcCBhcHAtYXV0b2NvbXBsZXRlLWJveCA+ZGl2PmlucHV0IHtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgcGFkZGluZzogM3B4IDVweCAzcHggNHB4O1xyXG59XHJcblxyXG4vKiN2ZW5kb3JWYXI+ZGl2IHsqL1xyXG4vKmJvcmRlcjogbm9uZTsqL1xyXG4vKmZvbnQtd2VpZ2h0OiBib2xkICFpbXBvcnRhbnQ7Ki9cclxuLypiYWNrZ3JvdW5kLWNvbG9yOiAjM2U4MDM5ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLm9yZGVyTm9kZSB7Ki9cclxuLypwYWRkaW5nOiAwcHggMTBweCAwcHggMTBweDsqL1xyXG4vKndpZHRoOiAxMDAlOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RleyovXHJcbi8qcGFkZGluZzogMHB4IDBweCA1cHggMHB4OyovXHJcbi8qZm9udC1zaXplOiAxOHB4OyovXHJcbi8qYm9yZGVyLWJvdHRvbTogNHB4IHNvbGlkIHJnYmEoMCwgMTIyLCAxNjksIDAuMyk7Ki9cclxuLyptYXJnaW46IDBweCAwcHggMjVweCAwcHg7Ki9cclxuLypjb2xvcjogcmdiYSgwLCAxMjIsIDE2OSwgMC40KTsqL1xyXG4vKmZvbnQtd2VpZ2h0OiBib2xkOyovXHJcbi8qY3Vyc29yOiBwb2ludGVyOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RlIDpmb2N1cyB7Ki9cclxuLypvdXRsaW5lOiAwOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RlID4gc3BhbiB7Ki9cclxuLyptYXJnaW4tbGVmdDogMTBweDsqL1xyXG4vKnBhZGRpbmc6IDBweCA1cHggN3B4IDVweDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA+IHNwYW46Zmlyc3QtY2hpbGQgeyovXHJcbi8qbWFyZ2luLWxlZnQ6IDBweDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiU2VsZWN0ZWQgeyovXHJcbi8qY29sb3I6ICMwMDdhYTk7Ki9cclxuLypib3JkZXItYm90dG9tOiA0cHggc29saWQgIzAwN2FhOTsqL1xyXG4vKnBhZGRpbmctYm90dG9tOiA3cHg7Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNnB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjM2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNXB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNDY2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNHB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNHB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuIl19 */";
     /***/
   },
 
@@ -3141,18 +3297,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (ordersOfYear.expandYear) {
             ordersOfYear.expandYear = false;
 
-            var _iterator8 = _createForOfIteratorHelper(ordersOfYear.informationOfMonth),
-                _step8;
+            var _iterator9 = _createForOfIteratorHelper(ordersOfYear.informationOfMonth),
+                _step9;
 
             try {
-              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-                var orderOfMonth = _step8.value;
+              for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+                var orderOfMonth = _step9.value;
                 orderOfMonth.expandMonth = false;
               }
             } catch (err) {
-              _iterator8.e(err);
+              _iterator9.e(err);
             } finally {
-              _iterator8.f();
+              _iterator9.f();
             }
           } else {
             ordersOfYear.expandYear = true;
@@ -3164,18 +3320,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (ordersOfMonth.expandMonth) {
             ordersOfMonth.expandMonth = false;
 
-            var _iterator9 = _createForOfIteratorHelper(ordersOfMonth.informationOfDay),
-                _step9;
+            var _iterator10 = _createForOfIteratorHelper(ordersOfMonth.informationOfDay),
+                _step10;
 
             try {
-              for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-                var orderOfDay = _step9.value;
+              for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+                var orderOfDay = _step10.value;
                 orderOfDay.expandDay = false;
               }
             } catch (err) {
-              _iterator9.e(err);
+              _iterator10.e(err);
             } finally {
-              _iterator9.f();
+              _iterator10.f();
             }
           } else {
             ordersOfMonth.expandMonth = true;
@@ -3187,18 +3343,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (order.expandDay) {
             order.expandDay = false;
 
-            var _iterator10 = _createForOfIteratorHelper(order.info),
-                _step10;
+            var _iterator11 = _createForOfIteratorHelper(order.info),
+                _step11;
 
             try {
-              for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-                var orderInfo = _step10.value;
+              for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
+                var orderInfo = _step11.value;
                 orderInfo.expandOrder = false;
               }
             } catch (err) {
-              _iterator10.e(err);
+              _iterator11.e(err);
             } finally {
-              _iterator10.f();
+              _iterator11.f();
             }
           } else {
             order.expandDay = true;
@@ -3253,7 +3409,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".supplierNode {\r\n  padding: 0px 4px 0px 4px;\r\n  width: 100%;\r\n  /*font-size: 14px;*/\r\n}\r\n\r\ntd > input {\r\n  border: none;\r\n  width: 100%;\r\n}\r\n\r\ntd > input:focus {\r\n  outline: 0;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0VBQ3hCLFdBQVc7RUFDWCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osV0FBVztBQUNiOztBQUVBO0VBQ0UsVUFBVTtBQUNaIiwiZmlsZSI6InNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnN1cHBsaWVyTm9kZSB7XHJcbiAgcGFkZGluZzogMHB4IDRweCAwcHggNHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIC8qZm9udC1zaXplOiAxNHB4OyovXHJcbn1cclxuXHJcbnRkID4gaW5wdXQge1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxudGQgPiBpbnB1dDpmb2N1cyB7XHJcbiAgb3V0bGluZTogMDtcclxufVxyXG4iXX0= */";
+    __webpack_exports__["default"] = ".supplierNode {\r\n  padding: 0px 4px 0px 4px;\r\n  width: 100%;\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0VBQ3hCLFdBQVc7RUFDWCxtQkFBbUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL3N1cHBsaWVyL3N1cHBsaWVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3VwcGxpZXJOb2RlIHtcclxuICBwYWRkaW5nOiAwcHggNHB4IDBweCA0cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgLypmb250LXNpemU6IDE0cHg7Ki9cclxufVxyXG4iXX0= */";
     /***/
   },
 
@@ -3618,18 +3774,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           toggleDropdown: false
         }];
         navBarService.navSelect.subscribe(function (nav) {
-          var _iterator11 = _createForOfIteratorHelper(_this5.toggleDropdownVar),
-              _step11;
+          var _iterator12 = _createForOfIteratorHelper(_this5.toggleDropdownVar),
+              _step12;
 
           try {
-            for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
-              var toggleDd = _step11.value;
+            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
+              var toggleDd = _step12.value;
               toggleDd.toggleDropdown = false;
             }
           } catch (err) {
-            _iterator11.e(err);
+            _iterator12.e(err);
           } finally {
-            _iterator11.f();
+            _iterator12.f();
           }
 
           _this5.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
@@ -3640,8 +3796,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "ngOnInit",
         value: function ngOnInit() {}
       }, {
-        key: "toggleNavbar",
-        value: function toggleNavbar() {
+        key: "toggleNavbarOff",
+        value: function toggleNavbarOff(val) {
+          if (val === 1) {
+            this.collapseDropdown();
+          }
+
           this.toggleNav.next(false);
         }
       }, {
@@ -3662,21 +3822,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "collapseDropdown",
         value: function collapseDropdown() {
-          var _iterator12 = _createForOfIteratorHelper(this.toggleDropdownVar),
-              _step12;
+          var _iterator13 = _createForOfIteratorHelper(this.toggleDropdownVar),
+              _step13;
 
           try {
-            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
-              var toggleDd = _step12.value;
+            for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
+              var toggleDd = _step13.value;
               toggleDd.toggleDropdown = false;
             }
           } catch (err) {
-            _iterator12.e(err);
+            _iterator13.e(err);
           } finally {
-            _iterator12.f();
+            _iterator13.f();
           }
-
-          this.toggleNavbar();
         }
       }]);
 
