@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts()\" [(ngModel)]=\"inputText\" style=\"width: 100%\"\n         placeholder=\"{{clsForm.placeholder}}\">\n  <div *ngIf=\"filteredItems.size !== 0\">\n    <div *ngFor=\"let item of filteredItems\" (click)=\"selectText(item)\">\n      <span>{{item.id.toString().substring(0, item.startIndex)}}</span>\n      <span style=\"font-weight: bold\">{{item.id.toString().substring(item.startIndex,item.endIndex)}}</span>\n      <span>{{item.id.toString().substring(item.endIndex,item.length)}}</span>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--<div *ngIf=\"clsForm.isFrm && ((fieldId.touched || clsForm.frm.submitted) && fieldId.errors?.required)\"-->\n     <!--style=\"margin-left: 5px;color: #d41306;font-size: 11px\">-->\n  <!--Name is required-->\n<!--</div>-->\n<!--<div *ngIf=\"(id.dirty) && id.errors?.emailOrNicInvalid\"-->\n     <!--style=\"margin-left: 2px;color: #d41306;font-size: 11px\">-->\n  <!--Invalid Email-->\n<!--</div>-->\n<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts()\" [(ngModel)]=\"inputText\" style=\"width: 100%\" autocomplete=\"off\"\n         placeholder=\"{{clsForm.placeholder}}\" name=\"fieldId\" required #fieldId=\"ngModel\">\n  <div *ngIf=\"filteredItems.size !== 0\">\n    <div *ngFor=\"let item of filteredItems\" (click)=\"selectText(item)\">\n      <span>{{item.id.toString().substring(0, item.startIndex)}}</span>\n      <span style=\"font-weight: bold\">{{item.id.toString().substring(item.startIndex,item.endIndex)}}</span>\n      <span>{{item.id.toString().substring(item.endIndex,item.length)}}</span>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div style=\"height: 25px;\">\n        <div style=\"margin-top: 2px\">Vendor</div>\n        <div style=\"position: relative\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;</div>\n          <app-autocomplete-box style=\"float: left;width: 100%;position: absolute\"\n            [clsForm]=\"{placeholder:'Name',value:'E-008 EMERCHEMIE NB CEYLON LTD.'}\"></app-autocomplete-box>\n        </div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 4px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"4%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.pack\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.qty\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div style=\"height: 25px;\">\n        <div style=\"margin-top: 2px\">Vendor</div>\n        <div style=\"position: relative\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;</div>\n          <app-autocomplete-box\n            style=\"float: left;width: 100%;position: absolute\"\n            [clsForm]=\"{placeholder:'Name',isFrm:false}\"\n            [(inputText)]=\"item.desc\"\n          ></app-autocomplete-box>\n        </div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 4px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"4%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.pack\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.qty\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <table>\n        <thead>\n        <tr>\n          <td width=\"5%\">#</td>\n          <td>Name</td>\n          <td width=\"15%\">Email</td>\n          <td width=\"15%\">Address</td>\n          <td width=\"10%\">Contact Number</td>\n          <td width=\"10%\">Fax Number</td>\n          <td width=\"4%\"></td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let supplier of suppliers,let i = index\">\n          <td>{{suppliers.length - i}}</td>\n          <td [ngStyle]=\"{'padding':supplier.newRow?'3px 0px 1px 0px':'3px 4px 1px 4px'}\">\n            <app-autocomplete-box *ngIf=\"supplier.newRow\"\n                                  [clsForm]=\"{placeholder:'Name',value:''}\">\n            </app-autocomplete-box>\n            <span *ngIf=\"!supplier.newRow\">{{supplier.name}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Email\" [(ngModel)]=\"supplier.email\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.email}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Address\" [(ngModel)]=\"supplier.address\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.address}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Contact Number\" [(ngModel)]=\"supplier.cNumber\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.cNumber}}</span>\n          </td>\n          <td>\n            <input *ngIf=\"supplier.newRow\" type=\"text\" placeholder=\"Fax Number\" [(ngModel)]=\"supplier.fNumber\">\n            <span *ngIf=\"!supplier.newRow\">{{supplier.fNumber}}</span>\n          </td>\n          <td (click)=\"removeRow(i,supplier)\" *ngIf=\"!supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <!--<i (click)=\"updateRow(i,supplier)\" class=\"fas fa-keyboard\" style=\"color: #696969;font-size: 20px;padding-top: 4px;margin-right: 8px\"></i>-->\n            <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n          <td (click)=\"addRow()\" *ngIf=\"supplier.newRow\" style=\"text-align: center;cursor: pointer\">\n            <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n          </td>\n        </tr>\n        </tbody>\n      </table>\n\n    </div>\n\n  </div>\n</div>\n\n<!--<app-autocomplete-box [clsForm]=\"{border:'none',padding:'13px',placeholder:'Name'}\"></app-autocomplete-box>-->\n<!--<app-autocomplete-box [clsForm]=\"{class:'',padding:'0px'}\"></app-autocomplete-box>-->\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <form #supplierForm=\"ngForm\" (ngSubmit)=\"supplierForm.form.valid && addRow()\" novalidate>\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td>Name</td>\n            <td width=\"15%\">Email</td>\n            <td width=\"15%\">Address</td>\n            <td width=\"10%\">Contact Number</td>\n            <td width=\"10%\">Fax Number</td>\n            <td width=\"4%\"></td>\n          </tr>\n          </thead>\n\n          <tbody>\n          <tr>\n\n            <td>{{suppliers.length + 1}}</td>\n\n            <!--Name-->\n\n            <td style=\"padding: 3px 0px 1px 0px\">\n              <div\n                *ngIf=\"(name.valueAccessor['fieldId'].touched || supplierForm.submitted) && name.valueAccessor['fieldId'].errors?.required\"\n                style=\"margin-left: 5px;color: #d41306;font-size: 11px\">\n                Name is required\n              </div>\n              <app-autocomplete-box\n                [clsForm]=\"{\n                  placeholder:'Name',\n                  frm:supplierForm,\n                  isFrm:true\n                }\"\n                [(inputText)]=\"tempSupplier.name\"\n                [(ngModel)]=\"tempSupplier.name\"\n                name=\"name\" #name=\"ngModel\" required\n              >\n              </app-autocomplete-box>\n            </td>\n\n            <!--Email-->\n\n            <td>\n              <div *ngIf=\"(email.touched || supplierForm.submitted) && email.errors?.required\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Email is required\n              </div>\n              <div *ngIf=\"(email.dirty) && email.errors?.emailInvalid\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Invalid email\n              </div>\n              <input type=\"text\" placeholder=\"Email\"\n                     [(ngModel)]=\"tempSupplier.email\" #email=\"ngModel\" name=\"email\" required appEmailValidator>\n            </td>\n\n            <!--Address-->\n\n            <td>\n              <div *ngIf=\"(address.touched || supplierForm.submitted) && address.errors?.required\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Address is required\n              </div>\n              <input type=\"text\" placeholder=\"Address\"\n                     [(ngModel)]=\"tempSupplier.address\" #address=\"ngModel\" name=\"address\" required>\n            </td>\n\n            <!--Contact-->\n\n            <td>\n              <div *ngIf=\"(cNumber.touched || supplierForm.submitted) && cNumber.errors?.required\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Contact Number is required\n              </div>\n              <div *ngIf=\"(cNumber.dirty) && cNumber.errors?.telephoneInvalid\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Invalid contact Number\n              </div>\n              <input type=\"text\" placeholder=\"Contact Number\"\n                     [(ngModel)]=\"tempSupplier.cNumber\" #cNumber=\"ngModel\" name=\"cNumber\" required\n                     appTelephoneValidator>\n            </td>\n\n            <!--Fax-->\n\n            <td>\n              <div *ngIf=\"(fNumber.touched || supplierForm.submitted) && fNumber.errors?.required\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Fax Number is required\n              </div>\n              <div *ngIf=\"(fNumber.dirty) && fNumber.errors?.telephoneInvalid\"\n                   style=\"margin-left: 2px;color: #d41306;font-size: 11px\">\n                Invalid fax Number\n              </div>\n              <input type=\"text\" placeholder=\"Fax Number\"\n                     [(ngModel)]=\"tempSupplier.fNumber\" #fNumber=\"ngModel\" name=\"fNumber\" required\n                     appTelephoneValidator>\n            </td>\n\n            <td style=\"text-align: center;cursor: pointer\">\n              <button style=\"border: none;width: 100%\" type=\"submit\">\n                <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n              </button>\n            </td>\n\n          </tr>\n\n          <tr *ngFor=\"let supplier of suppliers,let i = index\">\n\n            <td style=\"padding: 3px 4px 1px 4px\">{{suppliers.length - i}}</td>\n            <td>{{supplier.name}}</td>\n            <td>{{supplier.email}}</td>\n            <td>{{supplier.address}}</td>\n            <td>{{supplier.cNumber}}</td>\n            <td>{{supplier.fNumber}}</td>\n\n            <td (click)=\"removeRow(i,supplier)\" style=\"text-align: center;cursor: pointer\">\n              <!--<i (click)=\"updateRow(i,supplier)\" class=\"fas fa-keyboard\" style=\"color: #696969;font-size: 20px;padding-top: 4px;margin-right: 8px\"></i>-->\n              <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n\n          </tr>\n          </tbody>\n        </table>\n      </form>\n\n    </div>\n  </div>\n</div>\n\n<!--<app-autocomplete-box [clsForm]=\"{border:'none',padding:'13px',placeholder:'Name'}\"></app-autocomplete-box>-->\n<!--<app-autocomplete-box [clsForm]=\"{class:'',padding:'0px'}\"></app-autocomplete-box>-->\n");
 
 /***/ }),
 
@@ -231,6 +231,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n\n<form #loginForm=\"ngForm\" (ngSubmit)=\"loginForm.form.valid && onSubmit()\" novalidate>\n\n  <div style=\"color: #007aa9;font-size: 35px;font-weight: bold\">\n    <div style=\"width: 140px;margin: 0px auto 0px auto;\">MediLab</div>\n  </div>\n  <div style=\"margin: 60px auto 0px auto\">\n    <input type=\"text\" placeholder=\"Email or NIC\"\n           [(ngModel)]=\"patient.nic\" #nic=\"ngModel\" appInputsValidator name=\"nic\" required\n           [ngStyle]=\"{'border-color':logged?'#c0ccda':'#b60f06'}\">\n    <div *ngIf=\"(nic.touched || loginForm.submitted) && nic.errors?.required\"\n         style=\"margin-left: 5px;color: #b60f06;font-size: 11px\">\n      Email or NIC is required\n    </div>\n    <div *ngIf=\"(nic.dirty) && nic.errors?.emailOrNicInvalid\"\n         style=\"margin-left: 5px;color: #b60f06;font-size: 11px\">\n      Invalid Email or NIC\n    </div>\n    <div style=\"margin-left: 5px;color: #b60f06;font-size: 11px\">\n      {{userNameMsg}}\n    </div>\n  </div>\n\n  <div style=\"margin: 15px auto 0px auto\">\n    <input type=\"password\" placeholder=\"Password\" [(ngModel)]=\"patient.password\"\n           #password=\"ngModel\" name=\"password\" required\n           [ngStyle]=\"{'border-color':logged?'#c0ccda':'#b60f06'}\">\n    <div *ngIf=\"(password.touched || loginForm.submitted) && password.errors?.required\"\n         style=\"margin-left: 5px;color: #b60f06;font-size: 11px\">\n      Password is required\n    </div>\n    <div style=\"margin-left: 5px;color: #b60f06;font-size: 11px\">\n      {{passwordMsg}}\n    </div>\n  </div>\n\n  <div style=\"margin: 5px auto auto auto;padding-right: 15px;font-size: 11px;color: #026a74;text-align: right\"\n    [ngStyle]=\"{'color': logged?'#007aa9':'#b60f06'}\">\n    Forgot Password?\n  </div>\n\n  <div style=\"margin: 40px auto auto auto;text-align: right\">\n    <button type=\"submit\" class=\"btn btn-secondary\"\n            [ngStyle]=\"{'background-color': logged?'#007aa9':'#b60f06','border-color':logged?'#007aa9':'#b60f06'}\"\n            style=\"font-weight: bold;width: 150px;background-color:#026a74\">\n      {{logged?'Sign In':'Sign In Again'}}\n    </button>\n  </div>\n</form>\n<app-footer></app-footer>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/navbar/navbar.component.html":
 /*!************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/navbar/navbar.component.html ***!
@@ -240,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"padding: 0px\" id=\"navBar\">\n  <div style=\"position: absolute;top: 10px;font-size: 25px;color: rgb(155,154,153);left: 186px\"\n       (click)=\"toggleNavbarOff()\"\n       *ngIf=\"isMobile()\">\n    <i class=\"fas fa-caret-left\"></i><i class=\"fas fa-caret-left\"></i>\n    <!--<i class=\"fas fa-times\"></i>-->\n  </div>\n\n  <div class=\"avatar\">\n    <div></div>\n    <div class=\"btnConfig\">\n      <div style=\"position: absolute;top: 40px;left: 18px;font-size: 40px;color: black\">\n        <i class=\"fas fa-cog\" style=\"cursor: pointer\"></i>\n        <i class=\"fas fa-power-off\" style=\"margin-left: 20px;cursor: pointer\"></i>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"font-size: 18px;text-align: center;margin-top: 20px;font-weight: bold;margin-bottom: 30px\">\n    Danley Richardson\n  </div>\n\n  <div class=\"btnNav\" style=\"padding: 0px;margin-bottom: 80px\">\n\n    <div [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #dashboard=\"routerLinkActive\">\n      <div>\n        <span>Dashboard</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':dashboard.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[0])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[0].toggleDropdown?'bold':'normal','color':toggleDropdownVar[0].toggleDropdown?'black':''}\">\n        <span>Purchase Order</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[0].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[0].toggleDropdown\">\n        <div [routerLink]=\"'/content/purchase_order/add'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #addorder=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add Order</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addorder.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/purchase_order/list'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #vieworders=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View Orders</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':vieworders.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/inventory'\"\n         [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #inventory=\"routerLinkActive\">\n      <div>\n        <span>Inventory</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':inventory.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[1])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[1].toggleDropdown?'bold':'normal','color':toggleDropdownVar[1].toggleDropdown?'black':''}\">\n        <span>Goods Received Note</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[1].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[1].toggleDropdown\">\n        <div [routerLink]=\"'/content/grn/add'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #addgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/grn/list'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #viewgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':viewgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #invoices=\"routerLinkActive\">\n      <div>\n        <span>Invoices</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':invoices.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/supplier'\"\n         [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #supplier=\"routerLinkActive\">\n      <div>\n        <span>Suppliers</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':supplier.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <!--&lt;!&ndash;<div *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]\">&ndash;&gt;-->\n    <!--&lt;!&ndash;<div [routerLinkActive]=\"'btnNavActive'\">&ndash;&gt;-->\n    <!--&lt;!&ndash;Invoices&ndash;&gt;-->\n    <!--&lt;!&ndash;<div>&ndash;&gt;-->\n    <!--&lt;!&ndash;<i class=\"fas fa-caret-right\"></i>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"padding: 0px\" id=\"navBar\">\n  <div style=\"position: absolute;top: 10px;font-size: 25px;color: rgb(155,154,153);left: 186px\"\n       (click)=\"toggleNavbarOff()\"\n       *ngIf=\"isMobile()\">\n    <i class=\"fas fa-caret-left\"></i><i class=\"fas fa-caret-left\"></i>\n    <!--<i class=\"fas fa-times\"></i>-->\n  </div>\n\n  <div class=\"avatar\">\n    <div></div>\n    <div class=\"btnConfig\">\n      <div style=\"position: absolute;top: 40px;left: 18px;font-size: 40px;color: black\">\n        <i class=\"fas fa-cog\" style=\"cursor: pointer\"></i>\n        <i class=\"fas fa-power-off\" style=\"margin-left: 20px;cursor: pointer\" [routerLink]=\"'/login'\"></i>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"font-size: 18px;text-align: center;margin-top: 20px;font-weight: bold;margin-bottom: 30px\">\n    Danley Richardson\n  </div>\n\n  <div class=\"btnNav\" style=\"padding: 0px;margin-bottom: 80px\">\n\n    <div [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #dashboard=\"routerLinkActive\">\n      <div>\n        <span>Dashboard</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':dashboard.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[0])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[0].toggleDropdown?'bold':'normal','color':toggleDropdownVar[0].toggleDropdown?'black':''}\">\n        <span>Purchase Order</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[0].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[0].toggleDropdown\">\n        <div [routerLink]=\"'/content/purchase_order/add'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #addorder=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add Order</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addorder.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/purchase_order/list'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #vieworders=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View Orders</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':vieworders.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/inventory'\"\n         [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #inventory=\"routerLinkActive\">\n      <div>\n        <span>Inventory</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':inventory.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div>\n      <div (click)=\"toggleDropdown(toggleDropdownVar[1])\" class=\"drpDown\"\n           [ngStyle]=\"{'font-weight':toggleDropdownVar[1].toggleDropdown?'bold':'normal','color':toggleDropdownVar[1].toggleDropdown?'black':''}\">\n        <span>Goods Received Note</span>\n        <div>\n          <i class=\"fas fa-caret-down\" style=\"margin-left: 189px\"\n             [ngStyle]=\"{'color':toggleDropdownVar[1].toggleDropdown?'black':''}\"></i>\n        </div>\n      </div>\n      <div *ngIf=\"toggleDropdownVar[1].toggleDropdown\">\n        <div [routerLink]=\"'/content/grn/add'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #addgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>Add GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':addgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n        <div [routerLink]=\"'/content/grn/list'\"\n             [routerLinkActive]=\"'btnNavActive'\"\n             (click)=\"toggleNavbarOff(0)\"\n             #viewgrn=\"routerLinkActive\">\n          <span><i class=\"fas fa-angle-right\" style=\"margin-right: 5px\"></i>View GRN</span>\n          <div>\n            <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':viewgrn.isActive?'#006e99':''}\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #invoices=\"routerLinkActive\">\n      <div>\n        <span>Invoices</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':invoices.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div [routerLink]=\"'/content/supplier'\"\n         [routerLinkActive]=\"'btnNavActive'\"\n         (click)=\"toggleNavbarOff(1)\"\n         #supplier=\"routerLinkActive\">\n      <div>\n        <span>Suppliers</span>\n        <div>\n          <i class=\"fas fa-caret-right\" [ngStyle]=\"{'color':supplier.isActive?'#006e99':''}\"></i>\n        </div>\n      </div>\n    </div>\n\n    <!--&lt;!&ndash;<div *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]\">&ndash;&gt;-->\n    <!--&lt;!&ndash;<div [routerLinkActive]=\"'btnNavActive'\">&ndash;&gt;-->\n    <!--&lt;!&ndash;Invoices&ndash;&gt;-->\n    <!--&lt;!&ndash;<div>&ndash;&gt;-->\n    <!--&lt;!&ndash;<i class=\"fas fa-caret-right\"></i>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -609,6 +622,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./content-panel/grn/grns-list/grn-view/grn-view.component */ "./src/app/content-panel/grn/grns-list/grn-view/grn-view.component.ts");
 /* harmony import */ var _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./content-panel/grn/grn-add/grn-add.component */ "./src/app/content-panel/grn/grn-add/grn-add.component.ts");
 /* harmony import */ var _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./content-panel/supplier/supplier.component */ "./src/app/content-panel/supplier/supplier.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+
 
 
 
@@ -624,8 +639,12 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        redirectTo: 'content/inventory',
+        redirectTo: 'login',
         pathMatch: 'full'
+    },
+    {
+        path: 'login',
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
     },
     {
         path: 'content',
@@ -777,6 +796,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./content-panel/supplier/supplier.component */ "./src/app/content-panel/supplier/supplier.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./autocomplete-box/autocomplete-box.component */ "./src/app/autocomplete-box/autocomplete-box.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _validator_inputs_validator_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./validator/inputs-validator.directive */ "./src/app/validator/inputs-validator.directive.ts");
+/* harmony import */ var _validator_email_validator_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./validator/email-validator.directive */ "./src/app/validator/email-validator.directive.ts");
+/* harmony import */ var _validator_telephone_validator_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./validator/telephone-validator.directive */ "./src/app/validator/telephone-validator.directive.ts");
+
+
+
+
 
 
 
@@ -821,12 +848,17 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_17__["GrnViewComponent"],
             _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_19__["AlertBoxComponent"],
             _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__["SupplierComponent"],
-            _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__["AutocompleteBoxComponent"]
+            _validator_inputs_validator_directive__WEBPACK_IMPORTED_MODULE_24__["InputsValidatorDirective"],
+            _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__["AutocompleteBoxComponent"],
+            _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"],
+            _validator_email_validator_directive__WEBPACK_IMPORTED_MODULE_25__["EmailValidatorDirective"],
+            _validator_telephone_validator_directive__WEBPACK_IMPORTED_MODULE_26__["TelephoneValidatorDirective"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_21__["ReactiveFormsModule"]
         ],
         providers: [_angular_common__WEBPACK_IMPORTED_MODULE_18__["DatePipe"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -862,10 +894,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutocompleteBoxComponent", function() { return AutocompleteBoxComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+var AutocompleteBoxComponent_1;
 
 
-let AutocompleteBoxComponent = class AutocompleteBoxComponent {
+
+let AutocompleteBoxComponent = AutocompleteBoxComponent_1 = class AutocompleteBoxComponent {
     constructor() {
+        this.inputTextChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        // inputText;
+        this.filteredItems = new Set();
         this.items = [
             {
                 id: 123
@@ -889,10 +927,16 @@ let AutocompleteBoxComponent = class AutocompleteBoxComponent {
                 id: 'E-009 emerchemiie NC CEYLON LTD.'
             }
         ];
-        this.filteredItems = new Set();
+    }
+    registerOnChange(fn) {
+    }
+    registerOnTouched(fn) {
+    }
+    setDisabledState(isDisabled) {
+    }
+    writeValue(obj) {
     }
     ngOnInit() {
-        this.inputText = this.clsForm.value;
     }
     suggestTexts() {
         this.pattern = new RegExp('(' + this.inputText + '|' + this.inputText.toLowerCase() + '|' + this.inputText.toUpperCase() + ')');
@@ -901,7 +945,6 @@ let AutocompleteBoxComponent = class AutocompleteBoxComponent {
         if (this.inputText !== '') {
             for (let item of this.items) {
                 if (this.pattern.test(item.id.toString())) {
-                    console.log(this.pattern.exec(item.id.toString()));
                     this.filteredItems.add({
                         id: item.id,
                         startIndex: this.pattern.exec(item.id.toString()).index,
@@ -910,20 +953,43 @@ let AutocompleteBoxComponent = class AutocompleteBoxComponent {
                 }
             }
         }
+        this.inputTextChange.emit(this.inputText);
         // console.log(this.filteredItems)
     }
     selectText(item) {
         this.filteredItems.clear();
         this.inputText = item.id;
+        this.inputTextChange.emit(this.inputText);
+    }
+    focusOut() {
+        console.log(44);
+        this.filteredItems.clear();
+        this.inputTextChange.emit(this.inputText);
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('fieldId', { static: true })
+], AutocompleteBoxComponent.prototype, "fieldId", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], AutocompleteBoxComponent.prototype, "clsForm", void 0);
-AutocompleteBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], AutocompleteBoxComponent.prototype, "inputText", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], AutocompleteBoxComponent.prototype, "inputTextChange", void 0);
+AutocompleteBoxComponent = AutocompleteBoxComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-autocomplete-box',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./autocomplete-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-box/autocomplete-box.component.html")).default,
+        providers: [
+            {
+                provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALUE_ACCESSOR"],
+                useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => AutocompleteBoxComponent_1),
+                multi: true
+            }
+        ],
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./autocomplete-box.component.css */ "./src/app/autocomplete-box/autocomplete-box.component.css")).default]
     })
 ], AutocompleteBoxComponent);
@@ -1727,7 +1793,7 @@ SummaryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".orderNode {\r\n  padding: 0px 11px 0px 11px;\r\n  /*width: 100%;*/\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n.orderTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.orderTop > div > div > div:first-child {\r\n  float: left;\r\n  font-weight: bold;\r\n}\r\n\r\n.orderTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\n::ng-deep app-autocomplete-box >div > div > div{\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n::ng-deep app-autocomplete-box >div>input {\r\n  border: none;\r\n  font-weight: bold;\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n/*#vendorVar>div {*/\r\n\r\n/*border: none;*/\r\n\r\n/*font-weight: bold !important;*/\r\n\r\n/*background-color: #3e8039 !important;*/\r\n\r\n/*}*/\r\n\r\n/*.orderNode {*/\r\n\r\n/*padding: 0px 10px 0px 10px;*/\r\n\r\n/*width: 100%;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*padding: 0px 0px 5px 0px;*/\r\n\r\n/*font-size: 18px;*/\r\n\r\n/*border-bottom: 4px solid rgba(0, 122, 169, 0.3);*/\r\n\r\n/*margin: 0px 0px 25px 0px;*/\r\n\r\n/*color: rgba(0, 122, 169, 0.4);*/\r\n\r\n/*font-weight: bold;*/\r\n\r\n/*cursor: pointer;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode :focus {*/\r\n\r\n/*outline: 0;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span {*/\r\n\r\n/*margin-left: 10px;*/\r\n\r\n/*padding: 0px 5px 7px 5px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span:first-child {*/\r\n\r\n/*margin-left: 0px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabSelected {*/\r\n\r\n/*color: #007aa9;*/\r\n\r\n/*border-bottom: 4px solid #007aa9;*/\r\n\r\n/*padding-bottom: 7px;*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 796px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 16px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 636px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 15px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 466px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 396px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsd0JBQXdCO0FBQzFCOztBQUVBLG1CQUFtQjs7QUFDbkIsZ0JBQWdCOztBQUNoQixnQ0FBZ0M7O0FBQ2hDLHdDQUF3Qzs7QUFDeEMsSUFBSTs7QUFFSixlQUFlOztBQUNmLDhCQUE4Qjs7QUFDOUIsZUFBZTs7QUFDZixJQUFJOztBQUVKLFlBQVk7O0FBQ1osNEJBQTRCOztBQUM1QixtQkFBbUI7O0FBQ25CLG1EQUFtRDs7QUFDbkQsNEJBQTRCOztBQUM1QixpQ0FBaUM7O0FBQ2pDLHFCQUFxQjs7QUFDckIsbUJBQW1COztBQUNuQixJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIsY0FBYzs7QUFDZCxJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIscUJBQXFCOztBQUNyQiw0QkFBNEI7O0FBQzVCLElBQUk7O0FBRUosZ0NBQWdDOztBQUNoQyxvQkFBb0I7O0FBQ3BCLElBQUk7O0FBRUosaUJBQWlCOztBQUNqQixrQkFBa0I7O0FBQ2xCLG9DQUFvQzs7QUFDcEMsdUJBQXVCOztBQUN2QixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSTs7QUFFSix5Q0FBeUM7O0FBQ3pDLFlBQVk7O0FBQ1osOEJBQThCOztBQUM5QixJQUFJOztBQUNKLElBQUk7O0FBRUoseUNBQXlDOztBQUN6QyxZQUFZOztBQUNaLDhCQUE4Qjs7QUFDOUIsSUFBSTs7QUFDSixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSSIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvcHVyY2hhc2Utb3JkZXIvb3JkZXItYWRkL29yZGVyLWFkZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9yZGVyTm9kZSB7XHJcbiAgcGFkZGluZzogMHB4IDExcHggMHB4IDExcHg7XHJcbiAgLyp3aWR0aDogMTAwJTsqL1xyXG4gIC8qZm9udC1zaXplOiAxNHB4OyovXHJcbn1cclxuXHJcbi5vcmRlclRvcCB7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBtYXJnaW4tbGVmdDogOTBweFxyXG59XHJcblxyXG46Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPmRpdiA+IGRpdiA+IGRpdntcclxuICBwYWRkaW5nOiAzcHggNXB4IDNweCA0cHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcCBhcHAtYXV0b2NvbXBsZXRlLWJveCA+ZGl2PmlucHV0IHtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgcGFkZGluZzogM3B4IDVweCAzcHggNHB4O1xyXG59XHJcblxyXG4vKiN2ZW5kb3JWYXI+ZGl2IHsqL1xyXG4vKmJvcmRlcjogbm9uZTsqL1xyXG4vKmZvbnQtd2VpZ2h0OiBib2xkICFpbXBvcnRhbnQ7Ki9cclxuLypiYWNrZ3JvdW5kLWNvbG9yOiAjM2U4MDM5ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLm9yZGVyTm9kZSB7Ki9cclxuLypwYWRkaW5nOiAwcHggMTBweCAwcHggMTBweDsqL1xyXG4vKndpZHRoOiAxMDAlOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RleyovXHJcbi8qcGFkZGluZzogMHB4IDBweCA1cHggMHB4OyovXHJcbi8qZm9udC1zaXplOiAxOHB4OyovXHJcbi8qYm9yZGVyLWJvdHRvbTogNHB4IHNvbGlkIHJnYmEoMCwgMTIyLCAxNjksIDAuMyk7Ki9cclxuLyptYXJnaW46IDBweCAwcHggMjVweCAwcHg7Ki9cclxuLypjb2xvcjogcmdiYSgwLCAxMjIsIDE2OSwgMC40KTsqL1xyXG4vKmZvbnQtd2VpZ2h0OiBib2xkOyovXHJcbi8qY3Vyc29yOiBwb2ludGVyOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RlIDpmb2N1cyB7Ki9cclxuLypvdXRsaW5lOiAwOyovXHJcbi8qfSovXHJcblxyXG4vKi50YWJOb2RlID4gc3BhbiB7Ki9cclxuLyptYXJnaW4tbGVmdDogMTBweDsqL1xyXG4vKnBhZGRpbmc6IDBweCA1cHggN3B4IDVweDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA+IHNwYW46Zmlyc3QtY2hpbGQgeyovXHJcbi8qbWFyZ2luLWxlZnQ6IDBweDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiU2VsZWN0ZWQgeyovXHJcbi8qY29sb3I6ICMwMDdhYTk7Ki9cclxuLypib3JkZXItYm90dG9tOiA0cHggc29saWQgIzAwN2FhOTsqL1xyXG4vKnBhZGRpbmctYm90dG9tOiA3cHg7Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNnB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjM2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNXB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNDY2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNHB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuXHJcbi8qQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHsqL1xyXG4vKi50YWJOb2RleyovXHJcbi8qZm9udC1zaXplOiAxNHB4ICFpbXBvcnRhbnQ7Ki9cclxuLyp9Ki9cclxuLyp9Ki9cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".orderNode {\r\n  padding: 0px 11px 0px 11px;\r\n  /*width: 100%;*/\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n.orderTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.orderTop > div > div > div:first-child {\r\n  float: left;\r\n  font-weight: bold;\r\n}\r\n\r\n.orderTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > div > div {\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > input {\r\n  border: none;\r\n  font-weight: bold !important;\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n/*#vendorVar>div {*/\r\n\r\n/*border: none;*/\r\n\r\n/*font-weight: bold !important;*/\r\n\r\n/*background-color: #3e8039 !important;*/\r\n\r\n/*}*/\r\n\r\n/*.orderNode {*/\r\n\r\n/*padding: 0px 10px 0px 10px;*/\r\n\r\n/*width: 100%;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*padding: 0px 0px 5px 0px;*/\r\n\r\n/*font-size: 18px;*/\r\n\r\n/*border-bottom: 4px solid rgba(0, 122, 169, 0.3);*/\r\n\r\n/*margin: 0px 0px 25px 0px;*/\r\n\r\n/*color: rgba(0, 122, 169, 0.4);*/\r\n\r\n/*font-weight: bold;*/\r\n\r\n/*cursor: pointer;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode :focus {*/\r\n\r\n/*outline: 0;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span {*/\r\n\r\n/*margin-left: 10px;*/\r\n\r\n/*padding: 0px 5px 7px 5px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span:first-child {*/\r\n\r\n/*margin-left: 0px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabSelected {*/\r\n\r\n/*color: #007aa9;*/\r\n\r\n/*border-bottom: 4px solid #007aa9;*/\r\n\r\n/*padding-bottom: 7px;*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 796px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 16px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 636px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 15px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 466px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 396px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLFlBQVk7RUFDWiw0QkFBNEI7RUFDNUIsd0JBQXdCO0FBQzFCOztBQUVBLG1CQUFtQjs7QUFDbkIsZ0JBQWdCOztBQUNoQixnQ0FBZ0M7O0FBQ2hDLHdDQUF3Qzs7QUFDeEMsSUFBSTs7QUFFSixlQUFlOztBQUNmLDhCQUE4Qjs7QUFDOUIsZUFBZTs7QUFDZixJQUFJOztBQUVKLFlBQVk7O0FBQ1osNEJBQTRCOztBQUM1QixtQkFBbUI7O0FBQ25CLG1EQUFtRDs7QUFDbkQsNEJBQTRCOztBQUM1QixpQ0FBaUM7O0FBQ2pDLHFCQUFxQjs7QUFDckIsbUJBQW1COztBQUNuQixJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIsY0FBYzs7QUFDZCxJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIscUJBQXFCOztBQUNyQiw0QkFBNEI7O0FBQzVCLElBQUk7O0FBRUosZ0NBQWdDOztBQUNoQyxvQkFBb0I7O0FBQ3BCLElBQUk7O0FBRUosaUJBQWlCOztBQUNqQixrQkFBa0I7O0FBQ2xCLG9DQUFvQzs7QUFDcEMsdUJBQXVCOztBQUN2QixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSTs7QUFFSix5Q0FBeUM7O0FBQ3pDLFlBQVk7O0FBQ1osOEJBQThCOztBQUM5QixJQUFJOztBQUNKLElBQUk7O0FBRUoseUNBQXlDOztBQUN6QyxZQUFZOztBQUNaLDhCQUE4Qjs7QUFDOUIsSUFBSTs7QUFDSixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSSIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvcHVyY2hhc2Utb3JkZXIvb3JkZXItYWRkL29yZGVyLWFkZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9yZGVyTm9kZSB7XHJcbiAgcGFkZGluZzogMHB4IDExcHggMHB4IDExcHg7XHJcbiAgLyp3aWR0aDogMTAwJTsqL1xyXG4gIC8qZm9udC1zaXplOiAxNHB4OyovXHJcbn1cclxuXHJcbi5vcmRlclRvcCB7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBtYXJnaW4tbGVmdDogOTBweFxyXG59XHJcblxyXG46Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBkaXYgPiBkaXYge1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDRweDtcclxufVxyXG5cclxuOjpuZy1kZWVwIGFwcC1hdXRvY29tcGxldGUtYm94ID4gZGl2ID4gaW5wdXQge1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBmb250LXdlaWdodDogYm9sZCAhaW1wb3J0YW50O1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDRweDtcclxufVxyXG5cclxuLyojdmVuZG9yVmFyPmRpdiB7Ki9cclxuLypib3JkZXI6IG5vbmU7Ki9cclxuLypmb250LXdlaWdodDogYm9sZCAhaW1wb3J0YW50OyovXHJcbi8qYmFja2dyb3VuZC1jb2xvcjogIzNlODAzOSAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcblxyXG4vKi5vcmRlck5vZGUgeyovXHJcbi8qcGFkZGluZzogMHB4IDEwcHggMHB4IDEwcHg7Ki9cclxuLyp3aWR0aDogMTAwJTsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZXsqL1xyXG4vKnBhZGRpbmc6IDBweCAwcHggNXB4IDBweDsqL1xyXG4vKmZvbnQtc2l6ZTogMThweDsqL1xyXG4vKmJvcmRlci1ib3R0b206IDRweCBzb2xpZCByZ2JhKDAsIDEyMiwgMTY5LCAwLjMpOyovXHJcbi8qbWFyZ2luOiAwcHggMHB4IDI1cHggMHB4OyovXHJcbi8qY29sb3I6IHJnYmEoMCwgMTIyLCAxNjksIDAuNCk7Ki9cclxuLypmb250LXdlaWdodDogYm9sZDsqL1xyXG4vKmN1cnNvcjogcG9pbnRlcjsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA6Zm9jdXMgeyovXHJcbi8qb3V0bGluZTogMDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA+IHNwYW4geyovXHJcbi8qbWFyZ2luLWxlZnQ6IDEwcHg7Ki9cclxuLypwYWRkaW5nOiAwcHggNXB4IDdweCA1cHg7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLnRhYk5vZGUgPiBzcGFuOmZpcnN0LWNoaWxkIHsqL1xyXG4vKm1hcmdpbi1sZWZ0OiAwcHg7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLnRhYlNlbGVjdGVkIHsqL1xyXG4vKmNvbG9yOiAjMDA3YWE5OyovXHJcbi8qYm9yZGVyLWJvdHRvbTogNHB4IHNvbGlkICMwMDdhYTk7Ki9cclxuLypwYWRkaW5nLWJvdHRvbTogN3B4OyovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc5NnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTZweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYzNnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ2NnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDM5NnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -1754,6 +1820,9 @@ let OrderAddComponent = class OrderAddComponent {
             alert: false,
             msg: '',
             value: ''
+        };
+        this.item = {
+            desc: 'E-008 EMERCHEMIE NB CEYLON LTD.'
         };
         this.items = [
             { code: 226455, desc: 'ADACAPONE TAB 200MG', pack: 50, qty: 1, newRow: false },
@@ -2003,7 +2072,7 @@ OrdersListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".supplierNode {\r\n  padding: 0px 4px 0px 4px;\r\n  width: 100%;\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0VBQ3hCLFdBQVc7RUFDWCxtQkFBbUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL3N1cHBsaWVyL3N1cHBsaWVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3VwcGxpZXJOb2RlIHtcclxuICBwYWRkaW5nOiAwcHggNHB4IDBweCA0cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgLypmb250LXNpemU6IDE0cHg7Ki9cclxufVxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".supplierNode {\r\n  padding: 0px 4px 0px 4px;\r\n  width: 100%;\r\n  /*font-size: 14px;*/\r\n}\r\n\r\ntd::ng-deep app-autocomplete-box > div > input {\r\n  font-weight: normal !important;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0VBQ3hCLFdBQVc7RUFDWCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSw4QkFBOEI7QUFDaEMiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL3N1cHBsaWVyL3N1cHBsaWVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3VwcGxpZXJOb2RlIHtcclxuICBwYWRkaW5nOiAwcHggNHB4IDBweCA0cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgLypmb250LXNpemU6IDE0cHg7Ki9cclxufVxyXG5cclxudGQ6Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCB7XHJcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbCAhaW1wb3J0YW50O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -2033,35 +2102,34 @@ let SupplierComponent = class SupplierComponent {
         };
         this.suppliers = [
             {
-                name: '',
-                email: '',
-                address: '',
-                cNumber: '',
-                fNumber: '',
-                newRow: true
+                name: 'Abc',
+                email: 'abc@gmail.com',
+                address: 'abc Road, Colombo',
+                cNumber: '077-1234567',
+                fNumber: '071-1234567'
             },
             {
                 name: 'Abc',
                 email: 'abc@gmail.com',
                 address: 'abc Road, Colombo',
                 cNumber: '077-1234567',
-                fNumber: '071-1234567',
-                newRow: false
+                fNumber: '071-1234567'
             }
         ];
+        this.tempSupplier = this.getNewSupplier();
     }
     ngOnInit() {
     }
     addRow() {
-        this.suppliers[0].newRow = false;
-        this.suppliers.unshift({
-            name: '',
-            email: '',
-            address: '',
-            cNumber: '',
-            fNumber: '',
-            newRow: true
-        });
+        let supplier = this.getNewSupplier();
+        supplier.name = this.tempSupplier.name;
+        supplier.email = this.tempSupplier.email;
+        supplier.address = this.tempSupplier.address;
+        supplier.cNumber = this.tempSupplier.cNumber;
+        supplier.fNumber = this.tempSupplier.fNumber;
+        this.suppliers.unshift(supplier);
+        this.supplierForm.resetForm();
+        this.name.valueAccessor['fieldId'].control.markAsUntouched();
     }
     updateRow(index, supplier) {
     }
@@ -2077,10 +2145,28 @@ let SupplierComponent = class SupplierComponent {
             this.alertBox.alert = false;
         });
     }
+    setName(supplier, name) {
+        supplier.name = name;
+    }
+    getNewSupplier() {
+        return {
+            name: '',
+            email: '',
+            address: '',
+            cNumber: '',
+            fNumber: ''
+        };
+    }
 };
 SupplierComponent.ctorParameters = () => [
     { type: _alert_box_alert_box_service__WEBPACK_IMPORTED_MODULE_2__["AlertBoxService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('supplierForm', { static: true })
+], SupplierComponent.prototype, "supplierForm", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('name', { static: true })
+], SupplierComponent.prototype, "name", void 0);
 SupplierComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-supplier',
@@ -2187,6 +2273,90 @@ HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./header.component.css */ "./src/app/header/header.component.css")).default]
     })
 ], HeaderComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/login/login.component.css ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("input {\r\n  width: 100%;\r\n  height: 32px;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n}\r\n\r\napp-header ::ng-deep div {\r\n  top: 0px;\r\n}\r\n\r\nform {\r\n  min-height: calc(100vh - 216px);\r\n  padding: 20px;\r\n  width: 100%;\r\n  max-width: 600px;\r\n  margin: 150px auto 0px auto\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n  form {\r\n    margin-top: 120px;\r\n    min-height: calc(100vh - 186px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 796px) {\r\n  form {\r\n    margin-top: 100px;\r\n    min-height: calc(100vh - 165px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 636px) {\r\n  form {\r\n    margin-top: 90px;\r\n    min-height: calc(100vh - 150px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 466px) {\r\n  form {\r\n    min-height: calc(100vh - 146px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 396px) {\r\n  form {\r\n    min-height: calc(100vh - 144px);\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFFBQVE7QUFDVjs7QUFFQTtFQUNFLCtCQUErQjtFQUMvQixhQUFhO0VBQ2IsV0FBVztFQUNYLGdCQUFnQjtFQUNoQjtBQUNGOztBQUVBO0VBQ0U7SUFDRSxpQkFBaUI7SUFDakIsK0JBQStCO0VBQ2pDO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLGlCQUFpQjtJQUNqQiwrQkFBK0I7RUFDakM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsZ0JBQWdCO0lBQ2hCLCtCQUErQjtFQUNqQztBQUNGOztBQUVBO0VBQ0U7SUFDRSwrQkFBK0I7RUFDakM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsK0JBQStCO0VBQ2pDO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMzJweDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuYXBwLWhlYWRlciA6Om5nLWRlZXAgZGl2IHtcclxuICB0b3A6IDBweDtcclxufVxyXG5cclxuZm9ybSB7XHJcbiAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDIxNnB4KTtcclxuICBwYWRkaW5nOiAyMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1heC13aWR0aDogNjAwcHg7XHJcbiAgbWFyZ2luOiAxNTBweCBhdXRvIDBweCBhdXRvXHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDEwMDBweCkge1xyXG4gIGZvcm0ge1xyXG4gICAgbWFyZ2luLXRvcDogMTIwcHg7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTg2cHgpO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHtcclxuICBmb3JtIHtcclxuICAgIG1hcmdpbi10b3A6IDEwMHB4O1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE2NXB4KTtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYzNnB4KSB7XHJcbiAgZm9ybSB7XHJcbiAgICBtYXJnaW4tdG9wOiA5MHB4O1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE1MHB4KTtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ2NnB4KSB7XHJcbiAgZm9ybSB7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTQ2cHgpO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHtcclxuICBmb3JtIHtcclxuICAgIG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSAxNDRweCk7XHJcbiAgfVxyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/login/login.component.ts ***!
+  \******************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+let LoginComponent = class LoginComponent {
+    constructor(router) {
+        this.router = router;
+        this.userNameMsg = '';
+        this.passwordMsg = '';
+        this.patient = { nic: '' };
+        this.logged = true;
+    }
+    ngOnInit() {
+        this.userNameMsg = '';
+        this.passwordMsg = '';
+        this.logged = true;
+        this.patient = { nic: '' };
+        this.loginForm.resetForm();
+    }
+    onSubmit() {
+        // this.loginService.accLogin(this.patient).subscribe((result) => {
+        //   let labAssistant: PatientDto = result;
+        //   if (labAssistant != null) {
+        //     if (labAssistant.reply === 'Success') {
+        //       localStorage.setItem('labAssistant', JSON.stringify(labAssistant));
+        this.router.navigate(['/content/supplier']);
+        //     } else if (labAssistant.reply === 'Password Failed') {
+        //       this.userNameMsg = '';
+        //       this.passwordMsg = 'Password Failed';
+        //       this.logged = false;
+        //     } else if (labAssistant.reply === 'User cannot be found') {
+        //       this.userNameMsg = 'User cannot be found';
+        //       this.passwordMsg = '';
+        //       this.logged = false;
+        //     }
+        //   } else {
+        //     this.logged = false;
+        //   }
+        // });
+    }
+};
+LoginComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('loginForm', { static: true })
+], LoginComponent.prototype, "loginForm", void 0);
+LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")).default]
+    })
+], LoginComponent);
 
 
 
@@ -2310,6 +2480,128 @@ NavbarService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], NavbarService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/validator/email-validator.directive.ts":
+/*!********************************************************!*\
+  !*** ./src/app/validator/email-validator.directive.ts ***!
+  \********************************************************/
+/*! exports provided: EmailValidatorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailValidatorDirective", function() { return EmailValidatorDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+var EmailValidatorDirective_1;
+
+
+
+let EmailValidatorDirective = EmailValidatorDirective_1 = class EmailValidatorDirective {
+    constructor() { }
+    validate(control) {
+        let EMAIL_REGEX = /^[a-z]([a-z0-9]+.)*[a-z0-9]+@[a-z0-9]+.[a-z0-9]+$/; // Regular Expression 1
+        if (control.value != undefined) {
+            if (control.value.length == 0 || EMAIL_REGEX.test(control.value)) {
+                return null;
+            }
+        }
+        return { 'emailInvalid': true };
+    }
+};
+EmailValidatorDirective = EmailValidatorDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+        selector: '[appEmailValidator]',
+        providers: [{ provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALIDATORS"], useExisting: EmailValidatorDirective_1, multi: true }]
+    })
+], EmailValidatorDirective);
+
+
+
+/***/ }),
+
+/***/ "./src/app/validator/inputs-validator.directive.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/validator/inputs-validator.directive.ts ***!
+  \*********************************************************/
+/*! exports provided: InputsValidatorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputsValidatorDirective", function() { return InputsValidatorDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+var InputsValidatorDirective_1;
+
+
+
+let InputsValidatorDirective = InputsValidatorDirective_1 = class InputsValidatorDirective {
+    constructor() {
+    }
+    validate(control) {
+        let NIC_REGEX = /^[0-9]{9}[Vv]$|^[0-9]{11}[Vv]$/; // Regular Expression 1
+        let EMAIL_REGEX = /^[a-z]([a-z0-9]+.)*[a-z0-9]+@[a-z0-9]+.[a-z0-9]+$/; // Regular Expression 2
+        if (control.value != undefined) {
+            if (control.value.length == 0 || (NIC_REGEX.test(control.value) || EMAIL_REGEX.test(control.value))) {
+                return null;
+            }
+        }
+        return { 'emailOrNicInvalid': true };
+    }
+};
+InputsValidatorDirective = InputsValidatorDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+        selector: '[appInputsValidator]',
+        providers: [{ provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALIDATORS"], useExisting: InputsValidatorDirective_1, multi: true }]
+    })
+], InputsValidatorDirective);
+
+
+
+/***/ }),
+
+/***/ "./src/app/validator/telephone-validator.directive.ts":
+/*!************************************************************!*\
+  !*** ./src/app/validator/telephone-validator.directive.ts ***!
+  \************************************************************/
+/*! exports provided: TelephoneValidatorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TelephoneValidatorDirective", function() { return TelephoneValidatorDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+var TelephoneValidatorDirective_1;
+
+
+
+let TelephoneValidatorDirective = TelephoneValidatorDirective_1 = class TelephoneValidatorDirective {
+    constructor() { }
+    validate(control) {
+        let TELEPHONE_REGEX = /^[0-9]{3}-[0-9]{7}$|^[+][0-9]{11}$/; // Regular Expression 1
+        if (control.value != undefined) {
+            if (control.value.length == 0 || TELEPHONE_REGEX.test(control.value)) {
+                return null;
+            }
+        }
+        return { 'telephoneInvalid': true };
+    }
+};
+TelephoneValidatorDirective = TelephoneValidatorDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+        selector: '[appTelephoneValidator]',
+        providers: [{ provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NG_VALIDATORS"], useExisting: TelephoneValidatorDirective_1, multi: true }]
+    })
+], TelephoneValidatorDirective);
 
 
 
