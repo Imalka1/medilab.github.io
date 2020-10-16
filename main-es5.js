@@ -97,7 +97,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!--<div *ngIf=\"clsForm.isFrm && ((fieldId.touched || clsForm.frm.submitted) && fieldId.errors?.required)\"-->\n     <!--style=\"margin-left: 5px;color: #d41306;font-size: 11px\">-->\n  <!--Name is required-->\n<!--</div>-->\n<!--<div *ngIf=\"(id.dirty) && id.errors?.emailOrNicInvalid\"-->\n     <!--style=\"margin-left: 2px;color: #d41306;font-size: 11px\">-->\n  <!--Invalid Email-->\n<!--</div>-->\n<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts()\" [(ngModel)]=\"inputText\" style=\"width: 100%\" autocomplete=\"off\"\n         placeholder=\"{{clsForm.placeholder}}\" name=\"fieldId\" required #fieldId=\"ngModel\">\n  <div *ngIf=\"filteredItems.size !== 0\">\n    <div *ngFor=\"let item of filteredItems\" (click)=\"selectText(item)\">\n      <span>{{item.id.toString().substring(0, item.startIndex)}}</span>\n      <span style=\"font-weight: bold\">{{item.id.toString().substring(item.startIndex,item.endIndex)}}</span>\n      <span>{{item.id.toString().substring(item.endIndex,item.length)}}</span>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<!--<div *ngIf=\"clsForm.isFrm && ((fieldId.touched || clsForm.frm.submitted) && fieldId.errors?.required)\"-->\n     <!--style=\"margin-left: 5px;color: #d41306;font-size: 11px\">-->\n  <!--Name is required-->\n<!--</div>-->\n<!--<div *ngIf=\"(id.dirty) && id.errors?.emailOrNicInvalid\"-->\n     <!--style=\"margin-left: 2px;color: #d41306;font-size: 11px\">-->\n  <!--Invalid Email-->\n<!--</div>-->\n<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts()\" [(ngModel)]=\"inputText\" style=\"width: 100%\" autocomplete=\"off\"\n         placeholder=\"{{clsForm.placeholder}}\" name=\"fieldId\" required #fieldId=\"ngModel\" (click)=\"focusOut()\" (focusout)=\"focusOut()\">\n  <div [ngStyle]=\"{'border':filteredItems.size !== 0?'1px solid #c4c4c4':'none'}\">\n    <div *ngFor=\"let item of filteredItems\" (mousedown)=\"selectText(item)\">\n      <span>{{item.id.toString().substring(0, item.startIndex)}}</span>\n      <span style=\"font-weight: bold\">{{item.id.toString().substring(item.startIndex,item.endIndex)}}</span>\n      <span>{{item.id.toString().substring(item.endIndex,item.length)}}</span>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -1597,7 +1597,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".autoCompleteB {\r\n  position: relative\r\n}\r\n\r\n.autoCompleteB > div {\r\n  position: absolute;\r\n  border: 1px solid #c4c4c4;\r\n  width: 100%;\r\n  margin-top: -1px;\r\n  background-color: white;\r\n}\r\n\r\n.autoCompleteB > div > div {\r\n  padding: 3px 5px 3px 5px;\r\n}\r\n\r\n.autoCompleteB > input {\r\n  padding: 3px 5px 3px 5px;\r\n}\r\n\r\n.autoCompleteB > div > div > span {\r\n  /*padding-left: 13px;*/\r\n  /*padding-right: 13px;*/\r\n}\r\n\r\n.autoCompleteB > div > div:not(:last-child) {\r\n  border-bottom: 1px solid #c4c4c4;\r\n}\r\n\r\ninput:focus {\r\n  outline: 0;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0b2NvbXBsZXRlLWJveC9hdXRvY29tcGxldGUtYm94LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtBQUNGOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtBQUN6Qjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0Qix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxVQUFVO0FBQ1oiLCJmaWxlIjoic3JjL2FwcC9hdXRvY29tcGxldGUtYm94L2F1dG9jb21wbGV0ZS1ib3guY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRvQ29tcGxldGVCIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmVcclxufVxyXG5cclxuLmF1dG9Db21wbGV0ZUIgPiBkaXYge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjYzRjNGM0O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1hcmdpbi10b3A6IC0xcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi5hdXRvQ29tcGxldGVCID4gZGl2ID4gZGl2IHtcclxuICBwYWRkaW5nOiAzcHggNXB4IDNweCA1cHg7XHJcbn1cclxuXHJcbi5hdXRvQ29tcGxldGVCID4gaW5wdXQge1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDVweDtcclxufVxyXG5cclxuLmF1dG9Db21wbGV0ZUIgPiBkaXYgPiBkaXYgPiBzcGFuIHtcclxuICAvKnBhZGRpbmctbGVmdDogMTNweDsqL1xyXG4gIC8qcGFkZGluZy1yaWdodDogMTNweDsqL1xyXG59XHJcblxyXG4uYXV0b0NvbXBsZXRlQiA+IGRpdiA+IGRpdjpub3QoOmxhc3QtY2hpbGQpIHtcclxuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2M0YzRjNDtcclxufVxyXG5cclxuaW5wdXQ6Zm9jdXMge1xyXG4gIG91dGxpbmU6IDA7XHJcbn1cclxuIl19 */";
+    __webpack_exports__["default"] = ".autoCompleteB {\r\n  position: relative\r\n}\r\n\r\n.autoCompleteB > div {\r\n  position: absolute;\r\n  /*border: 1px solid #c4c4c4;*/\r\n  width: 100%;\r\n  margin-top: -1px;\r\n  background-color: white;\r\n}\r\n\r\n.autoCompleteB > div > div {\r\n  padding: 3px 5px 3px 5px;\r\n}\r\n\r\n.autoCompleteB > input {\r\n  padding: 3px 5px 3px 5px;\r\n}\r\n\r\n.autoCompleteB > div > div > span {\r\n  /*padding-left: 13px;*/\r\n  /*padding-right: 13px;*/\r\n}\r\n\r\n.autoCompleteB > div > div:not(:last-child) {\r\n  border-bottom: 1px solid #c4c4c4;\r\n}\r\n\r\ninput:focus {\r\n  outline: 0;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0b2NvbXBsZXRlLWJveC9hdXRvY29tcGxldGUtYm94LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtBQUNGOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLDZCQUE2QjtFQUM3QixXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLHVCQUF1QjtBQUN6Qjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0Qix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxVQUFVO0FBQ1oiLCJmaWxlIjoic3JjL2FwcC9hdXRvY29tcGxldGUtYm94L2F1dG9jb21wbGV0ZS1ib3guY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRvQ29tcGxldGVCIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmVcclxufVxyXG5cclxuLmF1dG9Db21wbGV0ZUIgPiBkaXYge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAvKmJvcmRlcjogMXB4IHNvbGlkICNjNGM0YzQ7Ki9cclxuICB3aWR0aDogMTAwJTtcclxuICBtYXJnaW4tdG9wOiAtMXB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4uYXV0b0NvbXBsZXRlQiA+IGRpdiA+IGRpdiB7XHJcbiAgcGFkZGluZzogM3B4IDVweCAzcHggNXB4O1xyXG59XHJcblxyXG4uYXV0b0NvbXBsZXRlQiA+IGlucHV0IHtcclxuICBwYWRkaW5nOiAzcHggNXB4IDNweCA1cHg7XHJcbn1cclxuXHJcbi5hdXRvQ29tcGxldGVCID4gZGl2ID4gZGl2ID4gc3BhbiB7XHJcbiAgLypwYWRkaW5nLWxlZnQ6IDEzcHg7Ki9cclxuICAvKnBhZGRpbmctcmlnaHQ6IDEzcHg7Ki9cclxufVxyXG5cclxuLmF1dG9Db21wbGV0ZUIgPiBkaXYgPiBkaXY6bm90KDpsYXN0LWNoaWxkKSB7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjNGM0YzQ7XHJcbn1cclxuXHJcbmlucHV0OmZvY3VzIHtcclxuICBvdXRsaW5lOiAwO1xyXG59XHJcbiJdfQ== */";
     /***/
   },
 
@@ -1645,8 +1645,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function AutocompleteBoxComponent() {
         _classCallCheck(this, AutocompleteBoxComponent);
 
-        this.inputTextChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](); // inputText;
-
+        this.inputTextChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.filteredItems = new Set();
         this.items = [{
           id: 123
@@ -1710,7 +1709,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
           }
 
-          this.inputTextChange.emit(this.inputText); // console.log(this.filteredItems)
+          this.inputTextChange.emit(this.inputText);
         }
       }, {
         key: "selectText",
@@ -1722,9 +1721,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "focusOut",
         value: function focusOut() {
-          console.log(44);
           this.filteredItems.clear();
-          this.inputTextChange.emit(this.inputText);
         }
       }]);
 
@@ -4210,7 +4207,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(EmailValidatorDirective, [{
         key: "validate",
         value: function validate(control) {
-          var EMAIL_REGEX = /^[a-z]([a-z0-9]+.)*[a-z0-9]+@[a-z0-9]+.[a-z0-9]+$/; // Regular Expression 1
+          var EMAIL_REGEX = /^[a-z.]+[0-9a-z]+[@][0-9a-z]+[.][0-9a-z]+$/; // Regular Expression 1
 
           if (control.value != undefined) {
             if (control.value.length == 0 || EMAIL_REGEX.test(control.value)) {
