@@ -97,7 +97,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!--<div *ngIf=\"clsForm.isFrm && ((fieldId.touched || clsForm.frm.submitted) && fieldId.errors?.required)\"-->\n     <!--style=\"margin-left: 5px;color: #d41306;font-size: 11px\">-->\n  <!--Name is required-->\n<!--</div>-->\n<!--<div *ngIf=\"(id.dirty) && id.errors?.emailOrNicInvalid\"-->\n     <!--style=\"margin-left: 2px;color: #d41306;font-size: 11px\">-->\n  <!--Invalid Email-->\n<!--</div>-->\n<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts()\" [(ngModel)]=\"inputText\" style=\"width: 100%\" autocomplete=\"off\"\n         placeholder=\"{{clsForm.placeholder}}\" name=\"fieldId\" required #fieldId=\"ngModel\" (click)=\"focusOut()\" (focusout)=\"focusOut()\">\n  <div [ngStyle]=\"{'border':filteredItems.size !== 0?'1px solid #c4c4c4':'none'}\">\n    <div *ngFor=\"let item of filteredItems\" (mousedown)=\"selectText(item)\">\n      <span>{{item.id.toString().substring(0, item.startIndex)}}</span>\n      <span style=\"font-weight: bold\">{{item.id.toString().substring(item.startIndex,item.endIndex)}}</span>\n      <span>{{item.id.toString().substring(item.endIndex,item.length)}}</span>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<!--<div *ngIf=\"clsForm.isFrm && ((fieldId.touched || clsForm.frm.submitted) && fieldId.errors?.required)\"-->\n<!--style=\"margin-left: 5px;color: #d41306;font-size: 11px\">-->\n<!--Name is required-->\n<!--</div>-->\n<!--<div *ngIf=\"(id.dirty) && id.errors?.emailOrNicInvalid\"-->\n<!--style=\"margin-left: 2px;color: #d41306;font-size: 11px\">-->\n<!--Invalid Email-->\n<!--</div>-->\n<div class=\"autoCompleteB\">\n  <input type=\"text\" (keyup)=\"suggestTexts(fieldId)\" [(ngModel)]=\"inputText\" style=\"width: 100%\" autocomplete=\"off\"\n         placeholder=\"{{clsForm.placeholder}}\" name=\"fieldId\" required #fieldId=\"ngModel\" (click)=\"focusOut()\"\n         (focusout)=\"focusOut()\"\n         [disabled]=\"disabled\">\n  <div [ngStyle]=\"{'border':filteredItems.size !== 0?'1px solid #c4c4c4':'none'}\" style=\"z-index: 999\">\n    <div *ngFor=\"let item of filteredItems\" (mousedown)=\"selectText(item)\">\n      <span>{{item.id.toString().substring(0, item.startIndex)}}</span>\n      <span style=\"font-weight: bold\">{{item.id.toString().substring(item.startIndex,item.endIndex)}}</span>\n      <span>{{item.id.toString().substring(item.endIndex,item.length)}}</span>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -257,7 +257,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div style=\"height: 25px;\">\n        <div style=\"margin-top: 2px\">Vendor</div>\n        <div style=\"position: relative\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;</div>\n          <app-autocomplete-box\n            style=\"float: left;width: 100%;position: absolute\"\n            [clsForm]=\"{placeholder:'Name',isFrm:false}\"\n            [(inputText)]=\"item.desc\"\n          ></app-autocomplete-box>\n        </div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 4px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <table>\n      <thead>\n      <tr>\n        <td width=\"5%\">#</td>\n        <td width=\"8%\">Code</td>\n        <td>Description</td>\n        <td width=\"7%\">Pack Size</td>\n        <td width=\"7%\">Qty</td>\n        <td width=\"4%\"></td>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of items,let i = index\">\n        <td>{{i+1}}</td>\n        <td><input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\"></td>\n        <td><input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"item.desc\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.pack\"></td>\n        <td><input type=\"number\" [(ngModel)]=\"item.qty\"></td>\n        <td (click)=\"removeRow(i,item)\" *ngIf=\"!item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n        <td (click)=\"addRow()\" *ngIf=\"item.newRow\" style=\"text-align: center;cursor: pointer\">\n          <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n        </td>\n      </tr>\n      <!--<tr>-->\n      <!--<td>{{getLastIndex() + 1}}</td>-->\n      <!--<td><input type=\"text\" placeholder=\"Code\"></td>-->\n      <!--<td><input type=\"text\" placeholder=\"Description\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td><input type=\"number\" value=\"0\"></td>-->\n      <!--<td (click)=\"addRow()\" style=\"text-align: center;cursor: pointer\"><i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i></td>-->\n      <!--</tr>-->\n      </tbody>\n    </table>\n\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Purchase Order</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <span style=\"color: #898989\">Add Order</span>\n</div>\n\n<div class=\"orderNode\">\n  <div class=\"row orderTop\">\n    <div class=\"col-6\">\n      <div>\n        <div>PO. No</div>\n        <div style=\"font-weight: bold\"> :&nbsp;&nbsp;&nbsp;0003112</div>\n      </div>\n      <div>\n        <div>Date</div>\n        <div> :&nbsp;&nbsp;&nbsp;14/05/2020</div>\n      </div>\n      <div style=\"height: 25px;\">\n        <div style=\"margin-top: 2px\">Vendor</div>\n        <div style=\"position: relative\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;</div>\n          <app-autocomplete-box\n            style=\"float: left;width: 100%;position: absolute\"\n            [clsForm]=\"{placeholder:'Vendor',isFrm:false}\"\n            [(inputText)]=\"order.vendor\"\n          ></app-autocomplete-box>\n        </div>\n      </div>\n      <div>\n        <div>Status</div>\n        <div> :&nbsp;&nbsp;&nbsp;Processed by Manager</div>\n      </div>\n      <div style=\"margin-top: 2px\">\n        <div style=\"margin-top: 4px\">Valid Until</div>\n        <div style=\"margin-right: 40px\">\n          <div style=\"float: left;margin-top: 2px\">:&nbsp;&nbsp;&nbsp;</div>\n          <input type=\"date\" style=\"width: 250px\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-6\">\n      <div>\n        <div>Telephone</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675005</div>\n      </div>\n      <div>\n        <div>Fax</div>\n        <div> :&nbsp;&nbsp;&nbsp;011-675877</div>\n      </div>\n      <div>\n        <div>Email</div>\n        <div> :&nbsp;&nbsp;&nbsp;enbci@sltnet.lk</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"orderNode\" style=\"height: 0px;margin-top: 13px\">\n  <div style=\"border-bottom: 1px solid black;margin-left: 0px;margin-right: 0px\"></div>\n</div>\n\n<div class=\"orderNode\">\n  <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n    <div id=\"itemTable\">\n\n      <div class=\"tblRow\">\n        <div class=\"tblCell\">#</div>\n        <div class=\"tblCell\">Code</div>\n        <div class=\"tblCell\">Description</div>\n        <div class=\"tblCell\">Pack Size</div>\n        <div class=\"tblCell\">Qty</div>\n        <div class=\"tblCell\"></div>\n      </div>\n\n      <form #itemForm=\"ngForm\" novalidate\n            (ngSubmit)=\"itemForm.form.valid && addRow(item,itemForm,desc)\"\n            *ngFor=\"let item of items,let i = index;last as isLast\">\n\n        <!--#-->\n\n        <div class=\"tblCell\" *ngIf=\"!isLast\">{{i+1}}</div>\n\n        <!--# new-->\n\n        <div class=\"tblCell\" *ngIf=\"isLast\">\n          <i class=\"fas fa-caret-right\"\n             style=\"margin-left: 2px\"></i>\n        </div>\n\n        <!--Code-->\n\n        <div class=\"tblCell\">\n          <div *ngIf=\"(code.touched || itemForm.submitted) && code.errors?.required\"\n               class=\"validErr\">\n            Code is required\n          </div>\n          <input type=\"text\"\n                 placeholder=\"Code\"\n                 [(ngModel)]=\"item.code\"\n                 #code=\"ngModel\"\n                 required\n                 name=\"code\"\n                 [disabled]=\"item.editRow===1\">\n        </div>\n\n        <!--Description-->\n\n        <div class=\"tblCell\">\n          <div\n            *ngIf=\"(desc.valueAccessor['fieldId'].touched || itemForm.submitted) && desc.valueAccessor['fieldId'].errors?.required\"\n            style=\"margin-left: 2px\" class=\"validErr\">\n            Description is required\n          </div>\n          <app-autocomplete-box\n            [clsForm]=\"{\n              placeholder:'Description',\n              frm:itemForm,\n              isFrm:true\n              }\"\n            [(inputText)]=\"item.desc\"\n            [(ngModel)]=\"item.desc\"\n            [disabled]=\"item.editRow===1\"\n            name=\"desc\"\n            #desc=\"ngModel\"\n            required>\n          </app-autocomplete-box>\n        </div>\n\n        <!--Pack Size-->\n\n        <div class=\"tblCell\">\n          <div *ngIf=\"(pack.touched || itemForm.submitted) && pack.errors?.required\"\n               class=\"validErr\">\n            Pack size is required\n          </div>\n          <input type=\"number\"\n                 [(ngModel)]=\"item.pack\"\n                 #pack=\"ngModel\"\n                 required\n                 min=\"0\"\n                 name=\"pack\"\n                 placeholder=\"Pack Size\"\n                 [disabled]=\"item.editRow===1\">\n        </div>\n\n        <!--Qty-->\n\n        <div class=\"tblCell\">\n          <div *ngIf=\"(qty.touched || itemForm.submitted) && qty.errors?.required\" class=\"validErr\">\n            Qty is required\n          </div>\n          <input type=\"number\"\n                 [(ngModel)]=\"item.qty\"\n                 #qty=\"ngModel\"\n                 required\n                 min=\"0\"\n                 placeholder=\"Qty\"\n                 name=\"qty\"\n                 [disabled]=\"item.editRow===1\">\n        </div>\n\n        <!--Buttons-->\n\n        <div class=\"tblCell\" *ngIf=\"!isLast\">\n          <div class=\"btnEdit\"\n               style=\"left:50%;top: 50%;transform: translateX(-50%) translateY(-50%)\"\n               [ngStyle]=\"{'width':item.editRow===1?'60px':'70px'}\">\n            <button style=\"border: none\"\n                    type=\"submit\"\n                    *ngIf=\"item.editRow===2\">\n              <i class=\"fas fa-check-circle\"\n                 style=\"color: #3e8039;font-size: 20px\"></i>\n            </button>\n            <i class=\"fas fa-keyboard\" (click)=\"editRow(item,2)\" *ngIf=\"item.editRow===1\"\n               style=\"color: #696969;font-size: 22px\"></i>\n            <i class=\"fas fa-times-circle\" (click)=\"removeRow(i,item)\"\n               style=\"color: #ff5937;font-size: 20px;padding-left: 12px\"></i>\n          </div>\n        </div>\n\n        <div class=\"tblCell\" *ngIf=\"isLast\">\n          <button style=\"border: none;left:50%;top: 50%;transform: translateX(-50%) translateY(-50%)\"\n                  type=\"submit\">\n            <i class=\"fas fa-plus-circle\"\n               style=\"color: #3e8039;font-size: 20px\"></i>\n          </button>\n        </div>\n\n      </form>\n\n    </div>\n\n    <div style=\"text-align: right;padding-bottom: 15px;margin-top: 60px\">\n      <button type=\"submit\" class=\"btn btn-primary\"\n              style=\"background-color: #3e8039;border-color: #3e8039;padding-right: 30px;padding-left: 30px;font-weight: bold\"\n              [disabled]=\"!isFinalized()\">\n        Finalize Purchase Order\n      </button>\n    </div>\n\n  </div>\n</div>\n";
     /***/
   },
 
@@ -317,7 +317,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <form #supplierForm=\"ngForm\" (ngSubmit)=\"supplierForm.form.valid && addRow()\" novalidate>\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td>Name</td>\n            <td width=\"15%\">Email</td>\n            <td width=\"15%\">Address</td>\n            <td width=\"10%\">Contact Number</td>\n            <td width=\"10%\">Fax Number</td>\n            <td width=\"4%\"></td>\n          </tr>\n          </thead>\n\n          <tbody>\n          <tr>\n\n            <td>\n              <i class=\"fas fa-caret-right\" style=\"font-size: 22px;margin-left: 2px;color: #03a703\"></i>\n            </td>\n\n            <!--Name-->\n\n            <td style=\"padding: 3px 0px 1px 0px\">\n              <div\n                *ngIf=\"(name.valueAccessor['fieldId'].touched || supplierForm.submitted) && name.valueAccessor['fieldId'].errors?.required\"\n                style=\"margin-left: 5px\">\n                Name is required\n              </div>\n              <app-autocomplete-box\n                [clsForm]=\"{\n                  placeholder:'Name',\n                  frm:supplierForm,\n                  isFrm:true\n                }\"\n                [(inputText)]=\"tempSupplier.name\"\n                [(ngModel)]=\"tempSupplier.name\"\n                name=\"name\" #name=\"ngModel\" required\n              >\n              </app-autocomplete-box>\n            </td>\n\n            <!--Email-->\n\n            <td>\n              <div *ngIf=\"(email.touched || supplierForm.submitted) && email.errors?.required\">\n                Email is required\n              </div>\n              <div *ngIf=\"(email.dirty) && email.errors?.emailInvalid\">\n                Invalid email\n              </div>\n              <input type=\"text\" placeholder=\"Email\"\n                     [(ngModel)]=\"tempSupplier.email\" #email=\"ngModel\" name=\"email\" required appEmailValidator>\n            </td>\n\n            <!--Address-->\n\n            <td>\n              <div *ngIf=\"(address.touched || supplierForm.submitted) && address.errors?.required\">\n                Address is required\n              </div>\n              <input type=\"text\" placeholder=\"Address\"\n                     [(ngModel)]=\"tempSupplier.address\" #address=\"ngModel\" name=\"address\" required>\n            </td>\n\n            <!--Contact-->\n\n            <td>\n              <div *ngIf=\"(cNumber.touched || supplierForm.submitted) && cNumber.errors?.required\">\n                Contact Number is required\n              </div>\n              <div *ngIf=\"(cNumber.dirty) && cNumber.errors?.telephoneInvalid\">\n                Invalid contact Number\n              </div>\n              <input type=\"text\" placeholder=\"Contact Number\"\n                     [(ngModel)]=\"tempSupplier.cNumber\" #cNumber=\"ngModel\" name=\"cNumber\" required\n                     appTelephoneValidator>\n            </td>\n\n            <!--Fax-->\n\n            <td>\n              <div *ngIf=\"(fNumber.touched || supplierForm.submitted) && fNumber.errors?.required\">\n                Fax Number is required\n              </div>\n              <div *ngIf=\"(fNumber.dirty) && fNumber.errors?.telephoneInvalid\">\n                Invalid fax Number\n              </div>\n              <input type=\"text\" placeholder=\"Fax Number\"\n                     [(ngModel)]=\"tempSupplier.fNumber\" #fNumber=\"ngModel\" name=\"fNumber\" required\n                     appTelephoneValidator>\n            </td>\n\n            <td style=\"text-align: center;cursor: pointer\">\n              <button style=\"border: none;width: 100%\" type=\"submit\">\n                <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n              </button>\n            </td>\n\n          </tr>\n\n          <tr *ngFor=\"let supplier of suppliers,let i = index\">\n\n            <td style=\"padding: 3px 4px 1px 4px\">{{suppliers.length - i}}</td>\n            <td>{{supplier.name}}</td>\n            <td>{{supplier.email}}</td>\n            <td>{{supplier.address}}</td>\n            <td>{{supplier.cNumber}}</td>\n            <td>{{supplier.fNumber}}</td>\n\n            <td (click)=\"removeRow(i,supplier)\" style=\"text-align: center;cursor: pointer\">\n              <!--<i (click)=\"updateRow(i,supplier)\" class=\"fas fa-keyboard\" style=\"color: #696969;font-size: 20px;padding-top: 4px;margin-right: 8px\"></i>-->\n              <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n\n          </tr>\n          </tbody>\n        </table>\n      </form>\n\n    </div>\n  </div>\n</div>\n\n<!--<app-autocomplete-box [clsForm]=\"{border:'none',padding:'13px',placeholder:'Name'}\"></app-autocomplete-box>-->\n<!--<app-autocomplete-box [clsForm]=\"{class:'',padding:'0px'}\"></app-autocomplete-box>-->\n";
+    __webpack_exports__["default"] = "<app-alert-box *ngIf=\"alertBox.alert\" [alertMsg]=\"alertBox\"></app-alert-box>\n\n<div class=\"breadCrumb\">\n  <span>Suppliers</span>\n  <span class=\"breadCrumbNext\"><i class=\"fas fa-angle-right\"></i></span>\n  <!--<span style=\"color: #898989\">Add GRN</span>-->\n</div>\n\n<div class=\"supplierNode\">\n  <div style=\"font-size: 14px;\">\n    <div style=\"margin-bottom: 40px;margin-top: 20px\">\n\n      <form #supplierForm=\"ngForm\" (ngSubmit)=\"supplierForm.form.valid && addRow()\" novalidate>\n        <table>\n          <thead>\n          <tr>\n            <td width=\"5%\">#</td>\n            <td>Name</td>\n            <td width=\"15%\">Email</td>\n            <td width=\"15%\">Address</td>\n            <td width=\"10%\">Contact Number</td>\n            <td width=\"10%\">Fax Number</td>\n            <td width=\"4%\"></td>\n          </tr>\n          </thead>\n\n          <tbody>\n          <tr>\n\n            <td>\n              <i class=\"fas fa-caret-right\" style=\"font-size: 22px;margin-left: 2px;color: #03a703\"></i>\n            </td>\n\n            <!--Name-->\n\n            <td style=\"padding: 3px 0px 1px 0px\">\n              <div\n                *ngIf=\"(name.valueAccessor['fieldId'].touched || supplierForm.submitted) && name.valueAccessor['fieldId'].errors?.required\"\n                style=\"margin-left: 5px\" class=\"validErr\">\n                Name is required\n              </div>\n              <app-autocomplete-box\n                [clsForm]=\"{\n                  placeholder:'Name',\n                  frm:supplierForm,\n                  isFrm:true\n                }\"\n                [(inputText)]=\"tempSupplier.name\"\n                [(ngModel)]=\"tempSupplier.name\"\n                name=\"name\" #name=\"ngModel\" required>\n              </app-autocomplete-box>\n            </td>\n\n            <!--Email-->\n\n            <td>\n              <div *ngIf=\"(email.touched || supplierForm.submitted) && email.errors?.required\" class=\"validErr\">\n                Email is required\n              </div>\n              <div *ngIf=\"(email.dirty) && email.errors?.emailInvalid\" class=\"validErr\">\n                Invalid email\n              </div>\n              <input type=\"text\" placeholder=\"Email\"\n                     [(ngModel)]=\"tempSupplier.email\" #email=\"ngModel\" name=\"email\" required appEmailValidator>\n            </td>\n\n            <!--Address-->\n\n            <td>\n              <div *ngIf=\"(address.touched || supplierForm.submitted) && address.errors?.required\" class=\"validErr\">\n                Address is required\n              </div>\n              <input type=\"text\" placeholder=\"Address\"\n                     [(ngModel)]=\"tempSupplier.address\" #address=\"ngModel\" name=\"address\" required>\n            </td>\n\n            <!--Contact-->\n\n            <td>\n              <div *ngIf=\"(cNumber.touched || supplierForm.submitted) && cNumber.errors?.required\" class=\"validErr\">\n                Contact Number is required\n              </div>\n              <div *ngIf=\"(cNumber.dirty) && cNumber.errors?.telephoneInvalid\" class=\"validErr\">\n                Invalid contact Number\n              </div>\n              <input type=\"text\" placeholder=\"Contact Number\"\n                     [(ngModel)]=\"tempSupplier.cNumber\" #cNumber=\"ngModel\" name=\"cNumber\" required\n                     appTelephoneValidator>\n            </td>\n\n            <!--Fax-->\n\n            <td>\n              <div *ngIf=\"(fNumber.touched || supplierForm.submitted) && fNumber.errors?.required\" class=\"validErr\">\n                Fax Number is required\n              </div>\n              <div *ngIf=\"(fNumber.dirty) && fNumber.errors?.telephoneInvalid\" class=\"validErr\">\n                Invalid fax Number\n              </div>\n              <input type=\"text\" placeholder=\"Fax Number\"\n                     [(ngModel)]=\"tempSupplier.fNumber\" #fNumber=\"ngModel\" name=\"fNumber\" required\n                     appTelephoneValidator>\n            </td>\n\n            <td style=\"text-align: center;cursor: pointer\">\n              <button style=\"border: none;width: 100%\" type=\"submit\">\n                <i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>\n              </button>\n            </td>\n\n          </tr>\n\n          <tr *ngFor=\"let supplier of suppliers,let i = index\">\n\n            <td style=\"padding: 3px 4px 1px 4px\">{{suppliers.length - i}}</td>\n            <td>{{supplier.name}}</td>\n            <td>{{supplier.email}}</td>\n            <td>{{supplier.address}}</td>\n            <td>{{supplier.cNumber}}</td>\n            <td>{{supplier.fNumber}}</td>\n\n            <td (click)=\"removeRow(i,supplier)\" style=\"text-align: center;cursor: pointer\">\n              <!--<i (click)=\"updateRow(i,supplier)\" class=\"fas fa-keyboard\" style=\"color: #696969;font-size: 20px;padding-top: 4px;margin-right: 8px\"></i>-->\n              <i class=\"fas fa-times-circle\" style=\"color: #ff5937;font-size: 20px;padding-top: 4px\"></i>\n            </td>\n\n          </tr>\n          </tbody>\n        </table>\n      </form>\n\n    </div>\n  </div>\n</div>\n\n<!--<app-autocomplete-box [clsForm]=\"{border:'none',padding:'13px',placeholder:'Name'}\"></app-autocomplete-box>-->\n<!--<app-autocomplete-box [clsForm]=\"{class:'',padding:'0px'}\"></app-autocomplete-box>-->\n";
     /***/
   },
 
@@ -358,6 +358,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     __webpack_exports__["default"] = "<div id=\"header\" style=\"background-color: #007aa9;width: 100%;position: fixed;z-index: 9\">\n  <div (click)=\"toggleNavbar()\" id=\"togglenav\"\n       style=\"color: white;margin: 15px 0px 0px 10px;width: 10px;cursor: pointer;float: left\">\n    <!--<span></span>-->\n    <!--<span style=\"margin-top: 6px\"></span>-->\n    <!--<span style=\"margin-top: 12px\"></span>-->\n    <i class=\"fas fa-ellipsis-v\" style=\"font-size: 25px\"></i>\n  </div>\n  <div style=\"float: left;padding: 4px 0px 10px 10px\">\n    <div style=\"font-size: 45px;color: white;font-weight: bold\">\n      State Pharmaceuticals Corporation\n    </div>\n    <div style=\"font-size: 25px;color: white\">\n      Rajya Osu Sala, No.61A, Wakwella Road, Galle\n    </div>\n  </div>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/item-table/item-table.component.html":
+  /*!********************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/item-table/item-table.component.html ***!
+    \********************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppItemTableItemTableComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div id=\"itemTable\">\n\n  <div class=\"tblRow\">\n    <div class=\"tblCell\">#</div>\n    <div class=\"tblCell\">Code</div>\n    <div class=\"tblCell\">Description</div>\n    <div class=\"tblCell\">Pack Size</div>\n    <div class=\"tblCell\">Qty</div>\n    <div class=\"tblCell\"></div>\n  </div>\n\n  <form #itemForm=\"ngForm\" novalidate\n        (ngSubmit)=\"itemForm.form.valid && addRow()\"\n        *ngFor=\"let item of items,let i = index;last as isLast\">\n\n    <div class=\"tblCell\" *ngIf=\"!isLast\">{{i+1}}</div>\n\n    <div class=\"tblCell\" *ngIf=\"isLast\">\n      <i class=\"fas fa-caret-right\" style=\"position: absolute;top: 50%;transform: translateY(-50%)\"></i>\n    </div>\n\n    <div class=\"tblCell\">\n      <div *ngIf=\"(code.touched || itemForm.submitted) && code.errors?.required\" class=\"validErr\">\n        Code is required\n      </div>\n      <input type=\"text\" placeholder=\"Code\" [(ngModel)]=\"item.code\" #code=\"ngModel\" name=\"code\" required>\n    </div>\n\n    <div class=\"tblCell\">\n      <div\n        *ngIf=\"(desc.valueAccessor['fieldId'].touched || itemForm.submitted) && desc.valueAccessor['fieldId'].errors?.required\"\n        style=\"margin-left: 5px\" class=\"validErr\">\n        Description is required\n      </div>\n      <app-autocomplete-box\n        [clsForm]=\"{\n          placeholder:'Description',\n          frm:itemForm,\n          isFrm:true\n          }\"\n        [(inputText)]=\"item.desc\"\n        [(ngModel)]=\"item.desc\"\n        name=\"desc\" #desc=\"ngModel\" required>\n      </app-autocomplete-box>\n    </div>\n    <div class=\"tblCell\">\n      <div *ngIf=\"(pack.touched || itemForm.submitted) && pack.errors?.required\" class=\"validErr\">\n        Pack size is required\n      </div>\n      <input type=\"number\" [(ngModel)]=\"item.pack\" name=\"pack\" #pack=\"ngModel\" required min=\"0\" placeholder=\"Pack Size\">\n    </div>\n    <div class=\"tblCell\">\n      <div *ngIf=\"(qty.touched || itemForm.submitted) && qty.errors?.required\" class=\"validErr\">\n        Qty is required\n      </div>\n      <input type=\"number\" [(ngModel)]=\"item.qty\" name=\"qty\" #qty=\"ngModel\" required min=\"0\" placeholder=\"Qty\">\n    </div>\n\n    <div class=\"tblCell\" *ngIf=\"!isLast\" (click)=\"removeRow(i,item)\">\n      <i class=\"fas fa-times-circle\"\n         style=\"color: #ff5937;font-size: 20px;left:50%;top: 50%;transform: translateX(-50%) translateY(-50%);\"></i>\n    </div>\n\n    <div class=\"tblCell\" *ngIf=\"isLast\">\n      <button style=\"border: none;left:50%;top: 50%;transform: translateX(-50%) translateY(-50%)\"\n              type=\"submit\">\n        <i class=\"fas fa-plus-circle\"\n           style=\"color: #3e8039;font-size: 20px\"></i>\n      </button>\n    </div>\n\n  </form>\n\n  <!--New Row-->\n\n  <!--<form #itemForm=\"ngForm\" novalidate-->\n  <!--(ngSubmit)=\"itemForm.form.valid && addRow()\">-->\n\n  <!--<div class=\"tblCell\"><i class=\"fas fa-caret-right\" style=\"font-size: 22px;margin-left: 2px;color: #03a703\"></i></div>-->\n\n  <!--<div class=\"tblCell\">-->\n  <!--<div-->\n  <!--*ngIf=\"(code.valueAccessor['fieldId'].touched || itemForm.submitted) && code.valueAccessor['fieldId'].errors?.required\"-->\n  <!--style=\"margin-left: 5px\" class=\"validErr\">-->\n  <!--Code is required-->\n  <!--</div>-->\n  <!--<app-autocomplete-box-->\n  <!--[clsForm]=\"{-->\n  <!--placeholder:'Code',-->\n  <!--frm:itemForm,-->\n  <!--isFrm:true-->\n  <!--}\"-->\n  <!--[(inputText)]=\"tempItem.code\"-->\n  <!--[(ngModel)]=\"tempItem.code\"-->\n  <!--#code=\"ngModel\" name=\"code\" required>-->\n  <!--</app-autocomplete-box>-->\n  <!--</div>-->\n\n  <!--<div class=\"tblCell\" style=\"padding: 3px 0px 1px 0px\">-->\n  <!--<div-->\n  <!--*ngIf=\"(desc.valueAccessor['fieldId'].touched || itemForm.submitted) && desc.valueAccessor['fieldId'].errors?.required\"-->\n  <!--style=\"margin-left: 5px\" class=\"validErr\">-->\n  <!--Description is required-->\n  <!--</div>-->\n  <!--<app-autocomplete-box-->\n  <!--[clsForm]=\"{-->\n  <!--placeholder:'Description',-->\n  <!--frm:itemForm,-->\n  <!--isFrm:true-->\n  <!--}\"-->\n  <!--[(inputText)]=\"tempItem.desc\"-->\n  <!--[(ngModel)]=\"tempItem.desc\"-->\n  <!--name=\"desc\" #desc=\"ngModel\" required>-->\n  <!--</app-autocomplete-box>-->\n  <!--</div>-->\n\n  <!--<div class=\"tblCell\">-->\n  <!--<div *ngIf=\"(pack.touched || itemForm.submitted) && pack.errors?.required\" class=\"validErr\">-->\n  <!--Pack size is required-->\n  <!--</div>-->\n  <!--<input type=\"number\" [(ngModel)]=\"tempItem.pack\" name=\"pack\" #pack=\"ngModel\" required min=\"0\" placeholder=\"Pack Size\">-->\n  <!--</div>-->\n\n  <!--<div class=\"tblCell\">-->\n  <!--<div *ngIf=\"(qty.touched || itemForm.submitted) && qty.errors?.required\" class=\"validErr\">-->\n  <!--Qty is required-->\n  <!--</div>-->\n  <!--<input type=\"number\" [(ngModel)]=\"tempItem.qty\" name=\"qty\" #qty=\"ngModel\" required min=\"0\" placeholder=\"Qty\">-->\n  <!--</div>-->\n\n  <!--<div style=\"text-align: center;cursor: pointer\" class=\"tblCell\">-->\n  <!--<button style=\"border: none;width: 100%\" type=\"submit\">-->\n  <!--<i class=\"fas fa-plus-circle\" style=\"color: #3e8039;font-size: 20px;padding-top: 4px\"></i>-->\n  <!--</button>-->\n  <!--</div>-->\n\n  <!--</form>-->\n\n  <!--<div>-->\n  <!--<div>2</div>-->\n  <!--<div>229216</div>-->\n  <!--<div>ADMENTA 10MG TAB [MEMANTINE HCL]</div>-->\n  <!--<div>30</div>-->\n  <!--<div>1</div>-->\n  <!--<div></div>-->\n  <!--</div>-->\n\n  <!--<div>-->\n  <!--<div>3</div>-->\n  <!--<div>229216</div>-->\n  <!--<div>ADMENTA 10MG TAB [MEMANTINE HCL]</div>-->\n  <!--<div>30</div>-->\n  <!--<div>1</div>-->\n  <!--<div></div>-->\n  <!--</div>-->\n\n</div>\n";
     /***/
   },
 
@@ -1567,13 +1587,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _validator_telephone_validator_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
     /*! ./validator/telephone-validator.directive */
     "./src/app/validator/telephone-validator.directive.ts");
+    /* harmony import */
+
+
+    var _item_table_item_table_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    /*! ./item-table/item-table.component */
+    "./src/app/item-table/item-table.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_11__["InventoryComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_12__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_13__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_14__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_15__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_16__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_17__["GrnViewComponent"], _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_19__["AlertBoxComponent"], _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__["SupplierComponent"], _validator_inputs_validator_directive__WEBPACK_IMPORTED_MODULE_24__["InputsValidatorDirective"], _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__["AutocompleteBoxComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"], _validator_email_validator_directive__WEBPACK_IMPORTED_MODULE_25__["EmailValidatorDirective"], _validator_telephone_validator_directive__WEBPACK_IMPORTED_MODULE_26__["TelephoneValidatorDirective"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _content_panel_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"], _content_panel_content_panel_component__WEBPACK_IMPORTED_MODULE_7__["ContentPanelComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _content_panel_inventory_summary_summary_component__WEBPACK_IMPORTED_MODULE_10__["SummaryComponent"], _content_panel_inventory_inventory_component__WEBPACK_IMPORTED_MODULE_11__["InventoryComponent"], _content_panel_purchase_order_orders_list_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_12__["OrderViewComponent"], _content_panel_purchase_order_order_add_order_add_component__WEBPACK_IMPORTED_MODULE_13__["OrderAddComponent"], _content_panel_purchase_order_orders_list_orders_list_component__WEBPACK_IMPORTED_MODULE_14__["OrdersListComponent"], _content_panel_grn_grn_add_grn_add_component__WEBPACK_IMPORTED_MODULE_15__["GrnAddComponent"], _content_panel_grn_grns_list_grns_list_component__WEBPACK_IMPORTED_MODULE_16__["GrnsListComponent"], _content_panel_grn_grns_list_grn_view_grn_view_component__WEBPACK_IMPORTED_MODULE_17__["GrnViewComponent"], _alert_box_alert_box_component__WEBPACK_IMPORTED_MODULE_19__["AlertBoxComponent"], _content_panel_supplier_supplier_component__WEBPACK_IMPORTED_MODULE_20__["SupplierComponent"], _validator_inputs_validator_directive__WEBPACK_IMPORTED_MODULE_24__["InputsValidatorDirective"], _autocomplete_box_autocomplete_box_component__WEBPACK_IMPORTED_MODULE_22__["AutocompleteBoxComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"], _validator_email_validator_directive__WEBPACK_IMPORTED_MODULE_25__["EmailValidatorDirective"], _validator_telephone_validator_directive__WEBPACK_IMPORTED_MODULE_26__["TelephoneValidatorDirective"], _item_table_item_table_component__WEBPACK_IMPORTED_MODULE_27__["ItemTableComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_21__["ReactiveFormsModule"]],
       providers: [_angular_common__WEBPACK_IMPORTED_MODULE_18__["DatePipe"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1681,7 +1707,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {}
       }, {
         key: "suggestTexts",
-        value: function suggestTexts() {
+        value: function suggestTexts(fieldId) {
+          var a = 'ADMENTA 10MG TAB [MEMANTINE HC';
+          console.log(a);
+          a.toString().replace(/\[/g, '5');
+
+          if (this.inputText.toString().indexOf('[') > -1) {// this.inputText.toString().replace('[', '\[')
+          }
+
+          if (this.inputText.toString().indexOf(']') > -1) {// this.inputText.toString().replace(']', '\]')
+          }
+
+          if (this.inputText.toString().indexOf('(') > -1) {// this.inputText.toString().replace('(', '\(')
+          }
+
+          if (this.inputText.toString().indexOf(')') > -1) {// this.inputText.toString().replace(')', '\)')
+          }
+
+          console.log(a);
           this.pattern = new RegExp('(' + this.inputText + '|' + this.inputText.toLowerCase() + '|' + this.inputText.toUpperCase() + ')'); // console.log(this.pattern.exec('E-009 emerchemiie NC CEYLON LTD.'))
 
           this.filteredItems = new Set();
@@ -1734,6 +1777,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], AutocompleteBoxComponent.prototype, "clsForm", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], AutocompleteBoxComponent.prototype, "inputText", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], AutocompleteBoxComponent.prototype, "inputTextChange", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], AutocompleteBoxComponent.prototype, "disabled", void 0);
     AutocompleteBoxComponent = AutocompleteBoxComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-autocomplete-box',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -3004,7 +3048,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".orderNode {\r\n  padding: 0px 11px 0px 11px;\r\n  /*width: 100%;*/\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n.orderTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.orderTop > div > div > div:first-child {\r\n  float: left;\r\n  font-weight: bold;\r\n}\r\n\r\n.orderTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > div > div {\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > input {\r\n  border: none;\r\n  font-weight: bold !important;\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n/*#vendorVar>div {*/\r\n\r\n/*border: none;*/\r\n\r\n/*font-weight: bold !important;*/\r\n\r\n/*background-color: #3e8039 !important;*/\r\n\r\n/*}*/\r\n\r\n/*.orderNode {*/\r\n\r\n/*padding: 0px 10px 0px 10px;*/\r\n\r\n/*width: 100%;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*padding: 0px 0px 5px 0px;*/\r\n\r\n/*font-size: 18px;*/\r\n\r\n/*border-bottom: 4px solid rgba(0, 122, 169, 0.3);*/\r\n\r\n/*margin: 0px 0px 25px 0px;*/\r\n\r\n/*color: rgba(0, 122, 169, 0.4);*/\r\n\r\n/*font-weight: bold;*/\r\n\r\n/*cursor: pointer;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode :focus {*/\r\n\r\n/*outline: 0;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span {*/\r\n\r\n/*margin-left: 10px;*/\r\n\r\n/*padding: 0px 5px 7px 5px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabNode > span:first-child {*/\r\n\r\n/*margin-left: 0px;*/\r\n\r\n/*}*/\r\n\r\n/*.tabSelected {*/\r\n\r\n/*color: #007aa9;*/\r\n\r\n/*border-bottom: 4px solid #007aa9;*/\r\n\r\n/*padding-bottom: 7px;*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 796px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 16px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 636px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 15px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 466px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*@media screen and (max-width: 396px) {*/\r\n\r\n/*.tabNode{*/\r\n\r\n/*font-size: 14px !important;*/\r\n\r\n/*}*/\r\n\r\n/*}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLFlBQVk7RUFDWiw0QkFBNEI7RUFDNUIsd0JBQXdCO0FBQzFCOztBQUVBLG1CQUFtQjs7QUFDbkIsZ0JBQWdCOztBQUNoQixnQ0FBZ0M7O0FBQ2hDLHdDQUF3Qzs7QUFDeEMsSUFBSTs7QUFFSixlQUFlOztBQUNmLDhCQUE4Qjs7QUFDOUIsZUFBZTs7QUFDZixJQUFJOztBQUVKLFlBQVk7O0FBQ1osNEJBQTRCOztBQUM1QixtQkFBbUI7O0FBQ25CLG1EQUFtRDs7QUFDbkQsNEJBQTRCOztBQUM1QixpQ0FBaUM7O0FBQ2pDLHFCQUFxQjs7QUFDckIsbUJBQW1COztBQUNuQixJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIsY0FBYzs7QUFDZCxJQUFJOztBQUVKLG9CQUFvQjs7QUFDcEIscUJBQXFCOztBQUNyQiw0QkFBNEI7O0FBQzVCLElBQUk7O0FBRUosZ0NBQWdDOztBQUNoQyxvQkFBb0I7O0FBQ3BCLElBQUk7O0FBRUosaUJBQWlCOztBQUNqQixrQkFBa0I7O0FBQ2xCLG9DQUFvQzs7QUFDcEMsdUJBQXVCOztBQUN2QixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSTs7QUFFSix5Q0FBeUM7O0FBQ3pDLFlBQVk7O0FBQ1osOEJBQThCOztBQUM5QixJQUFJOztBQUNKLElBQUk7O0FBRUoseUNBQXlDOztBQUN6QyxZQUFZOztBQUNaLDhCQUE4Qjs7QUFDOUIsSUFBSTs7QUFDSixJQUFJOztBQUVKLHlDQUF5Qzs7QUFDekMsWUFBWTs7QUFDWiw4QkFBOEI7O0FBQzlCLElBQUk7O0FBQ0osSUFBSSIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvcHVyY2hhc2Utb3JkZXIvb3JkZXItYWRkL29yZGVyLWFkZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9yZGVyTm9kZSB7XHJcbiAgcGFkZGluZzogMHB4IDExcHggMHB4IDExcHg7XHJcbiAgLyp3aWR0aDogMTAwJTsqL1xyXG4gIC8qZm9udC1zaXplOiAxNHB4OyovXHJcbn1cclxuXHJcbi5vcmRlclRvcCB7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBtYXJnaW4tbGVmdDogOTBweFxyXG59XHJcblxyXG46Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBkaXYgPiBkaXYge1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDRweDtcclxufVxyXG5cclxuOjpuZy1kZWVwIGFwcC1hdXRvY29tcGxldGUtYm94ID4gZGl2ID4gaW5wdXQge1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBmb250LXdlaWdodDogYm9sZCAhaW1wb3J0YW50O1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDRweDtcclxufVxyXG5cclxuLyojdmVuZG9yVmFyPmRpdiB7Ki9cclxuLypib3JkZXI6IG5vbmU7Ki9cclxuLypmb250LXdlaWdodDogYm9sZCAhaW1wb3J0YW50OyovXHJcbi8qYmFja2dyb3VuZC1jb2xvcjogIzNlODAzOSAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcblxyXG4vKi5vcmRlck5vZGUgeyovXHJcbi8qcGFkZGluZzogMHB4IDEwcHggMHB4IDEwcHg7Ki9cclxuLyp3aWR0aDogMTAwJTsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZXsqL1xyXG4vKnBhZGRpbmc6IDBweCAwcHggNXB4IDBweDsqL1xyXG4vKmZvbnQtc2l6ZTogMThweDsqL1xyXG4vKmJvcmRlci1ib3R0b206IDRweCBzb2xpZCByZ2JhKDAsIDEyMiwgMTY5LCAwLjMpOyovXHJcbi8qbWFyZ2luOiAwcHggMHB4IDI1cHggMHB4OyovXHJcbi8qY29sb3I6IHJnYmEoMCwgMTIyLCAxNjksIDAuNCk7Ki9cclxuLypmb250LXdlaWdodDogYm9sZDsqL1xyXG4vKmN1cnNvcjogcG9pbnRlcjsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA6Zm9jdXMgeyovXHJcbi8qb3V0bGluZTogMDsqL1xyXG4vKn0qL1xyXG5cclxuLyoudGFiTm9kZSA+IHNwYW4geyovXHJcbi8qbWFyZ2luLWxlZnQ6IDEwcHg7Ki9cclxuLypwYWRkaW5nOiAwcHggNXB4IDdweCA1cHg7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLnRhYk5vZGUgPiBzcGFuOmZpcnN0LWNoaWxkIHsqL1xyXG4vKm1hcmdpbi1sZWZ0OiAwcHg7Ki9cclxuLyp9Ki9cclxuXHJcbi8qLnRhYlNlbGVjdGVkIHsqL1xyXG4vKmNvbG9yOiAjMDA3YWE5OyovXHJcbi8qYm9yZGVyLWJvdHRvbTogNHB4IHNvbGlkICMwMDdhYTk7Ki9cclxuLypwYWRkaW5nLWJvdHRvbTogN3B4OyovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc5NnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTZweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYzNnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ2NnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcblxyXG4vKkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDM5NnB4KSB7Ki9cclxuLyoudGFiTm9kZXsqL1xyXG4vKmZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50OyovXHJcbi8qfSovXHJcbi8qfSovXHJcbiJdfQ== */";
+    __webpack_exports__["default"] = ".orderNode {\r\n  padding: 0px 11px 0px 11px;\r\n  /*width: 100%;*/\r\n  /*font-size: 14px;*/\r\n}\r\n\r\n.orderTop {\r\n  font-size: 14px;\r\n}\r\n\r\n.orderTop > div > div > div:first-child {\r\n  float: left;\r\n  font-weight: bold;\r\n}\r\n\r\n.orderTop > div > div > div:nth-child(2) {\r\n  margin-left: 90px\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > div > div {\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > input {\r\n  border: none;\r\n  font-weight: bold !important;\r\n  padding: 3px 5px 3px 4px;\r\n}\r\n\r\ntd::ng-deep app-autocomplete-box > div > input {\r\n  font-weight: normal !important;\r\n}\r\n\r\n/*Order Table*/\r\n\r\n#itemTable {\r\n  display: table;\r\n  width: 100%;\r\n  border: 1px solid #b6b6b6;\r\n}\r\n\r\nform {\r\n  width: 100%;\r\n  display: table-row;\r\n}\r\n\r\n.tblRow {\r\n  display: table-row;\r\n}\r\n\r\n.tblRow:first-child {\r\n  background-color: #e7e7e7;\r\n}\r\n\r\n.tblRow:first-child > div {\r\n  font-weight: bold;\r\n  border-top: none;\r\n}\r\n\r\n.tblCell {\r\n  padding: 5px 4px 3px 4px;\r\n  font-size: 14px;\r\n  display: table-cell;\r\n  width: 100%;\r\n  border-top: 1px solid #b6b6b6;\r\n  border-right: 1px solid #b6b6b6;\r\n  position: relative;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n}\r\n\r\n.tblCell:last-child {\r\n  border-right: none;\r\n}\r\n\r\n#itemTable > div > div:last-child {\r\n  border-right: none;\r\n}\r\n\r\nbutton {\r\n  background-color: white;\r\n}\r\n\r\nform:hover,\r\nform:hover > div > button,\r\nform:hover > div>div > button,\r\nform:hover > div > input,\r\nform:hover > div > ::ng-deep app-autocomplete-box > div > input {\r\n  background-color: #f3f2eb;\r\n  cursor: pointer;\r\n}\r\n\r\nform > div > app-autocomplete-box > div > input, form > div > input {\r\n  border: none;\r\n}\r\n\r\nform > div:nth-child(1), .tblRow:nth-child(1) > div:nth-child(1) {\r\n  width: 60px !important;\r\n}\r\n\r\nform > div:nth-child(2), .tblRow:nth-child(1) > div:nth-child(2) {\r\n  width: 120px !important;\r\n}\r\n\r\nform > div:nth-child(3), .tblRow:nth-child(1) > div:nth-child(3) {\r\n  width: calc(100% - 445px) !important;\r\n}\r\n\r\nform > div:nth-child(4), .tblRow:nth-child(1) > div:nth-child(4) {\r\n  width: 90px !important;\r\n}\r\n\r\nform > div:nth-child(5), .tblRow:nth-child(1) > div:nth-child(5) {\r\n  width: 90px !important;\r\n}\r\n\r\nform > div:nth-child(6), .tblRow:nth-child(1) > div:nth-child(6) {\r\n  width: 90px !important;\r\n}\r\n\r\n.tblCell ::ng-deep app-autocomplete-box > div > input {\r\n  font-weight: normal !important;\r\n  padding: 3px 2px 3px 2px !important;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 80px;\r\n}\r\n\r\ninput[type=text] {\r\n  width: 113px;\r\n}\r\n\r\n.tblCell > i {\r\n  font-size: 22px;\r\n  color: #03a703;\r\n}\r\n\r\n.tblCell {\r\n\r\n  /*padding: 2px 0px 2px 0px;*/\r\n}\r\n\r\n.tblCell > .btnEdit, .tblCell > button {\r\n  position: absolute;\r\n}\r\n\r\n.tblCell > input {\r\n  /*top: 50%;*/\r\n  /*transform: translateY(-50%);*/\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9wdXJjaGFzZS1vcmRlci9vcmRlci1hZGQvb3JkZXItYWRkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7QUFDRjs7QUFFQTtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLFlBQVk7RUFDWiw0QkFBNEI7RUFDNUIsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsOEJBQThCO0FBQ2hDOztBQUVBLGNBQWM7O0FBRWQ7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGVBQWU7RUFDZixtQkFBbUI7RUFDbkIsV0FBVztFQUNYLDZCQUE2QjtFQUM3QiwrQkFBK0I7RUFDL0Isa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSx1QkFBdUI7QUFDekI7O0FBRUE7Ozs7O0VBS0UseUJBQXlCO0VBQ3pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSx1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSw4QkFBOEI7RUFDOUIsbUNBQW1DO0FBQ3JDOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGNBQWM7QUFDaEI7O0FBRUE7O0VBRUUsNEJBQTRCO0FBQzlCOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLCtCQUErQjtBQUNqQyIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQtcGFuZWwvcHVyY2hhc2Utb3JkZXIvb3JkZXItYWRkL29yZGVyLWFkZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9yZGVyTm9kZSB7XHJcbiAgcGFkZGluZzogMHB4IDExcHggMHB4IDExcHg7XHJcbiAgLyp3aWR0aDogMTAwJTsqL1xyXG4gIC8qZm9udC1zaXplOiAxNHB4OyovXHJcbn1cclxuXHJcbi5vcmRlclRvcCB7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4ub3JkZXJUb3AgPiBkaXYgPiBkaXYgPiBkaXY6bnRoLWNoaWxkKDIpIHtcclxuICBtYXJnaW4tbGVmdDogOTBweFxyXG59XHJcblxyXG46Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBkaXYgPiBkaXYge1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDRweDtcclxufVxyXG5cclxuOjpuZy1kZWVwIGFwcC1hdXRvY29tcGxldGUtYm94ID4gZGl2ID4gaW5wdXQge1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBmb250LXdlaWdodDogYm9sZCAhaW1wb3J0YW50O1xyXG4gIHBhZGRpbmc6IDNweCA1cHggM3B4IDRweDtcclxufVxyXG5cclxudGQ6Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCB7XHJcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4vKk9yZGVyIFRhYmxlKi9cclxuXHJcbiNpdGVtVGFibGUge1xyXG4gIGRpc3BsYXk6IHRhYmxlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNiNmI2YjY7XHJcbn1cclxuXHJcbmZvcm0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGRpc3BsYXk6IHRhYmxlLXJvdztcclxufVxyXG5cclxuLnRibFJvdyB7XHJcbiAgZGlzcGxheTogdGFibGUtcm93O1xyXG59XHJcblxyXG4udGJsUm93OmZpcnN0LWNoaWxkIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTdlN2U3O1xyXG59XHJcblxyXG4udGJsUm93OmZpcnN0LWNoaWxkID4gZGl2IHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBib3JkZXItdG9wOiBub25lO1xyXG59XHJcblxyXG4udGJsQ2VsbCB7XHJcbiAgcGFkZGluZzogNXB4IDRweCAzcHggNHB4O1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxuICBkaXNwbGF5OiB0YWJsZS1jZWxsO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJvcmRlci10b3A6IDFweCBzb2xpZCAjYjZiNmI2O1xyXG4gIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNiNmI2YjY7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG59XHJcblxyXG4udGJsQ2VsbDpsYXN0LWNoaWxkIHtcclxuICBib3JkZXItcmlnaHQ6IG5vbmU7XHJcbn1cclxuXHJcbiNpdGVtVGFibGUgPiBkaXYgPiBkaXY6bGFzdC1jaGlsZCB7XHJcbiAgYm9yZGVyLXJpZ2h0OiBub25lO1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5mb3JtOmhvdmVyLFxyXG5mb3JtOmhvdmVyID4gZGl2ID4gYnV0dG9uLFxyXG5mb3JtOmhvdmVyID4gZGl2PmRpdiA+IGJ1dHRvbixcclxuZm9ybTpob3ZlciA+IGRpdiA+IGlucHV0LFxyXG5mb3JtOmhvdmVyID4gZGl2ID4gOjpuZy1kZWVwIGFwcC1hdXRvY29tcGxldGUtYm94ID4gZGl2ID4gaW5wdXQge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmM2YyZWI7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG5mb3JtID4gZGl2ID4gYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCwgZm9ybSA+IGRpdiA+IGlucHV0IHtcclxuICBib3JkZXI6IG5vbmU7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDEpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoMSkge1xyXG4gIHdpZHRoOiA2MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDIpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gIHdpZHRoOiAxMjBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5mb3JtID4gZGl2Om50aC1jaGlsZCgzKSwgLnRibFJvdzpudGgtY2hpbGQoMSkgPiBkaXY6bnRoLWNoaWxkKDMpIHtcclxuICB3aWR0aDogY2FsYygxMDAlIC0gNDQ1cHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDQpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoNCkge1xyXG4gIHdpZHRoOiA5MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDUpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoNSkge1xyXG4gIHdpZHRoOiA5MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDYpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoNikge1xyXG4gIHdpZHRoOiA5MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi50YmxDZWxsIDo6bmctZGVlcCBhcHAtYXV0b2NvbXBsZXRlLWJveCA+IGRpdiA+IGlucHV0IHtcclxuICBmb250LXdlaWdodDogbm9ybWFsICFpbXBvcnRhbnQ7XHJcbiAgcGFkZGluZzogM3B4IDJweCAzcHggMnB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9bnVtYmVyXSB7XHJcbiAgd2lkdGg6IDgwcHg7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9dGV4dF0ge1xyXG4gIHdpZHRoOiAxMTNweDtcclxufVxyXG5cclxuLnRibENlbGwgPiBpIHtcclxuICBmb250LXNpemU6IDIycHg7XHJcbiAgY29sb3I6ICMwM2E3MDM7XHJcbn1cclxuXHJcbi50YmxDZWxsIHtcclxuXHJcbiAgLypwYWRkaW5nOiAycHggMHB4IDJweCAwcHg7Ki9cclxufVxyXG5cclxuLnRibENlbGwgPiAuYnRuRWRpdCwgLnRibENlbGwgPiBidXR0b24ge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxufVxyXG5cclxuLnRibENlbGwgPiBpbnB1dCB7XHJcbiAgLyp0b3A6IDUwJTsqL1xyXG4gIC8qdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpOyovXHJcbn1cclxuIl19 */";
     /***/
   },
 
@@ -3050,34 +3094,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function OrderAddComponent(alertService) {
         _classCallCheck(this, OrderAddComponent);
 
-        this.alertService = alertService;
+        this.alertService = alertService; // @ViewChild('itemForm', {static: true}) public itemForm: NgForm;
+        // @ViewChild('desc', {static: true}) public desc: NgModel;
+
         this.alertBox = {
           alert: false,
           msg: '',
           value: ''
         };
-        this.item = {
-          desc: 'E-008 EMERCHEMIE NB CEYLON LTD.'
+        this.order = {
+          vendor: 'E-008 EMERCHEMIE NB CEYLON LTD.'
         };
         this.items = [{
-          code: 226455,
+          code: '226455',
           desc: 'ADACAPONE TAB 200MG',
-          pack: 50,
-          qty: 1,
-          newRow: false
+          pack: '50',
+          qty: '1',
+          editRow: 1
         }, {
-          code: 229216,
+          code: '229216',
           desc: 'ADMENTA 10MG TAB [MEMANTINE HCL]',
-          pack: 30,
-          qty: 10,
-          newRow: false
+          pack: '30',
+          qty: '10',
+          editRow: 1
         }, {
           code: '',
           desc: '',
-          pack: 0,
-          qty: 0,
-          newRow: true
+          pack: '',
+          qty: '',
+          editRow: 0
         }];
+        this.tempItem = this.getNewItem();
       }
 
       _createClass(OrderAddComponent, [{
@@ -3087,15 +3134,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       }, {
         key: "addRow",
-        value: function addRow() {
-          this.items[this.items.length - 1].newRow = false;
-          this.items.push({
-            code: '',
-            desc: '',
-            pack: 0,
-            qty: 0,
-            newRow: true
-          });
+        value: function addRow(item, itemForm, desc) {
+          if (item.editRow === 0) {
+            this.items.push(this.getNewItem());
+          }
+
+          item.editRow = 1;
+          desc.valueAccessor['fieldId'].control.markAsUntouched();
+        }
+      }, {
+        key: "editRow",
+        value: function editRow(item, isTrueOrFalse) {
+          item.editRow = isTrueOrFalse;
         }
       }, {
         key: "removeRow",
@@ -3113,6 +3163,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             _this3.alertBox.alert = false;
           });
+        }
+      }, {
+        key: "getNewItem",
+        value: function getNewItem() {
+          return {
+            code: '',
+            desc: '',
+            pack: '',
+            qty: '',
+            editRow: 0
+          };
+        }
+      }, {
+        key: "isFinalized",
+        value: function isFinalized() {
+          var _iterator9 = _createForOfIteratorHelper(this.items),
+              _step9;
+
+          try {
+            for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+              var item = _step9.value;
+
+              if (item.editRow === 2) {
+                return false;
+              }
+            }
+          } catch (err) {
+            _iterator9.e(err);
+          } finally {
+            _iterator9.f();
+          }
+
+          return true;
         }
       }]);
 
@@ -3395,18 +3478,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (ordersOfYear.expandYear) {
             ordersOfYear.expandYear = false;
 
-            var _iterator9 = _createForOfIteratorHelper(ordersOfYear.informationOfMonth),
-                _step9;
+            var _iterator10 = _createForOfIteratorHelper(ordersOfYear.informationOfMonth),
+                _step10;
 
             try {
-              for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-                var orderOfMonth = _step9.value;
+              for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+                var orderOfMonth = _step10.value;
                 orderOfMonth.expandMonth = false;
               }
             } catch (err) {
-              _iterator9.e(err);
+              _iterator10.e(err);
             } finally {
-              _iterator9.f();
+              _iterator10.f();
             }
           } else {
             ordersOfYear.expandYear = true;
@@ -3418,18 +3501,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (ordersOfMonth.expandMonth) {
             ordersOfMonth.expandMonth = false;
 
-            var _iterator10 = _createForOfIteratorHelper(ordersOfMonth.informationOfDay),
-                _step10;
+            var _iterator11 = _createForOfIteratorHelper(ordersOfMonth.informationOfDay),
+                _step11;
 
             try {
-              for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-                var orderOfDay = _step10.value;
+              for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
+                var orderOfDay = _step11.value;
                 orderOfDay.expandDay = false;
               }
             } catch (err) {
-              _iterator10.e(err);
+              _iterator11.e(err);
             } finally {
-              _iterator10.f();
+              _iterator11.f();
             }
           } else {
             ordersOfMonth.expandMonth = true;
@@ -3441,18 +3524,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (order.expandDay) {
             order.expandDay = false;
 
-            var _iterator11 = _createForOfIteratorHelper(order.info),
-                _step11;
+            var _iterator12 = _createForOfIteratorHelper(order.info),
+                _step12;
 
             try {
-              for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
-                var orderInfo = _step11.value;
+              for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
+                var orderInfo = _step12.value;
                 orderInfo.expandOrder = false;
               }
             } catch (err) {
-              _iterator11.e(err);
+              _iterator12.e(err);
             } finally {
-              _iterator11.f();
+              _iterator12.f();
             }
           } else {
             order.expandDay = true;
@@ -3507,7 +3590,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".supplierNode {\r\n  padding: 0px 4px 0px 4px;\r\n  width: 100%;\r\n  /*font-size: 14px;*/\r\n}\r\n\r\ntd::ng-deep app-autocomplete-box > div > input {\r\n  font-weight: normal !important;\r\n}\r\n\r\ntd > div {\r\n  margin-left: 2px;\r\n  color: #e41506;\r\n  font-size: 11px;\r\n  font-weight: bold;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0VBQ3hCLFdBQVc7RUFDWCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLGVBQWU7RUFDZixpQkFBaUI7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL3N1cHBsaWVyL3N1cHBsaWVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3VwcGxpZXJOb2RlIHtcclxuICBwYWRkaW5nOiAwcHggNHB4IDBweCA0cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgLypmb250LXNpemU6IDE0cHg7Ki9cclxufVxyXG5cclxudGQ6Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCB7XHJcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG50ZCA+IGRpdiB7XHJcbiAgbWFyZ2luLWxlZnQ6IDJweDtcclxuICBjb2xvcjogI2U0MTUwNjtcclxuICBmb250LXNpemU6IDExcHg7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuIl19 */";
+    __webpack_exports__["default"] = ".supplierNode {\r\n  padding: 0px 4px 0px 4px;\r\n  width: 100%;\r\n  /*font-size: 14px;*/\r\n}\r\n\r\ntd::ng-deep app-autocomplete-box > div > input {\r\n  font-weight: normal !important;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC1wYW5lbC9zdXBwbGllci9zdXBwbGllci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0VBQ3hCLFdBQVc7RUFDWCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSw4QkFBOEI7QUFDaEMiLCJmaWxlIjoic3JjL2FwcC9jb250ZW50LXBhbmVsL3N1cHBsaWVyL3N1cHBsaWVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3VwcGxpZXJOb2RlIHtcclxuICBwYWRkaW5nOiAwcHggNHB4IDBweCA0cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgLypmb250LXNpemU6IDE0cHg7Ki9cclxufVxyXG5cclxudGQ6Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCB7XHJcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbCAhaW1wb3J0YW50O1xyXG59XHJcbiJdfQ== */";
     /***/
   },
 
@@ -3822,6 +3905,95 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/item-table/item-table.component.css":
+  /*!*****************************************************!*\
+    !*** ./src/app/item-table/item-table.component.css ***!
+    \*****************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppItemTableItemTableComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "#itemTable {\r\n  display: table;\r\n  width: 100%;\r\n  border: 1px solid #b6b6b6;\r\n}\r\n\r\nform {\r\n  width: 100%;\r\n  display: table-row;\r\n}\r\n\r\n.tblRow {\r\n  display: table-row;\r\n}\r\n\r\n.tblRow:first-child {\r\n  background-color: #e7e7e7;\r\n}\r\n\r\n.tblRow:first-child > div {\r\n  font-weight: bold;\r\n  border-top: none;\r\n}\r\n\r\n.tblCell {\r\n  padding: 3px 4px 3px 4px;\r\n  font-size: 14px;\r\n  display: table-cell;\r\n  width: 100%;\r\n  border-top: 1px solid #b6b6b6;\r\n  border-right: 1px solid #b6b6b6;\r\n}\r\n\r\n.tblCell:last-child {\r\n  border-right: none;\r\n}\r\n\r\n#itemTable > div > div:last-child {\r\n  border-right: none;\r\n}\r\n\r\nbutton {\r\n  background-color: white;\r\n}\r\n\r\nform:hover,\r\nform:hover > div > button,\r\nform:hover > div > input,\r\nform:hover > div > ::ng-deep app-autocomplete-box > div > input {\r\n  background-color: #f3f2eb;\r\n  cursor: pointer;\r\n}\r\n\r\n/*.validErr {*/\r\n\r\n/*margin-left: 2px;*/\r\n\r\n/*color: #e41506;*/\r\n\r\n/*font-size: 11px;*/\r\n\r\n/*font-weight: bold;*/\r\n\r\n/*}*/\r\n\r\nform > div > app-autocomplete-box > div > input, form > div > input {\r\n  border: none;\r\n}\r\n\r\nform > div:nth-child(1), .tblRow:nth-child(1) > div:nth-child(1) {\r\n  width: 60px !important;\r\n}\r\n\r\nform > div:nth-child(2), .tblRow:nth-child(1) > div:nth-child(2) {\r\n  width: 120px !important;\r\n}\r\n\r\nform > div:nth-child(3), .tblRow:nth-child(1) > div:nth-child(3) {\r\n  width: calc(100% - 390px) !important;\r\n}\r\n\r\nform > div:nth-child(4), .tblRow:nth-child(1) > div:nth-child(4) {\r\n  width: 80px !important;\r\n}\r\n\r\nform > div:nth-child(5), .tblRow:nth-child(1) > div:nth-child(5) {\r\n  width: 80px !important;\r\n}\r\n\r\nform > div:nth-child(6), .tblRow:nth-child(1) > div:nth-child(6) {\r\n  width: 50px !important;\r\n}\r\n\r\n::ng-deep app-autocomplete-box > div > input {\r\n  font-weight: normal !important;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 73px;\r\n}\r\n\r\ninput[type=text] {\r\n  width: 113px;\r\n}\r\n\r\n.tblCell > i {\r\n  font-size: 22px;\r\n  color: #03a703;\r\n}\r\n\r\n.tblCell {\r\n  position: relative;\r\n  cursor: pointer;\r\n}\r\n\r\n.tblCell > i, .tblCell > input, .tblCell > button {\r\n  position: absolute;\r\n}\r\n\r\n.tblCell> input{\r\n  top:50%;\r\n  transform: translateY(-50%);\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaXRlbS10YWJsZS9pdGVtLXRhYmxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGVBQWU7RUFDZixtQkFBbUI7RUFDbkIsV0FBVztFQUNYLDZCQUE2QjtFQUM3QiwrQkFBK0I7QUFDakM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSx1QkFBdUI7QUFDekI7O0FBRUE7Ozs7RUFJRSx5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjs7QUFFQSxjQUFjOztBQUNkLG9CQUFvQjs7QUFDcEIsa0JBQWtCOztBQUNsQixtQkFBbUI7O0FBQ25CLHFCQUFxQjs7QUFDckIsSUFBSTs7QUFFSjtFQUNFLFlBQVk7QUFDZDs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHVCQUF1QjtBQUN6Qjs7QUFFQTtFQUNFLG9DQUFvQztBQUN0Qzs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLDhCQUE4QjtBQUNoQzs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGVBQWU7RUFDZixjQUFjO0FBQ2hCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxPQUFPO0VBQ1AsMkJBQTJCO0FBQzdCIiwiZmlsZSI6InNyYy9hcHAvaXRlbS10YWJsZS9pdGVtLXRhYmxlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjaXRlbVRhYmxlIHtcclxuICBkaXNwbGF5OiB0YWJsZTtcclxuICB3aWR0aDogMTAwJTtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjYjZiNmI2O1xyXG59XHJcblxyXG5mb3JtIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBkaXNwbGF5OiB0YWJsZS1yb3c7XHJcbn1cclxuXHJcbi50YmxSb3cge1xyXG4gIGRpc3BsYXk6IHRhYmxlLXJvdztcclxufVxyXG5cclxuLnRibFJvdzpmaXJzdC1jaGlsZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U3ZTdlNztcclxufVxyXG5cclxuLnRibFJvdzpmaXJzdC1jaGlsZCA+IGRpdiB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgYm9yZGVyLXRvcDogbm9uZTtcclxufVxyXG5cclxuLnRibENlbGwge1xyXG4gIHBhZGRpbmc6IDNweCA0cHggM3B4IDRweDtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbiAgZGlzcGxheTogdGFibGUtY2VsbDtcclxuICB3aWR0aDogMTAwJTtcclxuICBib3JkZXItdG9wOiAxcHggc29saWQgI2I2YjZiNjtcclxuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjYjZiNmI2O1xyXG59XHJcblxyXG4udGJsQ2VsbDpsYXN0LWNoaWxkIHtcclxuICBib3JkZXItcmlnaHQ6IG5vbmU7XHJcbn1cclxuXHJcbiNpdGVtVGFibGUgPiBkaXYgPiBkaXY6bGFzdC1jaGlsZCB7XHJcbiAgYm9yZGVyLXJpZ2h0OiBub25lO1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5mb3JtOmhvdmVyLFxyXG5mb3JtOmhvdmVyID4gZGl2ID4gYnV0dG9uLFxyXG5mb3JtOmhvdmVyID4gZGl2ID4gaW5wdXQsXHJcbmZvcm06aG92ZXIgPiBkaXYgPiA6Om5nLWRlZXAgYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YzZjJlYjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi8qLnZhbGlkRXJyIHsqL1xyXG4vKm1hcmdpbi1sZWZ0OiAycHg7Ki9cclxuLypjb2xvcjogI2U0MTUwNjsqL1xyXG4vKmZvbnQtc2l6ZTogMTFweDsqL1xyXG4vKmZvbnQtd2VpZ2h0OiBib2xkOyovXHJcbi8qfSovXHJcblxyXG5mb3JtID4gZGl2ID4gYXBwLWF1dG9jb21wbGV0ZS1ib3ggPiBkaXYgPiBpbnB1dCwgZm9ybSA+IGRpdiA+IGlucHV0IHtcclxuICBib3JkZXI6IG5vbmU7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDEpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoMSkge1xyXG4gIHdpZHRoOiA2MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDIpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoMikge1xyXG4gIHdpZHRoOiAxMjBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5mb3JtID4gZGl2Om50aC1jaGlsZCgzKSwgLnRibFJvdzpudGgtY2hpbGQoMSkgPiBkaXY6bnRoLWNoaWxkKDMpIHtcclxuICB3aWR0aDogY2FsYygxMDAlIC0gMzkwcHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDQpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoNCkge1xyXG4gIHdpZHRoOiA4MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDUpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoNSkge1xyXG4gIHdpZHRoOiA4MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmZvcm0gPiBkaXY6bnRoLWNoaWxkKDYpLCAudGJsUm93Om50aC1jaGlsZCgxKSA+IGRpdjpudGgtY2hpbGQoNikge1xyXG4gIHdpZHRoOiA1MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjo6bmctZGVlcCBhcHAtYXV0b2NvbXBsZXRlLWJveCA+IGRpdiA+IGlucHV0IHtcclxuICBmb250LXdlaWdodDogbm9ybWFsICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9bnVtYmVyXSB7XHJcbiAgd2lkdGg6IDczcHg7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9dGV4dF0ge1xyXG4gIHdpZHRoOiAxMTNweDtcclxufVxyXG5cclxuLnRibENlbGwgPiBpIHtcclxuICBmb250LXNpemU6IDIycHg7XHJcbiAgY29sb3I6ICMwM2E3MDM7XHJcbn1cclxuXHJcbi50YmxDZWxsIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4udGJsQ2VsbCA+IGksIC50YmxDZWxsID4gaW5wdXQsIC50YmxDZWxsID4gYnV0dG9uIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuXHJcbi50YmxDZWxsPiBpbnB1dHtcclxuICB0b3A6NTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxufVxyXG4iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/item-table/item-table.component.ts":
+  /*!****************************************************!*\
+    !*** ./src/app/item-table/item-table.component.ts ***!
+    \****************************************************/
+
+  /*! exports provided: ItemTableComponent */
+
+  /***/
+  function srcAppItemTableItemTableComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ItemTableComponent", function () {
+      return ItemTableComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var ItemTableComponent = /*#__PURE__*/function () {
+      function ItemTableComponent() {
+        _classCallCheck(this, ItemTableComponent);
+
+        this.inputTextChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+      }
+
+      _createClass(ItemTableComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.tempItem = this.item;
+          console.log(this.tempItem);
+        }
+      }, {
+        key: "addRow",
+        value: function addRow() {}
+      }]);
+
+      return ItemTableComponent;
+    }();
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ItemTableComponent.prototype, "item", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ItemTableComponent.prototype, "items", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ItemTableComponent.prototype, "inputText", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], ItemTableComponent.prototype, "inputTextChange", void 0);
+    ItemTableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-item-table',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./item-table.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/item-table/item-table.component.html"))["default"],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./item-table.component.css */
+      "./src/app/item-table/item-table.component.css"))["default"]]
+    })], ItemTableComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/login/login.component.css":
   /*!*******************************************!*\
     !*** ./src/app/login/login.component.css ***!
@@ -3837,7 +4009,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "input {\r\n  width: 100%;\r\n  height: 34px;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n}\r\n\r\napp-header ::ng-deep div {\r\n  top: 0px;\r\n}\r\n\r\nform {\r\n  min-height: calc(100vh - 216px);\r\n  padding: 20px;\r\n  width: 100%;\r\n  max-width: 600px;\r\n  margin: 150px auto 0px auto\r\n}\r\n\r\n.validErr{\r\n  margin-left: 5px;\r\n  color: #e41506;\r\n  font-size: 11px;\r\n  font-weight: bold;\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n  form {\r\n    margin-top: 120px;\r\n    min-height: calc(100vh - 186px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 796px) {\r\n  form {\r\n    margin-top: 100px;\r\n    min-height: calc(100vh - 165px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 636px) {\r\n  form {\r\n    margin-top: 90px;\r\n    min-height: calc(100vh - 150px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 466px) {\r\n  form {\r\n    min-height: calc(100vh - 146px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 396px) {\r\n  form {\r\n    min-height: calc(100vh - 144px);\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFFBQVE7QUFDVjs7QUFFQTtFQUNFLCtCQUErQjtFQUMvQixhQUFhO0VBQ2IsV0FBVztFQUNYLGdCQUFnQjtFQUNoQjtBQUNGOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxlQUFlO0VBQ2YsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7SUFDRSxpQkFBaUI7SUFDakIsK0JBQStCO0VBQ2pDO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLGlCQUFpQjtJQUNqQiwrQkFBK0I7RUFDakM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsZ0JBQWdCO0lBQ2hCLCtCQUErQjtFQUNqQztBQUNGOztBQUVBO0VBQ0U7SUFDRSwrQkFBK0I7RUFDakM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsK0JBQStCO0VBQ2pDO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMzRweDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuYXBwLWhlYWRlciA6Om5nLWRlZXAgZGl2IHtcclxuICB0b3A6IDBweDtcclxufVxyXG5cclxuZm9ybSB7XHJcbiAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDIxNnB4KTtcclxuICBwYWRkaW5nOiAyMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1heC13aWR0aDogNjAwcHg7XHJcbiAgbWFyZ2luOiAxNTBweCBhdXRvIDBweCBhdXRvXHJcbn1cclxuXHJcbi52YWxpZEVycntcclxuICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gIGNvbG9yOiAjZTQxNTA2O1xyXG4gIGZvbnQtc2l6ZTogMTFweDtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KSB7XHJcbiAgZm9ybSB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMjBweDtcclxuICAgIG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSAxODZweCk7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3OTZweCkge1xyXG4gIGZvcm0ge1xyXG4gICAgbWFyZ2luLXRvcDogMTAwcHg7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTY1cHgpO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjM2cHgpIHtcclxuICBmb3JtIHtcclxuICAgIG1hcmdpbi10b3A6IDkwcHg7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTUwcHgpO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNDY2cHgpIHtcclxuICBmb3JtIHtcclxuICAgIG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSAxNDZweCk7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzOTZweCkge1xyXG4gIGZvcm0ge1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE0NHB4KTtcclxuICB9XHJcbn1cclxuIl19 */";
+    __webpack_exports__["default"] = "input {\r\n  width: 100%;\r\n  height: 34px;\r\n  border-radius: 5px;\r\n  padding: 10px;\r\n}\r\n\r\napp-header ::ng-deep div {\r\n  top: 0px;\r\n}\r\n\r\nform {\r\n  min-height: calc(100vh - 216px);\r\n  padding: 20px;\r\n  width: 100%;\r\n  max-width: 600px;\r\n  margin: 150px auto 0px auto\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n  form {\r\n    margin-top: 120px;\r\n    min-height: calc(100vh - 186px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 796px) {\r\n  form {\r\n    margin-top: 100px;\r\n    min-height: calc(100vh - 165px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 636px) {\r\n  form {\r\n    margin-top: 90px;\r\n    min-height: calc(100vh - 150px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 466px) {\r\n  form {\r\n    min-height: calc(100vh - 146px);\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 396px) {\r\n  form {\r\n    min-height: calc(100vh - 144px);\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFFBQVE7QUFDVjs7QUFFQTtFQUNFLCtCQUErQjtFQUMvQixhQUFhO0VBQ2IsV0FBVztFQUNYLGdCQUFnQjtFQUNoQjtBQUNGOztBQUVBO0VBQ0U7SUFDRSxpQkFBaUI7SUFDakIsK0JBQStCO0VBQ2pDO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLGlCQUFpQjtJQUNqQiwrQkFBK0I7RUFDakM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsZ0JBQWdCO0lBQ2hCLCtCQUErQjtFQUNqQztBQUNGOztBQUVBO0VBQ0U7SUFDRSwrQkFBK0I7RUFDakM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsK0JBQStCO0VBQ2pDO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMzRweDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuYXBwLWhlYWRlciA6Om5nLWRlZXAgZGl2IHtcclxuICB0b3A6IDBweDtcclxufVxyXG5cclxuZm9ybSB7XHJcbiAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDIxNnB4KTtcclxuICBwYWRkaW5nOiAyMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1heC13aWR0aDogNjAwcHg7XHJcbiAgbWFyZ2luOiAxNTBweCBhdXRvIDBweCBhdXRvXHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDEwMDBweCkge1xyXG4gIGZvcm0ge1xyXG4gICAgbWFyZ2luLXRvcDogMTIwcHg7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTg2cHgpO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzk2cHgpIHtcclxuICBmb3JtIHtcclxuICAgIG1hcmdpbi10b3A6IDEwMHB4O1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE2NXB4KTtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYzNnB4KSB7XHJcbiAgZm9ybSB7XHJcbiAgICBtYXJnaW4tdG9wOiA5MHB4O1xyXG4gICAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtIDE1MHB4KTtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ2NnB4KSB7XHJcbiAgZm9ybSB7XHJcbiAgICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTQ2cHgpO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzk2cHgpIHtcclxuICBmb3JtIHtcclxuICAgIG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSAxNDRweCk7XHJcbiAgfVxyXG59XHJcbiJdfQ== */";
     /***/
   },
 
@@ -4023,18 +4195,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           toggleDropdown: false
         }];
         navBarService.navSelect.subscribe(function (nav) {
-          var _iterator12 = _createForOfIteratorHelper(_this5.toggleDropdownVar),
-              _step12;
+          var _iterator13 = _createForOfIteratorHelper(_this5.toggleDropdownVar),
+              _step13;
 
           try {
-            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
-              var toggleDd = _step12.value;
+            for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
+              var toggleDd = _step13.value;
               toggleDd.toggleDropdown = false;
             }
           } catch (err) {
-            _iterator12.e(err);
+            _iterator13.e(err);
           } finally {
-            _iterator12.f();
+            _iterator13.f();
           }
 
           _this5.toggleDropdownVar[nav[0]].toggleDropdown = nav[1];
@@ -4071,18 +4243,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "collapseDropdown",
         value: function collapseDropdown() {
-          var _iterator13 = _createForOfIteratorHelper(this.toggleDropdownVar),
-              _step13;
+          var _iterator14 = _createForOfIteratorHelper(this.toggleDropdownVar),
+              _step14;
 
           try {
-            for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
-              var toggleDd = _step13.value;
+            for (_iterator14.s(); !(_step14 = _iterator14.n()).done;) {
+              var toggleDd = _step14.value;
               toggleDd.toggleDropdown = false;
             }
           } catch (err) {
-            _iterator13.e(err);
+            _iterator14.e(err);
           } finally {
-            _iterator13.f();
+            _iterator14.f();
           }
         }
       }]);
